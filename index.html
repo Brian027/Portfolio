@@ -2,374 +2,649 @@
 <html lang="fr">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Développeur Web Fullstack en apprentissage. Conception de sites internet et d'application mobile sur mesure à l'île de la Réunion.">
+  <title>Coupama Brian | Développeur Web à La Réunion</title>
+  <link rel="shortcut icon" href="/img/arbre-icon.png" type="image/x-icon">
 
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ2W0SSQ1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <title>Coupama Brian | Développeur Web à La Réunion</title>
+    gtag('config', 'G-QQ2W0SSQ1C');
+  </script>
 
-    <meta name="description"
-        content="Développeur Web Fullstack en apprentissage. Conception de sites internet et d'application mobile sur mesure à l'île de la Réunion.">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+  <!-- CookieBot -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e7e5a8f7-277e-40fa-903e-b6265884ec10" data-blockingmode="auto" type="text/javascript"></script>
 
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Bootstrap CDN -->
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- Favicon
-    ================================================== -->
-    <link rel="shortcut icon" href="/assets/img/arbre-icon.png" type="image/x-icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Stylesheets
-    ================================================== -->
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- jQuery CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+  <!-- CSS General -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS Libraries -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Smooch+Sans:wght@600&display=swap"
+    rel="stylesheet">
+  <!-- Icon website flaticon -->
+  <a href="https://www.flaticon.com/free-icons/work" title="work icons"></a>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/4baed359dd.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
 
-    <header id="masthead" class="site-header">
-        <nav id="primary-navigation" class="site-navigation">
-            <div class="container">
+  <!-- Preloader Page -->
+  <div class="loader">
+    <img src="/img/arbre-icon.png" alt="Logo site">
+  </div>
+  <!-- Cursor mouse -->
+  <div class="cursor"></div>
+  <!-- Header Navbar -->
+  <header>
 
-                <div class="navbar-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-                    <a class="site-title" href="index.html">
-                        <div class="logo"><img src="/assets/img/arbre-logo.png" style="width: 70px;" alt="logo-site"></div>
-                    </a>
-                    <!-- <a class="site-title"><span>Agency</span>Perfect</a> -->
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <div class="logo"><img src="/img/arbre-logo.png" alt="logo-site"></div>
+        </a>
+        <button class="box b3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <div class="container-lignes">
+            <div class="ligne"></div>
+            <div class="ligne"></div>
+            <div class="ligne"></div>
+          </div>
+        </button>
 
-                </div><!-- /.navbar-header -->
-
-                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
-
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li class="active"><a href="index.html" data-toggle="dropdown">Home</a></li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<i
-                                    class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
-
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li><a href="portfolio.html">Portfolio</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                            </ul>
-
-                        </li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="ui-elements.html">UI Elements</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-        </nav><!-- /.site-navigation -->
-    </header><!-- /#mastheaed -->
-
-    <div id="hero" class="hero overlay">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Your story begins from here.</h1>
-                <p>Your clients on the internet. Learn how to receive them.</p>
-                <a href="#" class="btn btn-border">Learn more</a>
-            </div><!-- /.hero-text -->
-        </div><!-- /.hero-content -->
-    </div><!-- /.hero -->
-
-    <main id="main" class="site-main">
-
-        <section class="site-section section-features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <h2>Responsive web design</h2>
-                        <p>Responsive Web design is the approach that suggests that design and development should
-                            respond to the user's behavior and environment based on screen size, platform and
-                            orientation. The practice consists of a mix of flexible grids and layouts, images and an
-                            intelligent use of CSS media queries</p>
-                    </div>
-                    <div class="col-sm-7 hidden-xs">
-                        <img src="assets/img/ipad-pro.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </section><!-- /.section-features -->
-
-        <section class="site-section section-services gray-bg text-center">
-            <div class="container">
-                <h2 class="heading-separator">Our Services</h2>
-                <p class="subheading-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                <div class="row">
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/anchor.svg" alt="">
-                            <h3 class="service-title">Branding</h3>
-                            <p class="service-info"> Learn why your brand is a valuable component when it comes to your
-                                marketing communication and why you don't want to be without one.</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/bycicle.svg" alt="">
-                            <h3 class="service-title">Design</h3>
-                            <p class="service-info">The strength of a design lies as much in the steps taken to create
-                                it as in the final result. </p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/paper-plane.svg" alt="">
-                            <h3 class="service-title">Development</h3>
-                            <p class="service-info">Development is a way to make people aware of the services and/or
-                                products you are offering.</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/photo.svg" alt="">
-                            <h3 class="service-title">Photography</h3>
-                            <p class="service-info">Photographs are the legacy you leave for generations to come.</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/microphone.svg" alt="">
-                            <h3 class="service-title">Support</h3>
-                            <p class="service-info">A support network can include a variety of forms of interaction with
-                                a range of people who can support you in different ways. </p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/rocket.svg" alt="">
-                            <h3 class="service-title">Marketing</h3>
-                            <p class="service-info">Marketing is of vital importance to any business. It is the key
-                                process of researching, promoting and selling products or services to your target.</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/basket.svg" alt="">
-                            <h3 class="service-title">Ecommerce</h3>
-                            <p class="service-info">When customers are deciding on a purchase, they start by looking
-                                online.</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="service">
-                            <img src="assets/img/chemestry.svg" alt="">
-                            <h3 class="service-title">Coding</h3>
-                            <p class="service-info">We use the best coding practices</p>
-                        </div><!-- /.service -->
-                    </div>
-                </div>
-            </div>
-        </section><!-- /.section-services -->
-
-        <section class="site-section section-map-feature text-center">
-
-            <div class="container">
-                <h2>Responsive Web Design</h2>
-                <p>Web design is responsive design. Responsive web design is web design, done right.</p>
-                <a href="#" class="btn btn-fill">Learn More</a>
-                <div class="row">
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counter-item">
-                            <p class="counter" data-to="377" data-speed="2000">0</p>
-                            <h3>Cofee Cups</h3>
-                        </div><!-- /.counter-item -->
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counter-item">
-                            <p class="counter" data-to="1204" data-speed="2000">0</p>
-                            <h3>Projects completed</h3>
-                        </div> <!-- /.counter-item -->
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counter-item">
-                            <p class="counter" data-to="459" data-speed="1000">0</p>
-                            <h3>Happy Clients</h3>
-                        </div><!-- /.counter-item -->
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counter-item">
-                            <p class="counter" data-to="675" data-speed="1000">0</p>
-                            <h3>Average Deal</h3>
-                        </div><!-- /.counter-item -->
-                    </div>
-                </div>
-            </div>
-
-        </section><!-- /.section-map-feature -->
-
-        <section class="site-section section-portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="heading-separator">Latest Work</h2>
-                    <p class="subheading-text">This is some of our best work</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-2.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-3.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-4.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-5.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-6.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="portfolio-item">
-                            <img src="assets/img/portfolio-2.jpg" class="img-res" alt="">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="portfolio-item.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        </div><!-- /.portfolio-item -->
-                    </div>
-                </div>
-            </div>
-        </section><!-- /.section-portfolio -->
-
-        <section class="site-section section-newsletter text-center">
-            <div class="container">
-                <h2>Subscribe our newsletters</h2>
-                <form class="form-group newsletter-group">
-                    <input type="email" class="form-control" placeholder="Your e-mail" required>
-                    <button class="btn btn-green" type="button">Subscribe</button>
-                </form><!-- /.newsletter-group -->
-            </div>
-        </section><!-- /.section-newsletter -->
-
-    </main><!-- /#main -->
-
-    <footer id="colophon" class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-4 col-xs-6">
-                    <a class="site-title"><span>Agency</span>Perfect</a>
-                    <p>We're a digital agency focused on creative and results-driven solutions.</p>
-                    <p>We measure our success by the results we drive for our clients.</p>
-                </div>
-                <div class="col-lg-offset-4 col-md-3 col-sm-4 col-md-offset-2 col-sm-offset-0 col-xs-6 ">
-                    <h3>Keep in touch</h3>
-                    <ul class="list-unstyled contact-links">
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a
-                                href="mailto:info@agencyperfect.com">info@agencyperfect.com</a></li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+37400800000">+374 (00) 80 00 00
-                            </a></li>
-                        <li><i class="fa fa-fax" aria-hidden="true"></i><a href="+37400900000">+374 (00) 90 00 00</a>
-                        </li>
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <p>20 Leo, Armenia</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="clearfix visible-xs"></div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h3>Featured links</h3>
-                    <ul class="list-unstyled">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="portfolio.html">Porfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">A propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skill">Compétences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Expériences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#project">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mentions_legales/mention-legales.html">Mention légales</a>
+            </li>
+          </ul>
         </div>
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="social-links">
-                            <a class="twitter-bg" href="#"><i class="fa fa-twitter"></i></a>
-                            <a class="facebook-bg" href="#"><i class="fa fa-facebook"></i></a>
-                            <a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-                            <a class="linkedin-bg" href="#"><i class="fa fa-linkedin"></i></a>
-                        </div><!-- /.social-links -->
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="text-right">
-                            <p>&copy; AgencyPerfect</p>
-                            <p>All Rights Reserved</p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Back To Top -->
+    <button type="button" class="btn btn-outline-danger btn-floating btn-lg" id="btn-back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Section Hero -->
+
+    <section class="dark-bg">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-12 m-0 py-5">
+            <h1 class="text-hero"></h1>
+            <a href="#about">
+              <div class="mouse-icon">
+                <div class="wheel"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section About -->
+    <section class="about py-5 bg-light" id="about">
+      <div class="container mt-5">
+        <div class="abt wow zoomIn" data-wow-delay="0.1s">
+          <h1 class="title-about">A propos de moi</h1>
+        </div>
+        <div class="row mt-5 py-5 align-items-center">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="abt-1 wow fadeInLeft" data-wow-delay="0.1s">
+              <p>Bonjour je m'appelle <strong>Coupama Brian</strong> , passionné de hardware et de programmation. Puis
+                cette obsession s'est transformer en passion quand j'ai appris
+                à assembler mon premier ordinateur de bureau (gamer) en 2016, eh oui je suis un grand fan de pc custom
+                et sur-mesure ! Et ça fait maintenant
+                plus de 1 an que j'ai décidé d'apprendre à coder (site web, application et jeu vidéo), mon rêve le plus
+                fou est de développer mon propre jeu video et
+                j'espère bien le réaliser. Avant tout ce site est un aperçu de ce que je fais, mes réalisations, mes
+                passions et regroupe tout le travail que j'ai accompli et
+                également mon parcours. J'essaierai d'optimiser au mieux l'UX et l'UI pour répondre à vos attente !</p>
             </div>
-        </div><!-- /.copyright -->
-    </footer><!-- /#footer -->
+            <div class="line-abt wow fadeInRight" data-wow-delay="0.1s"></div>
+            <div class="abt-2 py-3">
+              <h3 class="rs-title">
+                N'hésitez pas à me suivre !
+              </h3>
+            </div>
+            <ul class="list-inline">
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.3s"><a
+                  href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-apprentissage-512644137/"
+                  class="text-decoration-none linkedin text-dark" target="_blank"><img
+                    src="https://img.icons8.com/fluency/35/000000/linkedin.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.4s"><a
+                  href="https://www.facebook.com/brian.coupama" class="text-decoration-none facebook text-dark"
+                  target="_blank"><img src="https://img.icons8.com/color-glass/35/000000/facebook.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.5s"><a
+                  href="https://www.instagram.com/brian_web_developer/" class="text-decoration-none instagram text-dark"
+                  target="_blank"><img src="https://img.icons8.com/color/35/000000/instagram-new--v2.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.6s"><a href="https://twitter.com/CoupamaBrian"
+                  class="text-decoration-none twitter text-dark" target="_blank"><img
+                    src="https://img.icons8.com/nolan/35/twitter.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.7s"><a href="https://github.com/Brian027"
+                  class="text-decoration-none git text-dark" target="_blank"><img
+                    src="https://img.icons8.com/color/35/000000/git.png" /></a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6 m-0 wow zoomIn" data-wow-delay="0.2s"><img src="./img/about.png"
+              class="img-about rounded-3" alt="image about" width="100%"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Skill -->
+    <section class="skill py-5" id="skill">
+      <div class="container mt-5">
+        <div class="skl wow zoomIn" data-wow-delay="0.1s">
+          <h1 class="cts fs-1">Compétences</h1>
+          <h2 class="cts-1 p-5">Développement Web | <span class="title-span">Design graphique</span></h2>
+        </div>
+        <div class="row gy-4 mt-5 align-items-center">
+          <div class="col-12 order-last col-md-7 order-md-first wow slideInLeft" data-wow-delay="0.1s">
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <i class="fab fa-html5 fa-2x me-3 text-danger"></i>
+                    <p class="fw-bold m-0">HTML5</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="50%">
+                    <div class="progress-bar bg-danger w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                      aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <i class="fab fa-css3-alt fa-2x me-3" style="color: #107aa3;"></i>
+                    <p class="fw-bold m-0">CSS3</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="30%">
+                    <div class="progress-bar" style="background-color: #107aa3; width: 30%;" role="progressbar"
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <i class="fab fa-js fa-2x me-3 text-warning"></i>
+                    <p class="fw-bold m-0">JS</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="25%">
+                    <div class="progress-bar w-25 bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                      aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <i class="fab fa-php fa-2x me-3" style="color: rgb(130, 4, 180);"></i>
+                    <p class="fw-bold m-0">PHP</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="30%">
+                    <div class="progress-bar" style="width: 30%; background-color: rgb(130, 4, 180);" role="progressbar"
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <i class="fab fa-wordpress fa-2x me-3 text-primary"></i>
+                    <p class="fw-bold m-0">WP</p>
+                  </div>
+                </div>
+                <div class="col p-3">
+                  <div class="progress" data-bs-toggle="tooltip" title="50%">
+                    <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                      aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-12 offset-md-1 col-md-4 wow fadeInDown" data-wow-delay="0.1s">
+            <p class="web wow zoomIn" data-wow-delay="1s">Les divers langages que j'ai appris au cours de ma progression
+              dans le developpement web,
+              ces langages sont purement évolutif et seront amenés à changer !</p>
+            <img src="./img/code.jpg" alt="écran montrant du code php" width="100%" class="rounded-3 shadow">
+          </div>
+        </div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/jquery.slicknav.min.js"></script>
-    <script src="assets/js/jquery.countTo.min.js"></script>
-    <script src="assets/js/jquery.shuffle.min.js"></script>
-    <script src="assets/js/script.js"></script>
+        <div class="design-web row gy-4 mt-4 align-items-center">
+          <div class="col-12 col-md-4 wow fadeInLeft" data-wow-delay="0.1s">
+            <p class="fw-bold design wow zoomIn" data-wow-delay="1s">Je possède aussi quelques compétences de base en
+              design graphique, que je manquerai pas
+              d'approfondir plus tard quand j'aurais terminer ma formation dans le developpement web ! </p>
+            <img src="./img/design.jpg" alt="écran montrant des designs" width="100%" class="rounded-3 shadow">
+          </div>
+          <div class="col-12 order-last offset-md-1 col-md-7 order-md-last wow fadeInUp" data-wow-delay="0.1s">
 
+            <!-- Progress bar -->
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <img src="./img/photoshop.png" alt="" style="width: 35px; height: 35px;">
+                    <p class="fw-bold m-1">Adobe Photoshop</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="40%">
+                    <div class="progress-bar" style="background-color: #02659e; width: 40%;" role="progressbar"
+                      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <img src="./img/illustrator.png" alt="illustrator" style="width: 35px; height: 35px;">
+                    <p class="fw-bold m-1">Adobe Illustrator</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="50%">
+                    <div class="progress-bar w-50" style="background-color: #ff9a00;" role="progressbar"
+                      aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <img src="./img/premiere-pro.png" alt="première pro" style="width: 35px; height: 35px;">
+                    <p class="fw-bold m-2">Première Pro</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="70%">
+                    <div class="progress-bar" style="background-color: #272780; width: 70%;" role="progressbar"
+                      aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-start">
+                    <img src="./img/indesign.png" alt="logo indesign" style="width: 35px; height: 35px;">
+                    <p class="fw-bold m-2">Indesign</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="55%">
+                    <div class="progress-bar" style="background-color: #ff3366; width: 55%;" role="progressbar"
+                      aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 p-3 bg-white rounded-3 shadow">
+              <div class="row align-items-center">
+                <div class="col-5 col-sm-4 col-lg-3 col-xl-2">
+                  <div class="d-flex align-items-center">
+                    <img src="./img/after-effects.png" alt="logo after-effects" style="width: 35px; height: 35px;">
+                    <p class="fw-bold m-2">After Effect</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="progress" data-bs-toggle="tooltip" title="60%">
+                    <div class="progress-bar" style="background-color: #a52994; width: 60%;" role="progressbar"
+                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Experience -->
+    <section class="experience bg-light" id="experience">
+      <div class="container">
+        <header class="section-header p-5 wow zoomIn" data-wow-delay="0.1s">
+          <h1 class="exp fs-1">Training</h1>
+          <h2 class="fs-2">Expériences | Formations</h2>
+        </header>
+        <div class="timeline py-5">
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text shadow">
+              <div class="timeline-date">10-2021/11-2021</div>
+              <h2><span class="img" style="margin-right: 8px;"><img src="/img/suitcase.png"
+                    alt="image valise travail"></span>Développeur Web</h2>
+              <h4>Image Digitale, Saint-Denis, La Réunion</h4>
+              <p>
+                Intégration et développement web, j'ai sû allié adaptation, efficacité et implication
+                au travers de ce stage chez Image Digitale. J'étais en charge de la refonte du site
+                internet ( CMS WordPress ) du gérant de l'entreprise et optimiser le référencement ( SEO )
+                et l'UX ( Expérience Utilisateur ). Intégration de logo, image, utilisation de plugins, thème
+                WordPress et diverse fonctionnalité.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+            <div class="timeline-text shadow">
+              <div class="timeline-date">08-2021/11-2021</div>
+              <h2><span class="img" style="margin-right: 8px;"><img src="/img/mortarboard.png"
+                    alt="image chapeau"></span>Intégration et Développement Web</h2>
+              <h4>IFR Institut de Formation de la Réunion, Le Port, La Réunion</h4>
+              <p>
+                Front-End: <br>
+                HTML: Structure et sémantique, RWD (Responsive Web Design), référencement Google, SEO... <br>
+                CSS: mise en forme d'une page web, reset css, selecteur de classe, animation et transition,
+                mediaqueries... <br>
+                Framework CSS: Bootstrap, composant bootstrap ( Card, ProgressBar, Carousel, Navs et Navbar... ) et
+                plus... <br>
+                <br>
+                Back-End: <br>
+                PHP: Syntaxe et quelques notions de base. <br>
+                MySQL: Utilisation et configuration BDD (Base de Donnée).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bannière Info -->
+
+    <section class="info">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div class="counter-up">
+              <div class="content">
+                <div class="box-2 wow fadeInDown" data-wow-delay="0.1s">
+                  <div class="counter">1</div>
+                  <div class="text">Projets réalisés</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="counter-up">
+              <div class="content">
+                <div class="box-2 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="counter">49</div>
+                  <div class="text">Nuits blanches</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="counter-up">
+              <div class="content">
+                <div class="box-2 wow fadeInDown" data-wow-delay="0.5s">
+                  <div class="counter">27</div>
+                  <div class="text">Problèmes résolus</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Portfolio -->
+    <section id="project" class="project py-5 bg-light">
+      <div class="container mt-5">
+        <div class="txt-p wow zoomIn" data-wow-delay="0.1s">
+          <h1 class="txt-pfo mb-0">Mon portfolio</h1>
+          <h2 class="txt-pfo-2 fw-light fs-5">Projets perso et pro</h2>
+        </div>
+
+        <div class="row gy-4 gy-md-5 mt-5">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 wow zoomIn" data-wow-delay="0.1s">
+            <div class="card shadow">
+              <img src="/img/Portfolio.png" class="card-img-top" alt="Image portfolio">
+              <div class="card-body">
+                <h5 class="card-title">Mon Portfolio</h5>
+                <p class="card-text">C'est ici que vous trouverez tous les détails sur mon parcours, expériences,
+                  projets réalisés etc.. </p>
+                <a class="btn" href="/index.html" target="_blank">En savoir plus</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 wow zoomIn" data-wow-delay="0.2s">
+            <div class="card shadow">
+              <img src="https://picsum.photos/300/150?random=2" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Projet 2</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin.</p>
+                <a class="btn btn-primary">En savoir plus</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 wow zoomIn" data-wow-delay="0.3s">
+            <div class="card shadow">
+              <img src="https://picsum.photos/300/150?random=3" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Projet 3</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                  sollicitudin.</p>
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#infoProjet3"
+                  aria-controls="infoProjet3">En savoir plus</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 wow zoomIn" data-wow-delay="0.4s">
+            <div class="card shadow">
+              <img src="https://picsum.photos/300/150?random=4" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Projet 4</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                  sollicitudin.</p>
+                <a class="btn btn-primary">En savoir plus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Contact -->
+    <section class="ctc" id="contact">
+      <div class="container">
+        <h1 class="ctc-h1 wow slideInLeft" data-wow-delay="0.1s">Un projet de création web ?</h1>
+        <h2 class="ctc-h2 wow zoomIn" data-wow-delay="0.2s">Prenons le temps d'en discuter !</h2>
+        <div class="row mt-5 ">
+          <div class="col-12 offset-md-3 col-md-6">
+            <div class="contact-form wow zoomIn" data-wow-delay="0.1s">
+              <div id="success"></div>
+              <form class="shadow" name="sentMessage" id="contactForm" method="post" action="/form/mail.php">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="name" name="name" required-pattern="^[A-Za-z '-]+$"
+                    maxlength="20" placeholder="Nom" required="required"
+                    data-validation-required-message="Veuillez saisir votre nom" />
+                  <label class="label-title" for="floatingInput">Nom:</label>
+                  <p class="help-block"></p>
+                </div>
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" name="email"
+                    required-pattern="^[A-Za-z]+@{1}[A-Za-z]+\.{1}[A-Za-z]{2,}$" placeholder="Email" required="required"
+                    data-validation-required-message="Veuillez saisir votre email" />
+                  <label class="label-title" for="floatingInput">Email:</label>
+                  <p class="help-block"></p>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="subject" name="subject" required-pattern="^[A-Za-z '-]+$"
+                    maxlenght="40" placeholder="Objet" required="required"
+                    data-validation-required-message="Veuillez entrer le sujet de votre message" />
+                  <label class="label-title" for="floatingInput">Objet:</label>
+                  <p class="help-block"></p>
+                </div>
+                <div class="form-floating">
+                  <textarea class="form-control" id="message" name="message" required-pattern="^[A-Za-z '-]+$"
+                    placeholder="Votre message" required="required"
+                    data-validation-required-message="Veuillez saisir votre message"></textarea>
+                  <label class="label-title" for="floatingInput">Message:</label>
+                  <p class="help-block"></p>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LeqrkAfAAAAAOK09poOyl0dAwM4FXZQ00lB4Zyq"></div>
+                <div>
+                  <button class="btn mt-5" name="submit-btn" type="submit" id="sendMessageButton">Envoyer</button>
+                </div>
+              </form>
+            </div>
+            <div class="line-ctn wow zoomIn" data-wow-delay="0.1s"></div>
+
+            <h2 class="reseau-text mt-5 wow slideInLeft" data-wow-delay="0.1s">N'hésitez pas à me suivre sur mes RS !
+            </h2>
+
+            <ul class="list-inline">
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.1s"><a
+                  href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-apprentissage-512644137/"
+                  class="text-decoration-none linkedin text-dark" target="_blank"><img
+                    src="https://img.icons8.com/fluency/35/000000/linkedin.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.2s"><a
+                  href="https://www.facebook.com/brian.coupama" class="text-decoration-none facebook text-dark"
+                  target="_blank"><img src="https://img.icons8.com/color-glass/35/000000/facebook.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.3s"><a
+                  href="https://www.instagram.com/brian_web_developer/" class="text-decoration-none instagram text-dark"
+                  target="_blank"><img src="https://img.icons8.com/color/35/000000/instagram-new--v2.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.4s"><a href="https://twitter.com/CoupamaBrian"
+                  class="text-decoration-none twitter text-dark" target="_blank"><img
+                    src="https://img.icons8.com/nolan/35/twitter.png" /></a></li>
+              <li class="list-inline-item wow zoomIn" data-wow-delay="0.5s"><a href="https://github.com/Brian027"
+                  class="text-decoration-none git text-dark" target="_blank"><img
+                    src="https://img.icons8.com/color/35/000000/git.png" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <section class="border-top">
+      <div class="container py-3 align-items-center">
+        <div class="row gy-4">
+          <div class="col-6 col-md-6">
+            <a class="text-light" href="#">
+              <span class="copy"> &copy 2021 Coupama Brian -
+                Développeur Web à la Réunion</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 text-end">
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="/mentions_legales/mention-legales.html" class="text-light">Mentions légales</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </footer>
+  <!-- Recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+
+  <!-- **************************************************************************************************** -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+  <script src="/js/jqBootstrapValidation.min.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 
 </html>
