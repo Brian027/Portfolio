@@ -64,7 +64,7 @@ function newFunction() {
   return 10;
 }
 
-//................ JQuery start ................//
+//................ Navbar Start ................//
 
 (function ($) {
   // Initiate the wowjs
@@ -98,6 +98,25 @@ function newFunction() {
       }
     }
   });
+  /* ********** Animate nav-link start ************ */
+
+    
+
+  /* ********** Animate nav-link end ************ */
+
+  /* ********** Animate icon nav hamburger start ************ */
+
+  const allBoxes = document.querySelectorAll(".btn-box");
+
+  allBoxes.forEach((box) => {
+    box.addEventListener("click", (e) => {
+      e.target.classList.toggle("active");
+    });
+  });
+
+  /* ********** Animate icon nav hamburger end ************ */
+
+  //................ Navbar End ................//
 
   // Skills
   $(".skill").waypoint(function () {
@@ -189,20 +208,10 @@ $("#name").focus(function () {
 
 /* Counter up */
 
-$(document).ready(function(){
-    $(".counter").counterUp({
-        delay: 5,
-        time: 2000,
-    });
-});
-
-/* ********************** */
-
-const allBoxes = document.querySelectorAll(".box");
-
-allBoxes.forEach((box) => {
-  box.addEventListener("click", (e) => {
-    e.target.classList.toggle("active");
+$(document).ready(function () {
+  $(".counter").counterUp({
+    delay: 5,
+    time: 2000,
   });
 });
 
@@ -210,15 +219,15 @@ allBoxes.forEach((box) => {
 // Expire si on supprime l'historique/cache
 // 10mb max
 
-localStorage.setItem('casquette', '20');
-localStorage.removeItem('casquette');
+localStorage.setItem("casquette", "20");
+localStorage.removeItem("casquette");
 
 /*---- Session storage ----*/
 // Se supprime à la fin d'une session
 // 5mb max
 
-sessionStorage.setItem('watchtime', '500');
-sessionStorage.removeItem('watchtime');
+sessionStorage.setItem("watchtime", "500");
+sessionStorage.removeItem("watchtime");
 
 /*---- Les cookies ----*/
 // Expirer quand on le souhaite, de base à la fin de la session.
@@ -226,4 +235,3 @@ sessionStorage.removeItem('watchtime');
 
 // document.cookie = `voiture=audi; expires=${new Date(2022, 07, 05).toUTCString()}`
 // document.cookie = `voiture=; expires=${new Date(0).toUTCString()}`
-

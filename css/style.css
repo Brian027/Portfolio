@@ -82,7 +82,25 @@ body {
 /* Navbar */
 
 @media screen and (max-width: 991px) {
-  .box {
+
+  .navbar {
+    position: absolute;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-top: 25vh;
+    height: 100vh;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    font-size: 25px;
+    color: #000;
+  }
+
+  .btn-box {
     margin: 0px;
     width: 50px;
     height: 50px;
@@ -111,15 +129,15 @@ body {
     background: #000;
   }
 
-  .box .ligne:nth-child(1) {
+  .btn-box .ligne:nth-child(1) {
     top: 0px;
   }
 
-  .box .ligne:nth-child(2) {
+  .btn-box .ligne:nth-child(2) {
     top: 15px;
   }
 
-  .box .ligne:nth-child(3) {
+  .btn-box .ligne:nth-child(3) {
     top: 30px;
   }
 
@@ -253,7 +271,7 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  .box {
+  .btn-box {
     display: none;
   }
 
@@ -261,7 +279,7 @@ body {
     position: absolute;
     width: 100%;
     padding: 15px 60px;
-    background: white;
+    background: transparent !important;
     border-bottom: 1px dashed rgba(256, 256, 256, 0.5);
     z-index: 3000;
   }
@@ -285,14 +303,14 @@ body {
     color: #ffffff;
   }
 
-  .navbar.nav-sticky .navbar-brand {
-    color: #ff5733;
+  .navbar.nav-sticky .nav-link{
+    color: #000000 !important;
   }
 
   .navbar-light .navbar-nav .nav-link,
   .navbar-light .navbar-nav .nav-link:focus {
     padding: 10px 10px 8px 10px;
-    color: #000000;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 500;
   }
@@ -553,6 +571,16 @@ body {
   background: #ff5733;
 }
 
+.about .img-about {
+  transition: 0.7s;
+}
+
+.about .img-about:hover {
+  transform: scale(1.05);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.30)!important;
+  transition: 0.7s;
+}
+
 @media screen and (min-width: 991px) and (max-width: 1200px) {
   .about .line-abt {
     position: relative;
@@ -672,6 +700,15 @@ body {
   font-weight: 300;
 }
 
+.skill .img-skill {
+  transition: all 0.7s;
+}
+.skill .img-skill:hover {
+  transform: scale(1.05);
+  transition: all 0.7s;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.30)!important;
+}
+
 .design-web .design {
   font-family: "Hurricane", cursive;
   font-size: 22px;
@@ -697,20 +734,21 @@ body {
   padding: 45px 0 15px 0;
 }
 
-.experience .section-header h1 {
+.experience .section-header .exp {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   font-family: "Fredoka", sans-serif;
+  font-size: 4vw;
 }
 
 .experience .section-header h1::before {
   content: "Mon Parcours";
   position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-45%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   font-size: 6vw;
   font-weight: 800;
@@ -976,8 +1014,29 @@ body {
 }
 
 .project .card-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-family: "Smooch Sans", cursive;
   font-size: 17px;
+}
+
+.project .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project .card img {
+  transition: all 0.7s;
+}
+
+.project .card img:hover {
+  transform: scale(1.05);
+  transition: all 0.7s;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.30)!important;
 }
 
 .project .btn {
@@ -1215,7 +1274,6 @@ textarea.form-control:focus {
 }
 
 /* Icone toggle cookies 
-
 .border-top .toggle-cookies {
   position: absolute;
   position: fixed;
@@ -1223,7 +1281,6 @@ textarea.form-control:focus {
   left: 50px;
   z-index: 5000;
 }
-
 .border-top .toggle-cookies .background-toggle-c {
   position: absolute;
   bottom: 0;
@@ -1233,7 +1290,6 @@ textarea.form-control:focus {
   border: 1px solid #d7c35d;
   border-radius: 50%;
 }
-
 .border-top .toggle-cookies .background-toggle-c img {
   position: absolute;
   cursor: pointer;
