@@ -100,7 +100,11 @@ function newFunction() {
   });
   /* ********** Animate nav-link start ************ */
 
-    
+  let nav = document.querySelectorAll(".btn-box .nav-link");
+
+  window.addEventListener("click", () => {
+    TweenMax.staggerFrom(nav, 2, { scale: 0.1, opacity: 0, delay: 0.5, ease: Elastic.easeOut },0.2);
+  });
 
   /* ********** Animate nav-link end ************ */
 
