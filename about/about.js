@@ -103,8 +103,7 @@ let options = {
 };
 
 function handleIntersect(entries) {
-  console.log(entries);
-
+  
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = 1;

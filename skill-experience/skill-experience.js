@@ -6,9 +6,45 @@ window.addEventListener("load", () => {
   setTimeout(() => (loader.style.display = "none"), 1000);
 });
 
+/* ***************** Preload End**********************/
+
+/* ***************** Back to Top Start**********************/
+
+//Get the button
+const mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+/* ***************** Back to Top End**********************/
+
 //................ Navbar Start ................//
 
+//.............. JQuery start ..............//
+
 (function ($) {
+  "use strict";
+
   // Initiate the wowjs
   new WOW().init();
 
@@ -22,7 +58,7 @@ window.addEventListener("load", () => {
   });
 
   // Smooth scrolling on the navbar links
-  $("a").on("click", function (event) {
+  $(".navbar-nav a").on("click", function (event) {
     if (this.hash !== "") {
       event.preventDefault();
 
@@ -30,7 +66,7 @@ window.addEventListener("load", () => {
         {
           scrollTop: $(this.hash).offset().top - 45,
         },
-        300,
+        1500,
         "easeInOutExpo"
       );
 
@@ -41,8 +77,18 @@ window.addEventListener("load", () => {
     }
   });
 
-  //................ Navbar End ................//
+  // Skills
+  $(".skill").waypoint(
+    function () {
+      $(".progress .progress-bar").each(function () {
+        $(this).css("width", $(this).attr("aria-valuenow") + "%");
+      });
+    },
+    { offset: "80%" }
+  );
 })(jQuery);
+
+//................ Navbar End ................//
 
 /* ********** Animate nav-link start ************ */
 
@@ -73,3 +119,60 @@ allBoxes.forEach((box) => {
 });
 
 /* ********** Animate icon nav hamburger end ************ */
+
+/* ******************** Animate navbar start ******************** */
+
+let nav2 = document.querySelectorAll(".nav-item");
+
+window.addEventListener("load", () => {
+  TweenMax.staggerFrom(
+    nav2,
+    0.5,
+    { scale: 0.5, opacity: 0, delay: 0.1, ease: Circ.easeInOut },
+    0.3
+  );
+});
+
+/* ********************* Anim navbar end ********************** */
+
+/* **************** Anim section skill start ***************** */
+
+let titleSkill = document.querySelectorAll(".cts, .skl");
+let progressBar = document.querySelectorAll(".progress-bar");
+let backSkill = document.querySelectorAll(".back-skill");
+let skill = document.querySelector('.skill');
+
+window.addEventListener("load", () => {
+  TweenMax.staggerFrom(
+    titleSkill,
+    1,
+    { opacity: 0, delay: 0.3, ease: Circ.easeIn },
+    0.2
+  );
+});
+
+window.addEventListener("load", () => {
+  TweenMax.staggerFrom(
+    progressBar,
+    5,
+    { x: -500, opacity: 1, delay: 0.5, ease: Bounce.easeOut },
+    0.2
+  );
+});
+
+window.addEventListener("load", () => {
+  TweenMax.staggerFrom(
+    backSkill,
+    1,
+    { x: -500, opacity: 0, delay: 0.5, ease: Circ.ease },
+    0.2
+  );
+});
+
+// progress.forEach((item) => {
+//   item.addEventListener("unload", () => {
+//     TweenMax.staggerFrom(progressBar, 3, {x: -500, opacity: 1, delay: 0.5, ease:Bounce.easeOut}, 0.2)
+//   })
+// })
+
+/* **************** Anim section skill end ***************** */
