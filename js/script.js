@@ -100,12 +100,29 @@ function newFunction() {
   });
   /* ********** Animate nav-link start ************ */
 
-  let nav = document.querySelectorAll(".btn-box .nav-link");
+  let nav = document.querySelectorAll(".nav-item");
+  let nav2 = document.querySelectorAll(".navbar .navbar-nav .nav-item, .social-links a");
+  const btn = document.querySelectorAll(".btn-box");
 
-  window.addEventListener("click", () => {
-    TweenMax.staggerFrom(nav, 2, { scale: 0.1, opacity: 0, delay: 0.5, ease: Elastic.easeOut },0.2);
-  });
+  btn.forEach((item) =>
+    item.addEventListener("click", () => {
+      TweenMax.staggerFrom(
+        nav,
+        2,
+        { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
+        0.2
+      );
+    })
+  );
 
+  window.addEventListener('load', () => {
+    TweenMax.staggerFrom(
+      nav2,
+      2,
+      { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
+      0.2
+    );
+  })
   /* ********** Animate nav-link end ************ */
 
   /* ********** Animate icon nav hamburger start ************ */
@@ -121,13 +138,21 @@ function newFunction() {
   /* ********** Animate icon nav hamburger end ************ */
 
   //................ Navbar End ................//
+  //......... Animate Section hero Start .........//
 
-  // Skills
-  $(".skill").waypoint(function () {
-    $(".progress .progress-bar").each(function () {
-      $(this).css("width", $(this).attr("aria-valuenow") + "%");
-    });
-  });
+  let hero = document.querySelectorAll('.dark-bg');
+
+  window.addEventListener('load', () => {
+    TweenMax.staggerFrom(
+      hero,
+      5,
+      { scale: 1.05, opacity: 1, delay: 0.5, ease: Sine.ease},
+      5
+    );
+  })
+
+  //......... Animate Section hero End .........//
+
 })(jQuery);
 
 //................. JQuery end ..................//
@@ -208,7 +233,6 @@ $("#name").focus(function () {
   $("#success").html("");
 });
 
-/* Consent cookies */
 
 /* Counter up */
 
