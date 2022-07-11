@@ -1,64 +1,72 @@
 <?php
 
-if (!empty($_POST['name']) && !empty($_POST['subject']) && !empty($_POST['message']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-  http_response_code(500);
-  exit();
+// Replace this with your own email address
+$siteOwnersEmail = 'contact@brian-coupama.fr';
+
+
+if ($_POST) {
+
+  $name = trim(stripslashes($_POST['contactName']));
+  $email = trim(stripslashes($_POST['contactEmail']));
+  $subject = trim(stripslashes($_POST['contactSubject']));
+  $contact_message = trim(stripslashes($_POST['contactMessage']));
+
+  // Check Name
+  if (strlen($name) < 2) {
+    $error['name'] = "Veuillez saisir votre nom.";
+  }
+  // Check Email
+  if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
+    $error['email'] = "Veuillez saisir une adresse email valide.";
+  }
+  // Check Message
+  if (strlen($contact_message) < 15) {
+    $error['message'] = "Veuillez saisir votre message. Il doit contenir au moins 15 caractères.";
+  }
+  // Subject
+  if ($subject == '') {
+    $subject = "Contact Form Submission";
+  }
+
+
+  // Set Message
+  $message .= "Email from: " . $name . "<br />";
+  $message .= "Email address: " . $email . "<br />";
+  $message .= "Message: <br />";
+  $message .= $contact_message;
+  $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
+
+  // Set From: header
+  $from =  $name . " <" . $email . ">";
+
+  // Email Headers
+  $headers = "From: " . $from . "\r\n";
+  $headers .= "Reply-To: " . $email . "\r\n";
+  $headers .= "MIME-Version: 1.0\r\n";
+  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+  if (!$error) {
+
+    ini_set("sendmail_from", $siteOwnersEmail); // for windows server
+    $mail = mail($siteOwnersEmail, $subject, $message, $headers);
+
+    if ($mail) {
+      echo "OK";
+    } else {
+      echo "Something went wrong. Please try again.";
+    }
+  } # end if - no validation error
+
+  else {
+
+    $response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
+    $response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
+    $response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
+
+    echo $response;
+  } # end if - there was a validation error
+
 }
-
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email = strip_tags(htmlspecialchars($_POST['email']));
-$m_subject = strip_tags(htmlspecialchars($_POST['subject']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
-
-$mail->CharSet="utf-8";
-
-$to = "contact@brian-coupama.fr"; // Change this email to your //
-$subject = "$m_subject:  $name";
-$body = "Vous avez reçu un nouveau message depuis le formulaire de contact de votre site internet.\n\n" . "En voici les details:\n\nNom: $name\n\n\nEmail: $email\n\nSujet: $m_subject\n\nMessage: $message";
-$header = "From: $email";
-$header .= "Reply-To: $email";
-
-if (!mail($to, $subject, $body, $header))
-  http_response_code(500);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
