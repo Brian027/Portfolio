@@ -46,30 +46,36 @@ window.addEventListener("load", () => {
 
 /* ********** Animate nav-link start ************ */
 
-  let nav = document.querySelectorAll(".nav-item");
-  let nav2 = document.querySelectorAll(".navbar .navbar-nav .nav-item, .social-links a");
-  const btn = document.querySelectorAll(".btn-box");
+  let nav2 = document.querySelectorAll(".nav-navigation a");
+  const btn = document.querySelectorAll(".nav-toggler");
 
   btn.forEach((item) =>
     item.addEventListener("click", () => {
       TweenMax.staggerFrom(
-        nav,
+        nav2,
         2,
-        { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
+        { scale: 0.8, opacity: 0, delay: 0.5, ease:Elastic.easeOut },
         0.2
       );
     })
   );
-
-  window.addEventListener('load', () => {
-    TweenMax.staggerFrom(
-      nav2,
-      2,
-      { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
-      0.2
-    );
-  })
   /* ********** Animate nav-link end ************ */
+
+  /* ********** Animate icon nav hamburger start ************ */
+
+  const hamburgerButton = document.querySelector(".nav-toggler");
+  const navigation = document.querySelector(".nav-navigation");
+
+  hamburgerButton.addEventListener("click", toggleNav);
+
+  function toggleNav(){
+    hamburgerButton.classList.toggle("active")
+    navigation.classList.toggle("active")
+  }
+
+  /* ********** Animate icon nav hamburger end ************ */
+
+  //................ Navbar End ................//
 
 /* ********** Animate section about start ************ */
 
@@ -89,21 +95,8 @@ window.addEventListener("load", () => {
   TweenMax.staggerFrom(imgAbout, 1, {opacity: 0, delay: 1.2, ease:Back.easeIn}, 0.2);
 });
 
-
-/* ********** Animate icon nav hamburger start ************ */
-
-const allBoxes = document.querySelectorAll(".btn-box");
-
-allBoxes.forEach((box) => {
-  box.addEventListener("click", (e) => {
-    e.target.classList.toggle("active");
-  });
-});
-
-/* ********** Animate icon nav hamburger end ************ */
-
 /* **************** Animate section contact start***************** */
-const anim = document.querySelectorAll(".ctc, .ctc-h1, .ctc-h2, form");
+const anim = document.querySelectorAll("#contact .section-intro, #contact .contact-form");
 
 let options = {
   // root: null

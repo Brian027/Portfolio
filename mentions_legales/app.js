@@ -76,4 +76,37 @@ function backToTop() {
 
 //................. JQuery end ..................//
 
-/* Cursor pointer */
+//................ Navbar Start ................//
+
+/* ********** Animate nav-link start ************ */
+
+  let nav2 = document.querySelectorAll(".nav-navigation a");
+  const btn = document.querySelectorAll(".nav-toggler");
+
+  btn.forEach((item) =>
+    item.addEventListener("click", () => {
+      TweenMax.staggerFrom(
+        nav2,
+        2,
+        { scale: 0.8, opacity: 0, delay: 0.5, ease:Elastic.easeOut },
+        0.2
+      );
+    })
+  );
+  /* ********** Animate nav-link end ************ */
+
+  /* ********** Animate icon nav hamburger start ************ */
+
+  const hamburgerButton = document.querySelector(".nav-toggler");
+  const navigation = document.querySelector(".nav-navigation");
+
+  hamburgerButton.addEventListener("click", toggleNav);
+
+  function toggleNav(){
+    hamburgerButton.classList.toggle("active")
+    navigation.classList.toggle("active")
+  }
+
+  /* ********** Animate icon nav hamburger end ************ */
+
+  //................ Navbar End ................//

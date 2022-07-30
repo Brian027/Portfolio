@@ -4,6 +4,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
+  background-color: rgb(21, 21, 21, 0.98);
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Preloader */
@@ -45,16 +48,20 @@ body {
 #btn-back-to-top {
   position: fixed;
   z-index: 5000;
-  bottom: 70px;
-  right: 20px;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
   background-color: #ff5733;
-  color: #fff;
+  color: #f8f9fa;
   border-color: #ff5733;
   box-shadow: inset 0 0 0 10px #ff5733;
   display: none;
 }
+
 #btn-back-to-top:hover {
-  background: #fff;
+  background: #f8f9fa;
   color: #ff5733;
   border-color: #ff5733;
   box-shadow: inset 0 0 0 0px #ff5733;
@@ -62,142 +69,145 @@ body {
 
 /* Navbar */
 
-.navbar {
-  transition: 0.5s;
-  z-index: 3000;
-}
-
-.navbar.nav-sticky {
+.nav-toggler {
   position: fixed;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.navbar .navbar-brand {
-  margin: 0;
-  font-size: 45px;
-  line-height: 0px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  transition: 0.5s;
-}
-
-.navbar-nav .nav-link, .nav-link-ml {
-  font-family: "Smooch Sans", sans-serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline;
-  text-decoration: none;
-}
-
-.navbar .navbar-brand .logo img {
-  width: 70px;
-  height: 70px;
-}
-
-.navbar-nav .nav-link::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #ff5733;
-  transition: width 0.3s ease-in-out;
-}
-
-.navbar-nav .nav-link:hover::after {
-  width: 100%;
-}
-
-.navbar {
-  padding: 10px;
-  margin: 0;
-}
-
-.navbar .navbar-toggler {
+  z-index: 644451251;
+  top: 30px;
+  right: 30px;
+  height: 50px;
+  width: 50px;
   border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  mix-blend-mode: exclusion;
+  transition: all 0.4s;
 }
 
-.navbar-brand .logo img {
-  transition: 1.3s;
-  -moz-transition: 1.3s;
-  -ms-transition: 1.3s;
-  -o-transition: 1.3s;
-  width: 250px;
-  height: 150px;
+.line {
+  position: absolute;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s ease-out, opacity 0.1s ease-out;
 }
 
-.navbar-brand .logo img:hover {
-  transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  -webkit-transform: scale(1.3);
-  -moz-transform: scale(1.3);
-  -o-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
+.l1 {
+  transform: translateY(-10px);
 }
 
-@media (min-width: 992px) {
-  .navbar {
+.l3 {
+  transform: translateY(10px);
+}
+
+.nav-toggler.active .l1 {
+  transform: translateY(0px) rotate(135deg);
+}
+
+.nav-toggler.active .l2 {
+  opacity: 0;
+}
+
+.nav-toggler.active .l3 {
+  transform: translateY(0px) rotate(-135deg);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  transform: translate(-50%, -50%);
+  z-index: 458489484;
+  transition: all 0.4s;
+}
+
+.logo img {
+  transition: all 0.4s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.5);
+  transition: transform 0.4s ease;
+}
+
+.nav-navigation {
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255, 0.98);
+  transform: translateY(-100%);
+  z-index: 9999;
+  transition: transform 0.3s ease-in;
+}
+
+.nav-navigation.active {
+  transform: translate(0);
+}
+
+.nav-navigation a {
+  font-family: 'Smooch Sans', sans-serif;
+  color: #000;
+  font-size: 26px;
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.nav-navigation a:hover {
+  color: #ff5733;
+}
+
+.nav-navigation .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.nav-navigation .social-links a {
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .logo img {
     position: absolute;
-    width: 100%;
-    padding: 10px 60px;
-    background: #ffffff;
-    z-index: 3000;
-    border-bottom: 1px dashed rgb(0, 0, 0, 0.33);
-  }
-
-  .navbar .navbar-nav .nav-item:nth-child(7) .nav-link {
-    display: inline;
-    left: 50%;
-    color: #ff5733;
-  }
-
-  .navbar.nav-sticky {
-    padding: 0 60px;
-    background: #ffffff !important;
-    border-bottom: none;
-  }
-
-  .navbar .navbar-brand {
-    color: #ffffff;
-  }
-
-  .navbar.nav-sticky .navbar-brand {
-    color: #ff5733;
-  }
-
-  .navbar-light .navbar-nav .nav-link, .nav-link-ml,
-  .navbar-light .navbar-nav .nav-link:focus {
-    padding: 10px 10px 8px 10px;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  .navbar-light .navbar-nav .nav-link:hover, .nav-link-ml:hover,
-  .navbar-light .navbar-nav .nav-link.active {
-    color: #ff5733;
-  }
-
-  .navbar-light.nav-sticky .navbar-nav .nav-link:hover, .nav-link-ml:hover,
-  .navbar-light.nav-sticky .navbar-nav .nav-link.active {
-    color: #ff5733;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%);
   }
 }
+
 /*********************************************************/
 /*************** Mentions Legal Section ******************/
 /*********************************************************/
 
-h1 {
-  padding: 25px 0px;
+p,
+ul {
+  line-height: 30px;
+  word-spacing: 3px;
+  letter-spacing: 2px;
+  color: rgb(248, 249, 250, 0.6);
+}
+
+h2 {
+  padding-bottom: 30px !important;
+}
+
+h3 {
+  font-size: 16px !important;
 }
 
 .hebger {
@@ -211,7 +221,7 @@ h1 {
   color: #ff5733;
 }
 
-.hebger::before{
+.hebger::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -225,23 +235,39 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 15vh;
   font-weight: 600;
+  padding: 25px 0px;
+  margin-bottom: 20px;
 }
 
-h2 ,h3 {
+h2,
+h3 {
   padding: 30px 0px;
   text-transform: uppercase;
   font-family: 'Fredoka', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p, li {
+p,
+li {
   font-family: 'Smooch Sans', sans-serif;
   font-size: 18px;
 }
 
-.liens-in, .liens-out {
+.liens-in,
+.liens-out {
   font-size: 20px;
 }
 
-footer {
-  background: #ff5733;
+/* footer */
+
+footer .social-links-footer a {
+  padding: 15px;
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 991px) {
+
+  footer .social-links-footer a {
+    padding: 15px;
+    transition: all 0.4s ease;
+  }
 }

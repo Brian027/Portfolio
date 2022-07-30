@@ -48,45 +48,37 @@ window.addEventListener("load", () => {
   });
 })(jQuery);
 
-//................ Navbar End ................//
+//................ Navbar Start ................//
 
-//* ********** Animate nav-link start ************ */
+/* ********** Animate nav-link start ************ */
 
-  let nav = document.querySelectorAll(".nav-item");
-  let nav2 = document.querySelectorAll(".navbar .navbar-nav .nav-item, .social-links a");
-  const btn = document.querySelectorAll(".btn-box");
+  let nav2 = document.querySelectorAll(".nav-navigation a");
+  const btn = document.querySelectorAll(".nav-toggler");
 
   btn.forEach((item) =>
     item.addEventListener("click", () => {
       TweenMax.staggerFrom(
-        nav,
+        nav2,
         2,
-        { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
+        { scale: 0.8, opacity: 0, delay: 0.5, ease:Elastic.easeOut },
         0.2
       );
     })
   );
-
-  window.addEventListener('load', () => {
-    TweenMax.staggerFrom(
-      nav2,
-      2,
-      { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
-      0.2
-    );
-  })
   /* ********** Animate nav-link end ************ */
 
-/* ********** Animate icon nav hamburger start ************ */
+  /* ********** Animate icon nav hamburger start ************ */
 
-const allBoxes = document.querySelectorAll(".btn-box");
+  const hamburgerButton = document.querySelector(".nav-toggler");
+  const navigation = document.querySelector(".nav-navigation");
 
-allBoxes.forEach((box) => {
-  box.addEventListener("click", (e) => {
-    e.target.classList.toggle("active");
-  });
-});
+  hamburgerButton.addEventListener("click", toggleNav);
 
-/* ********** Animate icon nav hamburger end ************ */
+  function toggleNav(){
+    hamburgerButton.classList.toggle("active")
+    navigation.classList.toggle("active")
+  }
 
-/* ******************** Animate navbar start ******************** */
+  /* ********** Animate icon nav hamburger end ************ */
+
+  //................ Navbar End ................//

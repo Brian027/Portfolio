@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- CSS General -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css-global/base.css">
+    <link rel="stylesheet" href="/css-global/main.css">
+    <link rel="stylesheet" href="/css-global/vendor.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
@@ -37,48 +40,41 @@
         <img src="/img/arbre-icon.png" alt="Logo site">
     </div>
 
-    <!-- Header Navbar-->
-    <header>
+    <!-- Header Navbar -->
+	<header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+		<a href="index.html">
+				<div class="logo"><img src="/img/arbre-logo.png" alt="logo-site"></div>
+		</a>
 
-            <div class="container">
-                <a class="navbar-brand" href="/index.html">
-                    <div class="logo"><img src="/img/arbre-logo.png" alt="logo-site"></div>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
+				<span class="line l1"></span>
+				<span class="line l2"></span>
+				<span class="line l3"></span>
+		</button>
 
-                    <span class="navbar-toggler-icon"></span></button>
+		<nav class="nav-navigation">
 
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="/index.html" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.brian-coupama.fr/#about">A propos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.brian-coupama.fr/#skill">Compétences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.brian-coupama.fr/#experience">Expériences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.brian-coupama.fr/#project">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.brian-coupama.fr/#contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/mentions_legales/mention-legales.html">Mention légales</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+			<a class="nav-link" href="about/about.html">A propos</a>
+			<a class="nav-link" href="/skill-experience/skill-experience.html">Compétences</a>
+			<a class="nav-link" href="/skill-experience/skill-experience.html">Expériences</a>
+			<a class="nav-link" href="/portfolio/portfolio.html">Portfolio</a>
+			<a class="nav-link" href="/contact/contact.html">Contact</a>
+			<a class="nav-link" href="/mentions_legales/mention-legales.html">Mention légales</a>
+			<div class="social-links">
+				<a class="twitter-bg" href="https://twitter.com/CoupamaBrian" target="_blank"><i
+						class="fa fa-twitter"></i></a>
+				<a class="facebook-bg" href="https://www.facebook.com/brian.coupama" target="_blank"><i
+						class="fa fa-facebook"></i></a>
+				<a class="linkedin-bg"
+					href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
+					target="_blank"><i class="fa fa-linkedin"></i></a>
+				<a class="instagram-bg" href="https://www.instagram.com/brian_web_developer/" target="_blank"><i
+						class="fa fa-instagram"></i></a>
+				<a class="github" href="https://github.com/Brian027" target="_blank"><i class="fa fa-github"></i></a>
+			</div>
+		</nav>
+	</header>
 
     <main>
         <!-- Back To Top -->
@@ -177,26 +173,34 @@
 
     <!-- Footer -->
     <footer>
-        <section class="border-top">
-            <div class="container py-3 align-items-center">
-                <div class="row gy-4">
-                    <div class="col-6 col-md-6">
-                        <a class="navbar-brand text-light" href="/index.html">
-                            <span class="copy fs-5" style="font-family: Smooch Sans, sans-serif;">&copy 2021 Coupama
-                                Brian - Développeur Web à la Réunion</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-6 text-end">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="/index.html" class="text-decoration-none text-light fs-5"
-                                    style="font-family: Smooch Sans, sans-serif;">Accueil</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="row">
+
+			<div class="col-six tab-full pull-right social">
+
+				<div class="social-links-footer">
+					<a class="twitter-bg" href="https://twitter.com/CoupamaBrian" target="_blank"><i
+							class="fa fa-twitter"></i></a>
+					<a class="facebook-bg" href="https://www.facebook.com/brian.coupama" target="_blank"><i
+							class="fa fa-facebook"></i></a>
+					<a class="linkedin-bg"
+						href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
+						target="_blank"><i class="fa fa-linkedin"></i></a>
+					<a class="instagram-bg" href="https://www.instagram.com/brian_web_developer/" target="_blank"><i
+							class="fa fa-instagram"></i></a>
+					<a class="github" href="https://github.com/Brian027" target="_blank"><i
+							class="fa fa-github"></i></a>
+				</div>
+
+			</div>
+
+			<div class="col-six tab-full">
+				<div class="copyright">
+					<span>© Coupama Brian - Développeur Web 2022.</span>
+				</div>
+                
+			</div>
+
+		</div>
     </footer>
 
     <!-- JavaScript Libraries -->
@@ -210,19 +214,6 @@
     <script src="/lib/isotope/isotope.pkgd.min.js"></script>
     <script src="/lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Axeptio Cookie script -->
-
-    <script>
-        window.axeptioSettings = {
-            clientId: "62cace6fc5cff83b9060bd5c",
-        };
-
-        (function (d, s) {
-            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-            e.async = true; e.src = "//static.axept.io/sdk.js";
-            t.parentNode.insertBefore(e, t);
-        })(document, "script");
-    </script>
 
     <!-- **************************************************************************************************** -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

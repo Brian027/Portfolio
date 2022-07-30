@@ -1499,10 +1499,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 #message-warning {
 	color: #fa0003;
-	font-size: 15px;
+	font-size: 18px;
 }
 #message-success {
-	color: #FF5733;
+	font-size: 18px;
+	color: #098604;
 }
 #message-warning i, #message-success i {
 	margin-right: 10px;

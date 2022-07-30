@@ -34,29 +34,31 @@ function backToTop() {
 
 // Type writer section hero
 
-const txtAnim = document.querySelector(".text-hero");
+const txtAnim = document.querySelector(".dark-bg h2");
 
 new Typewriter(txtAnim, {
   loop: true,
   deleteSpeed: 30,
 })
 
-  .changeDelay(100)
-  .pauseFor("2000")
-  .typeString("Je suis Brian")
-  .pauseFor("2000")
-  .deleteChars("13")
-  .pauseFor("2000")
-  .typeString("<strong>Développeur FullStack</strong>")
+  .changeDelay(70)
   .pauseFor("1000")
-  .deleteChars("21")
-  .typeString("à La Réunion")
+  .typeString("developpeur fullstack à la réunion.")
   .pauseFor("2000")
-  .deleteChars("12")
+  .deleteChars("35")
+  .pauseFor("3000")
   .typeString("Concepteur de sites internet")
   .pauseFor("500")
   .deleteChars("28")
-  .typeString("et application web et mobile")
+  .typeString("et application web et mobile.")
+  .pauseFor("2000")
+  .deleteChars("29")
+  .pauseFor("3000")
+  .typeString('Dev <span style="color:#107aa3;">CSS</span> !')
+  .pauseFor("2000")
+  .deleteChars("9")
+  .pauseFor("2000")
+  .typeString('Dev <span style="color: orangered;">JavaScript</span> !')
   .pauseFor("2000")
   .start();
 
@@ -101,59 +103,92 @@ function newFunction() {
 })(jQuery);
   /* ********** Animate nav-link start ************ */
 
-  let nav = document.querySelectorAll(".nav-item");
-  let nav2 = document.querySelectorAll(".navbar .navbar-nav .nav-item, .social-links a");
-  const btn = document.querySelectorAll(".btn-box");
+  let nav2 = document.querySelectorAll(".nav-navigation a");
+  const btn = document.querySelectorAll(".nav-toggler");
 
   btn.forEach((item) =>
     item.addEventListener("click", () => {
       TweenMax.staggerFrom(
-        nav,
-        2,
-        { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
+        nav2,
+        0.1,
+        {opacity: 0, delay: 0.5, ease:Elastic.easeOut },
         0.2
       );
     })
   );
-
-  window.addEventListener('load', () => {
-    TweenMax.staggerFrom(
-      nav2,
-      2,
-      { scale: 0.5, opacity: 0, delay: 0.5, ease: Elastic.easeOut },
-      0.2
-    );
-  })
   /* ********** Animate nav-link end ************ */
 
   /* ********** Animate icon nav hamburger start ************ */
 
-  const allBoxes = document.querySelectorAll(".btn-box");
+  const hamburgerButton = document.querySelector(".nav-toggler");
+  const navigation = document.querySelector(".nav-navigation");
 
-  allBoxes.forEach((box) => {
-    box.addEventListener("click", (e) => {
-      e.target.classList.toggle("active");
-    });
-  });
+  hamburgerButton.addEventListener("click", toggleNav);
+
+  function toggleNav(){
+    hamburgerButton.classList.toggle("active")
+    navigation.classList.toggle("active")
+  }
 
   /* ********** Animate icon nav hamburger end ************ */
 
   //................ Navbar End ................//
   //......... Animate Section hero Start .........//
 
-  let hero = document.querySelectorAll('.dark-bg');
+  let heroH1 = document.querySelectorAll(".dark-bg .text-hero");
+  let mouseIcon = document.querySelectorAll(".dark-bg a");
 
-  window.addEventListener('load', () => {
-    TweenMax.staggerFrom(
-      hero,
-      5,
-      { scale: 1.05, opacity: 1, delay: 0.5, ease: Sine.ease},
-      5
-    );
+  window.addEventListener("load", () => {
+    TweenMax.staggerFrom(heroH1, 0.5, {y: -10, opacity: 0, delay: 0.5, ease:Expo.easeout}, 0.5)
   })
 
+  window.addEventListener("load", () => {
+    TweenMax.staggerFrom(mouseIcon, 3, { opacity: 0, delay: 5, ease:Back.easeOut}, 0.5)
+  })
   //......... Animate Section hero End .........//
 
 
 
 //................. JQuery end ..................//
+
+//................. About start animate ..................//
+
+const about = document.querySelectorAll("#about .section-intro, #about .about-content , #about .about-content .skill, #about .about-content ");
+const pfo = document.querySelectorAll("#portfolio .section-intro, #portfolio .folio-item");
+const srv = document.querySelectorAll("#services .section-intro, #services .services-content");
+
+let options = {
+  // root: null
+  rootMargin: "-20% 0px",
+  threshold: 0,
+};
+
+function handleIntersect(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+    }
+  });
+}
+
+const observer = new IntersectionObserver(handleIntersect, options);
+
+about.forEach((text) => {
+  observer.observe(text);
+});
+
+pfo.forEach((text) => {
+  observer.observe(text);
+});
+
+srv.forEach((text) => {
+  observer.observe(text);
+});
+
+//................. About end animate ..................//
+
+//................. PortFolio start animate ..................//
+
+
+
+//................. PortFolio end animate ..................//
