@@ -48,7 +48,7 @@ body {
     }
 }
 
-/* Back to top Start*/
+/* Back to top start*/
 
 #btn-back-to-top {
   display: none;
@@ -74,9 +74,20 @@ body {
 
 /* Navbar */
 
+@media screen and (max-width:1000px){
+
+  .logo img {
+    position: absolute;
+    top: 70%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
 .nav-toggler {
   position: fixed;
-  z-index: 644451251;
+  z-index: 9999;
   top: 30px;
   right: 30px;
   height: 50px;
@@ -122,11 +133,11 @@ body {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  top: 5%;
-  left: 3%;
+  top: 7%;
+  left: 4%;
   transform: translate(-50%, -50%);
   z-index: 458489484;
   transition: all 0.4s;
@@ -137,7 +148,7 @@ body {
 }
 
 .logo img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform 0.4s ease;
 }
 
@@ -151,7 +162,7 @@ body {
   flex-direction: column;
   background-color: rgb(255, 255, 255, 0.98);
   transform: translateY(-100%);
-  z-index: 9999;
+  z-index: 9998;
   transition: transform 0.3s ease-in;
 }
 
@@ -188,7 +199,7 @@ body {
 /* Section Skill */
 
 .skill {
-  padding-top: 7vh;
+  padding: 40px 0;
   min-height: 100vh;
   background-color: #fff;
   color: #000;
@@ -206,7 +217,7 @@ body {
 }
 
 .skill .cts {
-  margin-top: 15%;
+  padding: 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,15 +248,13 @@ body {
   font-family: "Smooch Sans", sans-serif;
 }
 
+
+.skill .row {
+  width: 100%;
+}
 .skill .container span {
   font-size: 28px;
   font-family: "Hurricane", cursive;
-}
-
-.skill .container .row {
-  font-family: "Fredoka", sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 .skill .web {
@@ -257,12 +266,12 @@ body {
 }
 
 .skill .img-skill {
-  transition: all 0.7s;
+  transition: all 0.3s;
 }
 
 .skill .img-skill:hover {
   transform: scale(1.05);
-  transition: all 0.7s;
+  transition: all 0.3s;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.30)!important;
 }
 
@@ -742,6 +751,12 @@ body {
 		float: none;
 	}
 
+}
+
+/* Contact */
+
+#contact .contact-form .form-field textarea {
+  resize: none;
 }
 
 /* footer */

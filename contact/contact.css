@@ -1,52 +1,52 @@
 /* General CSS */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #151515;
-    color: #6e6e6e;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #151515;
+  color: #6e6e6e;
 }
 
 /* Preloader */
 
 .loader {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .fondu-out {
-    opacity: 0;
-    transition: opacity 0.4s ease-out;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
 }
 
 .loader img {
-    width: 70px;
-    height: 70px;
-    animation-name: scale;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
+  width: 70px;
+  height: 70px;
+  animation-name: scale;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
 
 }
 
 @keyframes scale {
-    0% {
-        -webkit-transform: scale(0.5);
-    }
+  0% {
+    -webkit-transform: scale(0.5);
+  }
 
-    50% {
-        -webkit-transform: scale(0.8);
-    }
+  50% {
+    -webkit-transform: scale(0.8);
+  }
 
-    100% {
-        -webkit-transform: scale(0.5);
-    }
+  100% {
+    -webkit-transform: scale(0.5);
+  }
 }
 
 /* Navbar */
@@ -99,11 +99,11 @@ body {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  top: 5%;
-  left: 3%;
+  top: 7%;
+  left: 4%;
   transform: translate(-50%, -50%);
   z-index: 458489484;
   transition: all 0.4s;
@@ -114,7 +114,7 @@ body {
 }
 
 .logo img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform 0.4s ease;
 }
 
@@ -135,7 +135,7 @@ body {
 .nav-navigation.active {
   transform: translate(0);
 }
- 
+
 .nav-navigation a {
   font-family: 'Smooch Sans', sans-serif;
   color: #000;
@@ -156,27 +156,37 @@ body {
   align-items: center;
   flex-direction: row;
   margin-top: 50px;
-} 
+}
 
 .nav-navigation .social-links a {
   padding: 0 30px;
 }
 
-/*------- Contact -------*/
+@media screen and (max-width:1000px) {
+  .logo img {
+    position: absolute;
+    top: 70%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
 
-#contact .col-twelve {
-    margin-top: 15%;
+/* Contact */
+
+#contact .contact-form .form-field textarea {
+  resize: none;
 }
 
 /* footer */
 
-footer .social-links-footer a{
-        padding: 15px;
-    }
+footer .social-links-footer a {
+  transition: all 0.3s;
+  padding: 15px;
+}
 
 @media screen and (max-width: 991px) {
 
-    footer .social-links-footer a{
-        padding: 15px;
-    }  
+  footer .social-links-footer a {
+    padding: 15px;
+  }
 }

@@ -50,6 +50,17 @@ body {
 
 /* Navbar */
 
+@media screen and (max-width:1000px){
+
+  .logo img {
+    position: absolute;
+    top: 70%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
 .nav-toggler {
   position: fixed;
   z-index: 644451251;
@@ -98,22 +109,22 @@ body {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  top: 5%;
-  left: 3%;
+  top: 7%;
+  left: 4%;
   transform: translate(-50%, -50%);
-  z-index: 458489484;
-  transition: all 0.4s;
+  z-index: 2000;
+  transition: all 0.3s;
 }
 
 .logo img {
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform 0.4s ease;
 }
 
@@ -161,6 +172,15 @@ body {
   padding: 0 30px;
 }
 
+@media screen and (max-width:1000px) {
+  .logo img {
+    position: absolute;
+    top: 70%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 /* Section About */
 
 .about {
@@ -173,7 +193,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 15%;
+    padding: 40px 0;
     font-size: 2vw;
     font-family: "Fredoka", Arial, Helvetica, sans-serif;
 }
@@ -296,22 +316,31 @@ body {
         background: #ff5733;
     }
 
-    .about .title-about {
-        margin-top: 10%;
-    }
-
     .about .col-sm-12 {
         font-size: 18px;
+    }
+}
+
+@media screen and (max-width:1000px){
+
+    .about .social-links a {
+        line-height: 36px;
+        padding: 0px 10px;
+        font-size: 18px;
+        border: 1px solid;
+        border-radius: 50px;
+        transition: all 0.5s;
+    }
+
+    .about .social-links i {
+        width: 3px;
+        text-align: center;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .about .col-sm-12 {
         font-size: 18px;
-    }
-
-    .about .title-about {
-        margin-top: 10%;
     }
 
     section.about {
@@ -322,10 +351,6 @@ body {
 @media screen and (max-width: 768px) {
     .about .col-md-6 .img-about {
         display: none;
-    }
-
-    .about .title-about {
-        margin-top: 20%;
     }
 
     .about .social-links {
@@ -354,7 +379,17 @@ body {
     }
 }
 
+/* Contact */
+
+#contact .contact-form .form-field textarea {
+  resize: none;
+}
+
 /* footer */
+
+footer .social-links-footer a{
+    padding: 15px;
+}
 
 @media screen and (max-width: 991px) {
 

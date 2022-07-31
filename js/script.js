@@ -60,6 +60,14 @@ new Typewriter(txtAnim, {
   .pauseFor("2000")
   .typeString('Dev <span style="color: orangered;">JavaScript</span> !')
   .pauseFor("2000")
+  .deleteChars("16")
+  .pauseFor("2000")
+  .typeString('Dev <span style="color: purple;">PHP</span> !')
+  .pauseFor("2000")
+  .deleteChars("9")
+  .pauseFor("2000")
+  .typeString("Développeur Mobile")
+  .pauseFor("2000")
   .start();
 
 function newFunction() {

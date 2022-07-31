@@ -15,21 +15,91 @@ body {
     height: 100vh;
 }
 
-.contenu, .hero-txt, span, .list-inline{
+.contenu, .hero-txt, span{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 50px;
+    padding: 40px;
 }
 
-.contenu .list-inline li{
-    text-decoration: none;
-    padding: 20px;
+.social-links {
+  margin: 80px auto;
 }
 
-.contenu .list-inline li img:hover{
-    animation: rotation ease 1s;
+.social-links a {
+    line-height: 36px;
+    margin: 0 15px;
+    padding: 14px;
+    font-size: 14px;
+    border: 1px solid;
+    border-radius: 50px;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+.social-links a i {
+    width: 16px;
+    text-align: center;
+}
+
+a.twitter-bg {
+    color: #55acee;
+    border-color: #55acee;
+}
+
+a.twitter-bg:hover {
+    background-color: #55acee;
+}
+
+a.facebook-bg {
+    color: #3b5998;
+    border-color: #3b5998;
+}
+
+a.facebook-bg:hover {
+    background-color: #3b5998;
+}
+
+a.pinterest {
+    color: #dd4b39;
+    border-color: #dd4b39;
+}
+
+a.pinterest:hover {
+    background-color: #dd4b39;
+}
+
+a.linkedin-bg {
+    color: #007bb5;
+    border-color: #007bb5;
+}
+
+a.linkedin-bg:hover {
+    background-color: #007bb5;
+    border-color: #007bb5;
+}
+
+a.instagram-bg {
+    color: #e1306c;
+    border-color: #e1306c;
+}
+
+a.instagram-bg:hover {
+    background-color: #e1306c;
+}
+
+a.github {
+    color: #c9510c;
+    border-color: #c9510c;
+}
+
+a.github:hover {
+    background: #c9510c;
 }
 
 /* Preloader */

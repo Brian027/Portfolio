@@ -28,18 +28,26 @@ body {
 }
 
 .loader img {
-  width: 50px;
-  height: 50px;
-  animation: rotation 2s infinite;
+  width: 70px;
+  height: 70px;
+  animation-name: scale;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+
 }
 
-@keyframes rotation {
+@keyframes scale {
   0% {
-    -webkit-transform: rotate(0deg);
+    -webkit-transform: scale(0.5);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
   }
 
   100% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: scale(0.5);
   }
 }
 
@@ -117,11 +125,11 @@ body {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  top: 5%;
-  left: 3%;
+  top: 7%;
+  left: 4%;
   transform: translate(-50%, -50%);
   z-index: 458489484;
   transition: all 0.4s;
@@ -132,9 +140,11 @@ body {
 }
 
 .logo img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform 0.4s ease;
 }
+
+
 
 .nav-navigation {
   position: fixed;
@@ -184,8 +194,8 @@ body {
 
   .logo img {
     position: absolute;
-    top: 80%;
-    left: 80%;
+    top: 70%;
+    left: 100%;
     transform: translate(-50%, -50%);
   }
 }
@@ -258,6 +268,10 @@ li {
 }
 
 /* footer */
+
+footer {
+  padding: 50px;
+}
 
 footer .social-links-footer a {
   padding: 15px;
