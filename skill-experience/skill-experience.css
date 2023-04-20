@@ -1,3 +1,9 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* General CSS */
 body {
   margin: 0;
@@ -8,19 +14,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-body::-webkit-scrollbar {
-  width: 5px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #ff5733;
-  border-radius: 14px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
 /* Preloader Start*/
 
 .loader {
@@ -28,7 +21,7 @@ body::-webkit-scrollbar-track {
   width: 100%;
   height: 100%;
   background: #fff;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -77,25 +70,25 @@ body::-webkit-scrollbar-track {
   justify-content: center;
   width: 45px;
   height: 45px;
-  background-color: #ff5733;
-  border: 1px solid #ff5733;
+  background-color: #083731;
+  border: 1px solid #083731;
   color: #f8f9fa;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 10px #ff5733;
+  box-shadow: inset 0 0 0 10px #083731;
   transition: all 0.2s ease;
 }
 
 #btn-back-to-top:hover {
   background: transparent;
-  color: #ff5733;
-  box-shadow: inset 0 0 0 0px #ff5733;
+  color: #083731;
+  box-shadow: inset 0 0 0 0px #083731;
 }
 
 /*------ Skill ------ */
 
 /** 
  * ===================================================================
- * 11. skill - (_layout.scss)
+ *    Skill Start
  *
  * ------------------------------------------------------------------- 
  */
@@ -176,62 +169,11 @@ body.dark .skill-exp {
 }
 
 /* Column skill 1 color start */
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(1) i {
-  color: red;
+.skill-exp .column:nth-child(1) .skill-bar .bar i {
+  color: #083731;
   cursor: pointer;
 }
 
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(1) .progress-line span{
-  background: red;
-}
-
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(2) i {
-  color: purple;
-}
-
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(2) .progress-line span{
-  background: purple;
-}
-
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(3) i {
-  color: rgb(255, 221, 0);
-}
-
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(3) .progress-line span{
-  background: rgb(255, 221, 0);
-}
-
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(4) .progress-line span{
-  background: rgb(8, 207, 200);
-}
-
-.skill-exp .column:nth-child(1) .skill-bar .bar:nth-child(5) .progress-line span{
-  background: #008037;
-}
-
-/* Column skill 1 color end */
-
-/* Column skill 2 color start */
-
-.skill-exp .column:nth-child(3) .skill-bar .bar:nth-child(1) .progress-line span{
-  background: #00639c;
-}
-
-.skill-exp .column:nth-child(3) .skill-bar .bar:nth-child(2) .progress-line span{
-  background: rgb(253, 46, 80);
-}
-
-.skill-exp .column:nth-child(3) .skill-bar .bar:nth-child(3) .progress-line span{
-  background: brown;
-}
-
-.skill-exp .column:nth-child(3) .skill-bar .bar:nth-child(4) .progress-line span{
-  background: rgb(59, 1, 124);
-}
-
-.skill-exp .column:nth-child(3) .skill-bar .bar:nth-child(5) .progress-line span{
-  background: #00807c;
-}
 
 /* Column skill 2 color end */
 
@@ -262,7 +204,7 @@ body.dark .skill-exp {
 .skill-exp .skill-bar .bar .progress-line span {
   height: 100%;
   width: 80%;
-  background: #ff5733;
+  background: #083731;
   border-radius: 10px;
   position: absolute;
 }
@@ -579,7 +521,7 @@ body.dark .skill-exp {
   text-align: center;
 }
 #resume .resume-header h2 {
-  color: #ff5733;
+  color: #083731;
 }
 
 #resume .resume-timeline {
@@ -752,7 +694,7 @@ button.dark-mode {
   border: none;
   border-radius: 50%;
   padding: 10px 14px;
-  background-color: #ff5733;
+  background-color: #083731;
   z-index: 3000;
   transform: scale(1);
   transition: transform .3s;
