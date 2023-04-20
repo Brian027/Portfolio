@@ -9,103 +9,56 @@ window.addEventListener("load", () => {
 /* ***************** Preload End**********************/
 
 /* ***************** Back to Top Start**********************/
+$('.smoothscroll').on('click', function (e) {
+  e.preventDefault();
 
-//Get the button
-const mybutton = document.getElementById("btn-back-to-top");
+var target = this.hash,
+    $target = $(target);
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+    }, 800, 'swing', function () {
+      window.location.hash = target;
+    });
+});
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+var pxShow = 300;
+var fadeInTime = 400;
+var fadeOutTime = 400;
+var scrollSpeed = 300;
+
+jQuery(window).scroll(function() {
+  if (!($("#header-search").hasClass('is-visible'))) {
+    if (jQuery(window).scrollTop() >= pxShow) {
+      jQuery("#go-top").fadeIn(fadeInTime);
+    } else {
+      jQuery("#go-top").fadeOut(fadeOutTime);
+    }
   }
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+})
 
 /* ***************** Back to Top End**********************/
 
 //................ Navbar Start ................//
 
-//.............. JQuery start ..............//
-
-(function ($) {
-  "use strict";
-
-  // Initiate the wowjs
-  new WOW().init();
-
-  // Sticky Navbar
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 0) {
-      $(".navbar").addClass("nav-sticky");
-    } else {
-      $(".navbar").removeClass("nav-sticky");
-    }
-  });
-
-  // Smooth scrolling on the navbar links
-  $(".navbar-nav a").on("click", function (event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-
-      $("html, body").animate(
-        {
-          scrollTop: $(this.hash).offset().top - 45,
-        },
-        1500,
-        "easeInOutExpo"
-      );
-
-      if ($(this).parents(".navbar-nav").length) {
-        $(".navbar-nav .active").removeClass("active");
-        $(this).closest("a").addClass("active");
-      }
-    }
-  });
-
-  // Skills
-  $(".skill").waypoint(
-    function () {
-      $(".progress .progress-bar").each(function () {
-        $(this).css("width", $(this).attr("aria-valuenow") + "%");
-      });
-    },
-    { offset: "80%" }
-  );
-})(jQuery);
-
 //................ Navbar Start ................//
 
 /* ********** Animate nav-link start ************ */
 
-  let nav2 = document.querySelectorAll(".nav-navigation a");
-  const btn = document.querySelectorAll(".nav-toggler");
+let nav2 = document.querySelectorAll(".nav-navigation .nav-link, .nav-navigation .social-links a");
+const btn = document.querySelectorAll(".nav-toggler");
 
-  btn.forEach((item) =>
-    item.addEventListener("click", () => {
-      TweenMax.staggerFrom(
-        nav2,
-        2,
-        { scale: 0.8, opacity: 0, delay: 0.5, ease:Elastic.easeOut },
-        0.2
-      );
-    })
-  );
-  /* ********** Animate nav-link end ************ */
+btn.forEach((item) =>
+  item.addEventListener("click", () => {
+    TweenMax.staggerFrom(
+      nav2,
+      0.1,
+      { y: -20, opacity: 0, delay: 0.3, ease:Elastic.ease },
+      0.1
+    );
+  })
+);
+/* ********** Animate nav-link end ************ */
 
   /* ********** Animate icon nav hamburger start ************ */
 
@@ -123,43 +76,22 @@ function backToTop() {
 
   //................ Navbar End ................//
 
-/* **************** Anim section skill start ***************** */
-
-let titleSkill = document.querySelectorAll(".cts, .skl");
-let progressBar = document.querySelectorAll(".progress-bar");
-let backSkill = document.querySelectorAll(".back-skill");
-
-// window.addEventListener("focus", () => {
-//   TweenMax.staggerFrom(
-//     titleSkill,
-//     1,
-//     { opacity: 0, delay: 0.3, ease: Circ.easeIn },
-//     0.2
-//   );
-// });
-
-// window.addEventListener("focus", () => {
-//   TweenMax.staggerFrom(
-//     progressBar,
-//     5,
-//     { x: -500, opacity: 1, delay: 0.5, ease: Bounce.easeOut },
-//     0.2
-//   );
-// });
-
-// window.addEventListener("focus", () => {
-//   TweenMax.staggerFrom(
-//     backSkill,
-//     1,
-//     { x: -500, opacity: 0, delay: 0.5, ease: Bounce.easeOut },
-//     0.2
-//   );
-// });
-
-// progress.forEach((item) => {
-//   item.addEventListener("unload", () => {
-//     TweenMax.staggerFrom(progressBar, 3, {x: -500, opacity: 1, delay: 0.5, ease:Bounce.easeOut}, 0.2)
-//   })
-// })
-
 /* **************** Anim section skill end ***************** */
+
+//................. Dark mode start ............................//
+const body = document.querySelector("body"),
+  btnToggle = document.querySelector(".dark-mode");
+
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+  body.classList.add("dark");
+}
+
+btnToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  if (!body.classList.contains("dark")) {
+    return localStorage.setItem("mode", "light");
+  }
+  localStorage.setItem("mode", "dark");
+});

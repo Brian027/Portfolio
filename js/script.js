@@ -1,202 +1,167 @@
-// Preload
-const loader = document.querySelector(".loader");
+// Preload start
+// const loader = document.querySelector(".loader");
+
+// window.addEventListener("load", () => {
+//   loader.classList.add("fondu-out");
+//   setTimeout(() => (loader.style.display = "none"), 1000);
+// });
+// Preload end
+
+/* ***************** Back to Top Start**********************/
+
+const backToTop = document.getElementById("btn-back-to-top");
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+/* ***************** Back to Top End**********************/
+
+//........Home Section Start animate.........//
+
+let homeH2 = document.querySelector(".home-page .text-hero");
+
+var tl = gsap.timeline();
+
+tl.from(homeH2, 0.5, { y: 50, opacity: 0, delay: 1, ease: Back.ease }, 0.1);
+
+const homeSpan = document.querySelector(".home-page .animate-text").children,
+  txtsLen = homeSpan.length;
+let index = 0;
+const textInTimer = 3000,
+  textOutTimer = 2800;
+
+function animateText() {
+  for (let i = 0; i < txtsLen; i++) {
+    homeSpan[i].classList.remove("text-in", "text-out");
+  }
+
+  homeSpan[index].classList.add("text-in");
+
+  setTimeout(function () {
+    homeSpan[index].classList.add("text-out");
+  }, textOutTimer);
+
+  setTimeout(function () {
+    if (index == txtsLen - 1) {
+      index = 0;
+    } else {
+      index++;
+    }
+    animateText();
+  }, textInTimer);
+}
+window.onload = setTimeout(() => {
+  animateText();
+}, 2000);
+
+const rsLinkHome = document.querySelectorAll(".home-page .social-links a");
+const btnAbout = document.querySelector(".home-page .cta-home");
 
 window.addEventListener("load", () => {
-  loader.classList.add("fondu-out");
-  setTimeout(() => (loader.style.display = "none"), 1000);
+  tl.from(
+    rsLinkHome,
+    0.2,
+    { y: 50, opacity: 0, delay: 2, ease: Back.ease },
+    0.3
+  );
+  tl.from(btnAbout, 0.2, { y: 20, opacity: 0, delay: 2, ease: Back.ease }, 0.5);
 });
 
-//Get the button
-const mybutton = document.getElementById("btn-back-to-top");
+//........Portfolio Section Start animate.........//
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-// Type writer section hero
-
-const txtAnim = document.querySelector(".dark-bg h2");
-
-new Typewriter(txtAnim, {
-  loop: true,
-  deleteSpeed: 30,
-})
-
-  .changeDelay(70)
-  .pauseFor("1000")
-  .typeString("developpeur fullstack à la réunion.")
-  .pauseFor("2000")
-  .deleteChars("35")
-  .pauseFor("3000")
-  .typeString("Concepteur de sites internet")
-  .pauseFor("500")
-  .deleteChars("28")
-  .typeString("et application web et mobile.")
-  .pauseFor("2000")
-  .deleteChars("29")
-  .pauseFor("3000")
-  .typeString('Dev <span style="color:#107aa3;">CSS</span> !')
-  .pauseFor("2000")
-  .deleteChars("9")
-  .pauseFor("2000")
-  .typeString('Dev <span style="color: orangered;">JavaScript</span> !')
-  .pauseFor("2000")
-  .deleteChars("16")
-  .pauseFor("2000")
-  .typeString('Dev <span style="color: purple;">PHP</span> !')
-  .pauseFor("2000")
-  .deleteChars("9")
-  .pauseFor("2000")
-  .typeString("Développeur Mobile")
-  .pauseFor("2000")
-  .start();
-
-function newFunction() {
-  return 10;
-}
-
-//................ Navbar Start ................//
-
-(function ($) {
-  // Initiate the wowjs
-  new WOW().init();
-
-  // Sticky Navbar
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 0) {
-      $(".navbar").addClass("nav-sticky");
-    } else {
-      $(".navbar").removeClass("nav-sticky");
-    }
-  });
-
-  // Smooth scrolling on the navbar links
-  $(".navbar a").on("click", function (event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-
-      $("html, body").animate(
-        {
-          scrollTop: $(this.hash).offset().top - 45,
-        },
-        300,
-        "easeInOutExpo"
-      );
-
-      if ($(this).parents(".navbar-nav").length) {
-        $(".navbar-nav .active").removeClass("active");
-        $(this).closest("a").addClass("active");
-      }
-    }
-  });
-})(jQuery);
-  /* ********** Animate nav-link start ************ */
-
-  let nav2 = document.querySelectorAll(".nav-navigation a");
-  const btn = document.querySelectorAll(".nav-toggler");
-
-  btn.forEach((item) =>
-    item.addEventListener("click", () => {
-      TweenMax.staggerFrom(
-        nav2,
-        0.1,
-        {opacity: 0, delay: 0.5, ease:Elastic.easeOut },
-        0.2
-      );
-    })
-  );
-  /* ********** Animate nav-link end ************ */
-
-  /* ********** Animate icon nav hamburger start ************ */
-
-  const hamburgerButton = document.querySelector(".nav-toggler");
-  const navigation = document.querySelector(".nav-navigation");
-
-  hamburgerButton.addEventListener("click", toggleNav);
-
-  function toggleNav(){
-    hamburgerButton.classList.toggle("active")
-    navigation.classList.toggle("active")
-  }
-
-  /* ********** Animate icon nav hamburger end ************ */
-
-  //................ Navbar End ................//
-  //......... Animate Section hero Start .........//
-
-  let heroH1 = document.querySelectorAll(".dark-bg .text-hero");
-  let mouseIcon = document.querySelectorAll(".dark-bg a");
-
-  window.addEventListener("load", () => {
-    TweenMax.staggerFrom(heroH1, 0.5, {y: -10, opacity: 0, delay: 0.5, ease:Expo.easeout}, 0.5)
-  })
-
-  window.addEventListener("load", () => {
-    TweenMax.staggerFrom(mouseIcon, 3, { opacity: 0, delay: 5, ease:Back.easeOut}, 0.5)
-  })
-  //......... Animate Section hero End .........//
-
-
-
-//................. JQuery end ..................//
-
-//................. About start animate ..................//
-
-const about = document.querySelectorAll("#about .section-intro, #about .about-content , #about .about-content .skill, #about .about-content ");
-const pfo = document.querySelectorAll("#portfolio .section-intro, #portfolio .folio-item");
-const srv = document.querySelectorAll("#services .section-intro, #services .services-content");
+const items = document.querySelectorAll(".grid-item");
 
 let options = {
-  // root: null
-  rootMargin: "-20% 0px",
-  threshold: 0,
-};
-
-function handleIntersect(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-    }
-  });
+  root: null,
+  rootMargin: "-1% 0px",
+  threshold: 0
 }
 
-const observer = new IntersectionObserver(handleIntersect, options);
+function handleIntersect(entries){
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.classList.add("active");
+    } else {
+      entry.target.classList.remove("active");
+      entry.target.style.opacity = 0;
+    }
+  })
+}
 
-about.forEach((text) => {
-  observer.observe(text);
+const observer = new IntersectionObserver(
+  handleIntersect, options
+)
+
+items.forEach(item => {
+  observer.observe(item)
+})
+
+
+// ................ Counter up start animate ...................//
+
+const observeCount = document.querySelector(".count-up");
+const counters = document.querySelectorAll(".stat-count");
+
+let optionsCount = {
+  root: null,
+  rootMargin: "-10% 0px",
+  threshold: 0
+}
+
+function countIntersect(counters){
+  counters.forEach(counter => {
+    counter.innerText = "0";
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const c = +counter.innerText;
+  
+      const increment = target / 200;
+      
+      if(c < target){
+        counter.innerText = `${Math.ceil(c + increment)}`;
+        setTimeout(updateCounter, 1);
+      }
+    }
+    updateCounter()
+  })
+}
+
+const observerCount = new IntersectionObserver(
+  countIntersect, optionsCount
+)
+
+counters.forEach(item => {
+  observer.observe(item)
+})
+
+//................. Dark mode start ............................//
+
+const body = document.querySelector("body"),
+  btnToggle = document.querySelector(".dark-mode");
+const iconBtn = document.querySelector(".dark-mode i");
+
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+  body.classList.add("dark");
+}
+
+if(body.classList.contains("dark")){
+  btnToggle.innerHTML = '<img src="img/sun.svg" alt="icone soleil">';
+} else {
+  btnToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+}
+
+btnToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  if (!body.classList.contains("dark")) {
+    return localStorage.setItem("mode", "light");
+  }
+  localStorage.setItem("mode", "dark");
 });
-
-pfo.forEach((text) => {
-  observer.observe(text);
-});
-
-srv.forEach((text) => {
-  observer.observe(text);
-});
-
-//................. About end animate ..................//
-
-//................. PortFolio start animate ..................//
-
-
-
-//................. PortFolio end animate ..................//

@@ -1,8 +1,10 @@
 <?php
-// Replace this with your own email address
+
+require('Recaptcha/recaptcha/autoload.php');
+
 $siteOwnersEmail = 'contact@brian-coupama.fr';
 $message = "";
-$error = "";
+$error = [];
 
 if ($_POST) {
 
@@ -17,7 +19,7 @@ if ($_POST) {
   }
   // Check Email
   if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
-    $error['email'] = "Veuillez saisir une adresse email valide.";
+    $error['email'] = "Veuillez saisir une email valide.";
   }
   // Check Message
   if (strlen($contact_message) < 15) {
@@ -25,12 +27,24 @@ if ($_POST) {
   }
   // Subject
   if ($subject == '') {
-    $subject = "Contact Form Submission";
+    $subject = "Veuillez saisir l'objet de votre message.";
   }
+  if (isset($_POST['g-recaptcha-response'])) {
+    $recaptcha = new \ReCaptcha\ReCaptcha('6LeqrkAfAAAAAK10R3x_yi8-dUBa9k9wPMtT4-XG');
+    $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
+    if ($resp->isSuccess()) {
+      
+    } else {
+      echo 'Captcha invalide';
+    }
+  } else {
+    echo 'Captcha non rempli';
+  }
+
 
   // Set Message
   $message .= "Email from: " . $name . "<br />";
-  $message .= "Adresse email: " . $email . "<br />";
+  $message .= "Email address: " . $email . "<br />";
   $message .= "Message: <br />";
   $message .= $contact_message;
   $message .= "<br /> ----- <br /> Vous avez reçu un message depuis le formulaire de contact de votre site web. <br />";
@@ -42,7 +56,7 @@ if ($_POST) {
   $headers = "From: " . $from . "\r\n";
   $headers .= "Reply-To: " . $email . "\r\n";
   $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+  $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 
   if (!$error) {
@@ -53,7 +67,7 @@ if ($_POST) {
     if ($mail) {
       echo "OK";
     } else {
-      echo "Something went wrong. Please try again.";
+      echo "Le message n'a pu être envoyer";
     }
   } # end if - no validation error
 

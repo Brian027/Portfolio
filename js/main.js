@@ -129,9 +129,8 @@
 
       $.ajax({
         type: "POST",
-        url: "../form/mail.php",
+        url: "form/mail.php",
         data: $(form).serialize(),
-        dataType: "JSON",
         beforeSend: function () {
           sLoader.fadeIn();
         },
@@ -152,12 +151,10 @@
         },
         error: function () {
           sLoader.fadeOut();
-          $("#message-warning").html(
-            "Quelque chose s'est mal passé. Veuillez réessayer."
-          );
+          $("#message-warning").html("Le message n'a pu être envoyer");
           $("#message-warning").fadeIn();
         },
       });
     },
   });
-})(jQuery);
+});

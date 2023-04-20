@@ -6,39 +6,39 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description"
-		content="Développeur Web Fullstack en apprentissage. Conception de sites internet et d'application mobile sur mesure à l'île de la Réunion.">
-	<title>Coupama Brian | Développeur Web à La Réunion</title>
-	<link rel="shortcut icon" href="/img/arbre-icon.png" type="image/x-icon">
+		content="Développeur Web Front End en apprentissage. Conception de sites internet et d'application mobile sur mesure à l'île de la Réunion.">
+	<title>Coupama Brian - Développeur Front End à La Réunion</title>
+	<link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
 
-	<!-- Bootstrap CDN -->
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-	<!-- jQuery CDN-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 	<!-- CSS General -->
 	<link rel="stylesheet" href="css-global/style.css">
 	<link rel="stylesheet" href="css-global/base.css">
 	<link rel="stylesheet" href="css-global/main.css">
 	<link rel="stylesheet" href="css-global/vendor.css">
+	<link rel="stylesheet" href="css-global/header.css">
+	<link rel="stylesheet" href="css-global/footer.css">
+	<link rel="stylesheet" href="css-global/contact-global.css">
 	<!-- CSS Libraries -->
 	<link href="lib/animate/animate.min.css" rel="stylesheet">
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Smooch+Sans:wght@600&display=swap"
-		rel="stylesheet">
-	<!-- Icon website flaticon -->
-	<a href="https://www.flaticon.com/free-icons/work" title="work icons"></a>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-WMRKXZ2');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Script Google Recaptcha 
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/4baed359dd.js" crossorigin="anonymous"></script>
 
@@ -46,516 +46,201 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+	<!-- Icon website flaticon 
+	<a href="https://www.flaticon.com/free-icons/work" title="work icons"></a>-->
 
 </head>
 
-<body data-spy="scroll" data-offset="51">
+<body>
 
-	<!-- Preloader Page -->
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMRKXZ2" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!-- Preloader Page 
 	<div class="loader">
-		<img src="/img/arbre-icon.png" alt="Logo site">
-	</div>
+		<div class="wrapper">
+			<div class="bloc1"></div>
+			<div class="bloc2"></div>
+		</div>
+	</div>-->
 	<!-- Header Navbar -->
-	<header>
+	
+	<header id="top">
 
 		<a href="index.html">
-				<div class="logo"><img src="/img/arbre-logo.png" alt="logo-site"></div>
+			<div class="logo"><img src="img/Logo.png" alt="Logo site"></div>
 		</a>
 
-		<button class="nav-toggler" type="button" aria-label="toggle curtain navigation">
-				<span class="line l1"></span>
-				<span class="line l2"></span>
-				<span class="line l3"></span>
+		<button class="nav-toggler" type="button" aria-label="Menu">
+			<span class="line l1"></span>
+			<span class="line l2"></span>
 		</button>
 
 		<nav class="nav-navigation">
-
-			<a class="nav-link" href="about/about.html">A propos</a>
-			<a class="nav-link" href="/skill-experience/skill-experience.html">Compétences</a>
-			<a class="nav-link" href="/skill-experience/skill-experience.html">Expériences</a>
-			<a class="nav-link" href="/contact/contact.html">Contact</a>
-			<a class="nav-link" href="/mentions_legales/mention-legales.html">Mention légales</a>
+			<div class="nav-links">
+				<a class="nav-link" data-text="Accueil" href="index.html">Accueil</a>
+				<a class="nav-link" data-text="APropos" href="about/about.html">APropos</a>
+				<a class="nav-link" data-text="MonParcours" href="skill-experience/skill-experience.html">MonParcours</a>
+				<a class="nav-link" data-text="Contact" href="contact/contact.html">Contact</a>
+				<a class="nav-link" data-text="MentionLégales" href="mentions_legales/mention-legales.html">MentionLégales</a>
+			</div>
 			<div class="social-links">
-				<a class="twitter-bg" href="https://twitter.com/CoupamaBrian" target="_blank"><i
+				<a class="twitter-bg" aria-label="Twitter" href="https://twitter.com/CoupamaBrian" target="_blank"><i
 						class="fa fa-twitter"></i></a>
-				<a class="facebook-bg" href="https://www.facebook.com/brian.coupama" target="_blank"><i
-						class="fa fa-facebook"></i></a>
-				<a class="linkedin-bg"
+				<a class="facebook-bg" aria-label="Facebook" href="https://www.facebook.com/brian.coupama"
+					target="_blank"><i class="fa fa-facebook"></i></a>
+				<a class="linkedin-bg" aria-label="Linkedin"
 					href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
 					target="_blank"><i class="fa fa-linkedin"></i></a>
-				<a class="instagram-bg" href="https://www.instagram.com/brian_web_developer/" target="_blank"><i
-						class="fa fa-instagram"></i></a>
-				<a class="github" href="https://github.com/Brian027" target="_blank"><i class="fa fa-github"></i></a>
+				<a class="instagram-bg" aria-label="Instagram" href="https://www.instagram.com/brian_web_developer/"
+					target="_blank"><i class="fa fa-instagram"></i></a>
+				<a class="github" aria-label="Github" href="https://github.com/Brian027" target="_blank"><i
+						class="fa fa-github"></i></a>
 			</div>
 		</nav>
 	</header>
 	<main>
-		<!-- Back To Top -->
-		<button type="button" class="btn btn-outline-danger btn-floating btn-lg" id="btn-back-to-top">
-			<i class="fas fa-arrow-up"></i>
-		</button>
-		<!-- Section Hero -->
-		<section class="dark-bg">
-			<div class="container">
-				<div class="row gy-4">
-					<div class="col-12 m-0 py-5">
-						<h1 class="text-hero">Bonjour, <br> je suis Brian !</h1>
-						<h2></h2>
-						<a href="#about">
-							<div class="mouse-icon">
-								<i class="fa-solid fa-arrow-down"></i>
-							</div>
-						</a>
+
+		<!-- 	Hero Section 
+   		================================================== -->
+		<section class="home-page">
+			<div class="home-text">
+				<h1 class="text-hero">Bonjour, je suis Brian.</h1>
+				<p class="animate-text">
+					<span id="hero-p">Développeur frond end à la Réunion</span>
+					<span id="hero-p">Conception de sites web</span>
+					<span id="hero-p">et d'application web et mobile.</span>
+					<span id="hero-p">Enjoy to coding !</span>
+					<span id="hero-p">Développeur JavaScript !</span>
+					<span id="hero-p">Développeur Mobile</span>
+				</p>
+				<div class="social-links">
+					<a class="twitter-bg" aria-label="Twitter" href="https://twitter.com/CoupamaBrian"
+						target="_blank"><i class="fa fa-twitter"></i></a>
+					<a class="facebook-bg" aria-label="Facebook" href="https://www.facebook.com/brian.coupama"
+						target="_blank"><i class="fa fa-facebook"></i></a>
+					<a class="linkedin-bg" aria-label="Linkedin"
+						href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
+						target="_blank"><i class="fa fa-linkedin"></i></a>
+					<a class="instagram-bg" aria-label="Instagram" href="https://www.instagram.com/brian_web_developer/"
+						target="_blank"><i class="fa fa-instagram"></i></a>
+					<a class="github" aria-label="Github" href="https://github.com/Brian027" target="_blank"><i
+							class="fa fa-github"></i></a>
+				</div>
+				<a class="cta-home" aria-label="En savoir plus" href="about/about.html"><span class="text-btn">En savoir
+						plus..<span class="anim-point">.</span></span></a>
+			</div>
+			<div class="mouse-icon">
+				<button aria-label="Scroll to Portfolio" class="scrollsection"><i class="fa-solid fa-arrow-down"></i>
+			</div>
+		</section>
+
+		<!-- Portfolio Section
+   		================================================== -->
+		<section class="portfolio">
+			<div class="intro-info">
+				<h5>Portfolio</h5>
+				<h1>Découvrez certaines de mes œuvres.</h1>
+				<p class="lead">Photographies, sites web, activités, voyages et projets future !</p>
+			</div>
+			<div class="grid-container">
+				<div class="grid-item">
+					<img src="images/portfolio/SpotifyDesktop.png" alt="">
+					<div class="card-info">
+						<h5 class="animated-text">
+							<span>Clone de spotify</span>
+						</h5>
+						<p>
+							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique, fugit aliquam
+							voluptatem deserunt,
+							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
+							iusto eaque.</span>
+						</p>
+						<a class="btn" href="/projets/Spotify/index.html" target="_blank">Voir...</a>
+					</div>
+				</div>
+				<div class="grid-item">
+					<img src="https://source.unsplash.com/random/?foret" alt="">
+					<div class="card-info">
+						<h5 class="animated-text">
+							<span>Title</span>
+						</h5>
+						<p>
+							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique, fugit aliquam
+							voluptatem deserunt,
+							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
+							iusto eaque.</span>
+						</p>
+						<a class="btn" href="#">Voir...</a>
+					</div>
+				</div>
+				<div class="grid-item">
+					<img src="https://source.unsplash.com/random/?voyage" alt="">
+					<div class="card-info">
+						<h5 class="animated-text">
+							<span>Title</span>
+						</h5>
+						<p>
+							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique, fugit aliquam
+							voluptatem deserunt,
+							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
+							iusto eaque.</span>
+						</p>
+						<a class="btn" href="#">Voir...</a>
+					</div>
+				</div>
+				<div class="grid-item">
+					<img src="https://source.unsplash.com/random/?decouverte" alt="">
+					<div class="card-info">
+						<h5 class="animated-text">
+							<span>Title</span>
+						</h5>
+						<p>
+							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique, fugit aliquam
+							voluptatem deserunt,
+							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
+							iusto eaque.</span>
+						</p>
+						<a class="btn" href="#">Voir...</a>
+					</div>
+				</div>
+				<div class="grid-item">
+					<img src="https://source.unsplash.com/random/?animal" alt="">
+					<div class="card-info">
+						<h5 class="animated-text">
+							<span>Title</span>
+						</h5>
+						<p>
+							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique, fugit aliquam
+							voluptatem deserunt,
+							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
+							iusto eaque.</span>
+						</p>
+						<a class="btn" href="#">Voir...</a>
+					</div>
+				</div>
+				<div class="grid-item">
+					<img src="https://source.unsplash.com/random/?paysage" alt="">
+					<div class="card-info">
+						<h5 class="animated-text">
+							<span>Title</span>
+						</h5>
+						<p>
+							<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique, fugit aliquam
+							voluptatem deserunt,
+							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
+							iusto eaque.</span>
+						</p>
+						<a class="btn" href="#">Voir...</a>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- about section
-   ================================================== -->
-   <section id="about">  
 
-   	<div class="row section-intro" style="opacity: 0; transition: all 0.4s;">
-   		<div class="col-twelve">
-
-   			<h5>About</h5>
-   			<h1>Let me introduce myself.</h1>
-
-   			<div class="intro-info">
-
-   				<img src="images/profile2.jpg" alt="Profile Picture">
-
-   				<p class="lead">Je suis Brian, passionné d'informatique et spiritualité.</p>
-   			</div>   			
-
-   		</div>   		
-   	</div> <!-- /section-intro -->
-
-   	<div class="row about-content" style="opacity: 0; transition: all 0.4s;">
-
-   		<div class="col-six tab-full">
-
-   			<h3>Profile</h3>
-   			<p class="lead2">Geek depuis tout jeune et de nature calme et réfléchi, j'ai toujours été attirer par les jeux videos, intelligence artificiel (IA), et maintenant il y a un an de sa que je m'intéresse à la programmation informatique. Plus particulièrement le développement de sites internet et d'application sur tous les écrans. Et j'espère un jour coder mon propre jeu video (j'ai pleins d'idées en tête!). Bonne visite sur mon site !</p>
-
-   			<ul class="info-list">
-   				<li>
-   					<strong>Nom complet:</strong>
-   					<span>Coupama Brian</span>
-   				</li>
-   				<li>
-   					<strong>Anniversaire:</strong>
-   					<span>25 Mai, 1995</span>
-   				</li>
-   				<li>
-   					<strong>Spécialité:</strong>
-   					<span>Programmation Informatique et Assembleur de PC sur mesure, Futur Développeur</span>
-   				</li>
-   				<li>
-   					<strong>Site web:</strong>
-   					<span>brian-coupama.fr</span>
-   				</li>
-
-   			</ul> <!-- /info-list -->
-
-   		</div>
-
-   		<div class="skill col-six tab-full" style="opacity: 0; transition: all 0.4s;">
-
-   			<h3>Skills</h3>
-   			<p class="lead2">Compétences principaux au niveau des langages informatique.</p>
-
-				<ul class="skill-bars">
-				   <li>
-				   	<div class="progress percent60"><span>60%</span></div>
-				   	<strong>HTML5</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent60"><span>60%</span></div>
-				   	<strong>CSS3</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent30"><span>30%</span></div>
-				   	<strong>JavaScript</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent40"><span>40%</span></div>
-				   	<strong>PHP</strong>
-				   </li>
-				   <li>
-
-				   	<div class="progress percent30"><span>30%</span></div>
-				   	<strong>C++</strong>
-				   </li>
-      
-				</ul> <!-- /skill-bars -->		
-
-   		</div>
-
-   	</div>
-
-   </section> <!-- /process-->    
-
-		<!-- Portfolio Section
-   ================================================== -->
-		<section id="portfolio">
-
-			<div class="row section-intro" style="opacity: 0; transition: all 0.4s;">
-				<div class="col-twelve">
-
-					<h5>Portfolio</h5>
-					<h1>Découvrez certaines de mes œuvres.</h1>
-
-					<p class="lead">Photographies, sites web, activités, voyages et projets future !</p>
-
-				</div>
-			</div>
-		<!-- /section-intro-->
-
-			<div class="row portfolio-content">
-
-				<div class="col-twelve">
-
-		<!-- portfolio-wrapper -->
-					<div id="folio-wrapper" class="block-1-2 block-mob-full stack">
-
-						<div class="bgrid folio-item" style="opacity: 0; transition: all 0.4s;">
-							<div class="item-wrap">
-								<img src="images/portfolio/liberty.jpg" alt="Liberty">
-								<a href="#modal-01" class="overlay">
-									<div class="folio-item-table">
-										<div class="folio-item-cell">
-											<h3 class="folio-title">Liberty</h3>
-											<span class="folio-types">
-												Graphic Design
-											</span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-		<!-- /folio-item -->
-
-						<div class="bgrid folio-item" style="opacity: 0; transition: all 0.4s;">
-							<div class="item-wrap">
-								<img src="images/portfolio/shutterbug.jpg" alt="Shutterbug">
-								<a href="#modal-02" class="overlay">
-									<div class="folio-item-table">
-										<div class="folio-item-cell">
-											<h3 class="folio-title">Shutterbug</h3>
-											<span class="folio-types">
-												Web Design
-											</span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-		<!-- /folio-item -->
-
-						<div class="bgrid folio-item" style="opacity: 0; transition: all 0.4s;">
-							<div class="item-wrap">
-								<img src="images/portfolio/clouds.jpg" alt="Clouds">
-								<a href="#modal-03" class="overlay">
-									<div class="folio-item-table">
-										<div class="folio-item-cell">
-											<h3 class="folio-title">Clouds</h3>
-											<span class="folio-types">
-												Web Design
-											</span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-		<!-- /folio-item -->
-
-						<div class="bgrid folio-item" style="opacity: 0; transition: all 0.4s;">
-							<div class="item-wrap">
-								<img src="images/portfolio/Forest.jpg" alt="Beetle">
-								<a href="#modal-04" class="overlay">
-									<div class="folio-item-table">
-										<div class="folio-item-cell">
-											<h3 class="folio-title">Foret des makes</h3>
-											<span class="folio-types">
-												Natural Forest
-											</span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-		<!-- /folio-item -->
-
-						<div class="bgrid folio-item" style="opacity: 0; transition: all 0.4s;">
-							<div class="item-wrap">
-								<img src="images/portfolio/lighthouse.jpg" alt="Image code">
-								<a href="#modal-05" class="overlay">
-									<div class="folio-item-table">
-										<div class="folio-item-cell">
-											<h3 class="folio-title">Lighthouse</h3>
-											<span class="folio-types">
-												Photography
-											</span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-		<!-- /folio-item -->
-
-						<div class="bgrid folio-item" style="opacity: 0; transition: all 0.4s;">
-							<div class="item-wrap">
-								<img src="images/portfolio/salad.jpg" alt="Salad">
-								<a href="#modal-06" class="overlay">
-									<div class="folio-item-table">
-										<div class="folio-item-cell">
-											<h3 class="folio-title">Salad</h3>
-											<span class="folio-types">
-												Branding
-											</span>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-		<!-- /folio-item -->
-
-		<!-- modal popups - begin
-	            ============================================================= -->
-						<div id="modal-01" class="popup-modal slider mfp-hide">
-
-							<div class="media">
-								<img src="images/portfolio/modals/m-liberty.jpg" alt="" />
-							</div>
-
-							<div class="description-box">
-								<h4>Liberty</h4>
-								<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-									auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-								<div class="categories">Web Development</div>
-							</div>
-
-							<div class="link-box">
-								<a href="http://www.behance.net">Details</a>
-								<a href="#" class="popup-modal-dismiss">Fermer</a>
-							</div>
-
-						</div>
-		<!-- /modal-01 -->
-
-						<div id="modal-02" class="popup-modal slider mfp-hide">
-
-							<div class="media">
-								<img src="images/portfolio/modals/m-shutterbug.jpg" alt="" />
-							</div>
-
-							<div class="description-box">
-								<h4>Shutterbug</h4>
-								<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-									auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-								<div class="categories">Web Design</div>
-							</div>
-
-							<div class="link-box">
-								<a href="http://www.behance.net">Details</a>
-								<a href="#" class="popup-modal-dismiss">Fermer</a>
-							</div>
-
-						</div>
-		<!-- /modal-02 -->
-
-						<div id="modal-03" class="popup-modal slider mfp-hide">
-
-							<div class="media">
-								<img src="images/portfolio/modals/m-clouds.jpg" alt="" />
-							</div>
-
-							<div class="description-box">
-								<h4>Clouds</h4>
-								<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-									auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-								<div class="categories">Web Design</div>
-							</div>
-
-							<div class="link-box">
-								<a href="http://www.behance.net">Details</a>
-								<a href="#" class="popup-modal-dismiss">Fermer</a>
-							</div>
-
-						</div>
-		<!-- /modal-03 -->
-
-						<div id="modal-04" class="popup-modal slider mfp-hide">
-
-							<div class="media">
-								<img src="images/portfolio/Forest.jpg" alt="" />
-							</div>
-
-							<div class="description-box">
-								<h4>Foret des makes</h4>
-								<p>Avec sa vue imprenable sur le cirque de Cilaos, ses chemins de randonnée et ses arbres de couleurs, la forêt des Makes est l’endroit rêvé pour une évasion nature en famille. Localisée dans le Parc national de La Réunion, cette forêt vous permettra de découvrir l’un des plus beaux panoramas de l’île.</p>
-								<Source>Source: ONF de La Réunion</Source>
-								<div class="categories">Natural Forest</div>
-							</div>
-
-							<div class="link-box">
-								<a href="https://www.onf.fr/onf/+/d68::la-foret-des-makes-un-massif-couper-le-souffle.html" target="_blank">Details</a>
-								<a href="#" class="popup-modal-dismiss">Fermer</a>
-							</div>
-
-						</div>
-		<!-- /modal-04 -->
-
-						<div id="modal-05" class="popup-modal slider mfp-hide">
-
-							<div class="media">
-								<img src="images/portfolio/lighthouse.jpg" alt="Image code" />
-							</div>
-
-							<div class="description-box">
-								<h4>Lighthouse</h4>
-								<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-									auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-								<div class="categories">Web Development</div>
-							</div>
-
-							<div class="link-box">
-								<a href="http://www.behance.net">Details</a>
-								<a href="#" class="popup-modal-dismiss">Fermer</a>
-							</div>
-
-						</div>
-		<!-- /modal-05 -->
-
-						<div id="modal-06" class="popup-modal slider mfp-hide">
-
-							<div class="media">
-								<img src="images/portfolio/modals/m-salad.jpg" alt="" />
-							</div>
-
-							<div class="description-box">
-								<h4>Salad</h4>
-								<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-									auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-								<div class="categories">Branding</div>
-							</div>
-
-							<div class="link-box">
-								<a href="http://www.behance.net">Details</a>
-								<a href="#" class="popup-modal-dismiss">Fermer</a>
-							</div>
-
-						</div>
-		<!-- /modal-06 -->
-
-
-		<!-- modal popups - end
-	            ============================================================= -->
-
-		</div> <!-- /portfolio-wrapper -->
-
-		</div> <!-- /twelve -->
-
-		</div> <!-- /portfolio-content -->
-
-		</section> <!-- /portfolio -->
-
-
-		<!-- services Section
-   ================================================== -->
-		<section id="services">
-
-			<div class="overlay"></div>
-
-			<div class="row section-intro" style="opacity: 0; transition: all 0.4s;">
-				<div class="col-twelve">
-
-					<h5>Services</h5>
-					<h1>Que puis-je faire pour vous?</h1>
-
-					<p class="lead">Developpement Web et Web Design sont mes deux principaux domaines, que je mettrai au
-						service de ceux qui en ont besoin.
-						J'ai aussi quelques notions de base en UX Design / UI Design !
-					</p>
-
-				</div>
-			</div>
-		<!-- /section-intro -->
-
-			<div class="row services-content" style="opacity: 0; transition: all 0.4s;">
-
-				<div id="owl-slider" class="owl-carousel services-list">
-
-					<div class="service">
-
-						<span class="icon"><i class="icon-earth"></i></span>
-
-						<div class="service-content">
-
-							<h3>Webdesign</h3>
-
-							<p class="desc">Concevoir l'identité graphique de votre futur site et créer des maquettes
-								intéractives pour vous permettre de vous projeter.
-								Le design de l’interface est une étape importante, je saurai vous guider et vous
-								proposer des solutions en accord avec vos besoins.
-							</p>
-
-						</div>
-
-					</div>
-		<!-- /service -->
-
-					<div class="service">
-
-						<span class="icon"><i class="icon-window"></i></span>
-
-						<div class="service-content">
-
-							<h3>Web Developpement</h3>
-
-							<p class="desc">C’est l’étape de construction du site ou de l’application web avant la mise
-								en ligne du site. J’ai toutes les compétences
-								nécessaires pour m’occuper de l’intégration des templates et des fonctionnalités
-								techniques d’un projet web.
-							</p>
-
-						</div>
-
-					</div>
-		<!-- /service -->
-
-					<div class="service">
-
-						<span class="icon"><i class="icon-toggles"></i></span>
-
-						<div class="service-content">
-
-							<h3>UI/UX Design</h3>
-
-							<p class="desc">
-								Optimisation du contenu et d'interface pour une navigation agréable et assurer un
-								confort sans précédent pour l'utilisateur !
-							</p>
-
-						</div>
-
-					</div>
-		<!-- /service -->
-
-		</div> <!-- /services-list -->
-
-		</div> <!-- /services-content -->
-
-		</section> <!-- /services -->
-
-
-		<!-- stats Section
-   ================================================== -->
+		<!-- Stats Section
+   		================================================== -->
 		<section id="stats" class="count-up">
 
 			<div class="row">
@@ -569,8 +254,8 @@
 								<i class="icon-pencil-ruler"></i>
 							</div>
 
-							<h3 class="stat-count">
-								1
+							<h3 class="stat-count" data-target="3">
+								3
 							</h3>
 
 							<h5 class="stat-title">
@@ -585,8 +270,8 @@
 								<i class="icon-users"></i>
 							</div>
 
-							<h3 class="stat-count">
-								1
+							<h3 class="stat-count" data-target="2">
+								2
 							</h3>
 
 							<h5 class="stat-title">
@@ -601,7 +286,7 @@
 								<i class="fa-regular fa-moon"></i>
 							</div>
 
-							<h3 class="stat-count">
+							<h3 class="stat-count" data-target="57">
 								57
 							</h3>
 
@@ -617,7 +302,7 @@
 								<i class="icon-light-bulb"></i>
 							</div>
 
-							<h3 class="stat-count">
+							<h3 class="stat-count" data-target="49">
 								49
 							</h3>
 
@@ -633,7 +318,7 @@
 								<i class="icon-cup"></i>
 							</div>
 
-							<h3 class="stat-count">
+							<h3 class="stat-count" data-target="823">
 								823
 							</h3>
 
@@ -649,7 +334,7 @@
 								<i class="icon-clock"></i>
 							</div>
 
-							<h3 class="stat-count">
+							<h3 class="stat-count" data-target="4635">
 								4635
 							</h3>
 
@@ -666,7 +351,6 @@
 
 		</section>
 
-
 		<!-- contact -->
 
 		<section id="contact">
@@ -675,7 +359,7 @@
 				<div class="col-twelve">
 
 					<h5>Contact</h5>
-					<h1>J'aimerais avoir de vos nouvelles.</h1>
+					<h1>Un projet de création web ?</h1>
 
 					<p class="lead">Pour toute question ou demande auquel vous voulez m'adresser, je vous invite à me
 						contacter via ce formulaire de contact. J'essaierai de répondre au plus vite !</p>
@@ -688,7 +372,7 @@
 				<div class="col-twelve">
 
 
-					<form name="contactForm" id="contactForm" method="post" action="">
+					<form name="contactForm" id="contactForm" method="post">
 						<fieldset>
 
 							<div class="form-field">
@@ -707,7 +391,9 @@
 								<textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10"
 									cols="50" required=""></textarea>
 							</div>
+
 							<div class="form-field">
+								<div class="g-recaptcha" data-sitekey="6LeqrkAfAAAAAOK09poOyl0dAwM4FXZQ00lB4Zyq"></div>
 								<button class="submitform">Envoyer</button>
 								<div id="submit-loader">
 									<div class="text-loader">Envoi...</div>
@@ -720,15 +406,18 @@
 							</div>
 
 						</fieldset>
-					</form> 
-		<!-- Form End -->
-		<!-- contact-warning -->
-		<div id="message-warning">
-		</div>
-		<!-- contact-success -->
-		<div id="message-success">
-			<i class="fa fa-check"></i>Votre message a bien été envoyé, merci !<br>
-		</div>
+					</form>
+					<!-- Form End -->
+					<!-- contact-warning -->
+					<div id="message-warning">
+					</div>
+					<!-- contact-success -->
+					<div id="message-success">
+						<i class="fa fa-check"></i>Votre message a bien été envoyé, merci !<br>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 	<!-- Footer -->
 	<footer>
@@ -737,16 +426,16 @@
 			<div class="col-six tab-full pull-right social text-center">
 
 				<div class="social-links-footer">
-					<a class="twitter-bg" href="https://twitter.com/CoupamaBrian" target="_blank"><i
-							class="fa fa-twitter"></i></a>
-					<a class="facebook-bg" href="https://www.facebook.com/brian.coupama" target="_blank"><i
-							class="fa fa-facebook"></i></a>
-					<a class="linkedin-bg"
+					<a class="twitter-bg" aria-label="Twitter" href="https://twitter.com/CoupamaBrian"
+						target="_blank"><i class="fa fa-twitter"></i></a>
+					<a class="facebook-bg" aria-label="Facebook" href="https://www.facebook.com/brian.coupama"
+						target="_blank"><i class="fa fa-facebook"></i></a>
+					<a class="linkedin-bg" aria-label="Linkedin"
 						href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
 						target="_blank"><i class="fa fa-linkedin"></i></a>
-					<a class="instagram-bg" href="https://www.instagram.com/brian_web_developer/" target="_blank"><i
-							class="fa fa-instagram"></i></a>
-					<a class="github" href="https://github.com/Brian027" target="_blank"><i
+					<a class="instagram-bg" aria-label="Instagram" href="https://www.instagram.com/brian_web_developer/"
+						target="_blank"><i class="fa fa-instagram"></i></a>
+					<a class="github" aria-label="Github" href="https://github.com/Brian027" target="_blank"><i
 							class="fa fa-github"></i></a>
 				</div>
 
@@ -754,37 +443,35 @@
 
 			<div class="col-six tab-full">
 				<div class="copyright text-center">
-					<span>© Coupama Brian - Développeur Web 2022.</span>
+					<span>© Coupama Brian - Développeur Front End 2022.</span>
 				</div>
 			</div>
 
 		</div>
+		<div class="widget">
+			<button class="dark-mode" title="Dark Mode" aria-label="Theme sombre"><i class="fa-regular fa-moon"></i></button>
+		</div>
+
 	</footer>
-	<!-- Recaptcha -->
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-	<!-- JavaScript Libraries -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<script src="lib/easing/easing.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
-		integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+	<!-- Back To Top -->
+	<div id="go-top">
+		<button class="smoothscroll" id="btn-back-to-top" aria-label="ScrollTop">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+	</div>
 
 	<!-- **************************************************************************************************** -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Observer.min.js"></script>
 
 	<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
-	<script src="/js/script.js"></script>
-	<script src="/js/jquery-2.1.3.min.js"></script>
-	<script src="/js/plugins.js"></script>
-	<script src="/js/main.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/header.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
 </body>
 

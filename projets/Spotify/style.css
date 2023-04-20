@@ -1,0 +1,964 @@
+/* Light */
+@font-face {
+    font-family: "spotify-circular";
+    src: url(font/CircularStd-Light.otf) format("opentype");
+    font-style: normal;
+    font-weight: 300;
+  }
+  /* Medium */
+  @font-face {
+    font-family: "spotify-circular";
+    src: url(font/CircularStd-Medium.otf) format("opentype");
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  /* Bold */
+  @font-face {
+    font-family: "spotify-circular";
+    src: url(font/CircularStd-Bold.otf) format("opentype");
+    font-style: normal;
+    font-weight: 900;
+  }
+
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "spotify-circular";
+}
+
+/* Navigation style  start */
+
+header {
+    width: 100%;
+    background-color: #000;
+}
+
+header .logo {
+    width: 135px;
+}
+
+header nav .btnHamburger {
+    display: none;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    margin: auto;
+    min-height: 80px;
+}
+
+header nav .navlinks-content {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav .navlinks-content .navlinks {
+    padding: 28px 5px;
+    margin: 0 1rem;
+}
+
+header nav .navlinks-content .navlinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+header nav .navlinks-content .navlinks a:hover {
+    color: #1ed760;
+}
+
+header nav .navlinks-content .navlinks:nth-child(4) span {
+    display: flex;
+    background-color: #ffffff;
+    width: 1px;
+    height: 100%;
+}
+
+/* Responsive navbar start */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        position: fixed;
+    }
+    header nav .btnHamburger {
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        width: 50px;
+        height: 50px;
+        position: relative;
+    }
+    
+    header nav .btnHamburger span:nth-child(1){
+        position: absolute;
+        top: 25%;
+        width: 80%;
+        height: 2px;
+        background-color: #ffffff;
+    }
+    header nav .btnHamburger span:nth-child(2){
+        top: 50%;
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background-color: #ffffff;
+    }
+    header nav .btnHamburger span:nth-child(3){
+        position: absolute;
+        top: 75%;
+        width: 80%;
+        height: 2px;
+        background-color: #ffffff;
+    }
+
+    header nav {
+        position: relative;
+        width: 100%;
+        padding: .5rem 1.5rem;
+        top: 0;
+        left: 0;
+    }
+
+    header nav .navlinks-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        position: absolute;
+        background-color: #000;
+        top: 100%;
+        right: 0;
+        max-width: 500px;
+        width: 70%;
+        transform: translateX(100%);
+        height: 91vh;
+        transition: transform .3s ease-out;
+    }
+
+    header nav .navlinks-content.active {
+        transform: translateX(0);
+    }
+    
+    header nav .navlinks-content .navlinks:nth-child(1) a, .navlinks-content .navlinks:nth-child(2) a,
+    .navlinks-content .navlinks:nth-child(3) a{
+        font-size: 32px;
+    }
+
+    header nav .navlinks-content .navlinks:nth-child(5) a, .navlinks-content .navlinks:nth-child(6) a {
+        font-size: 26px;
+    }
+
+    header nav .navlinks-content .navlinks:nth-child(4) span {
+        background-color: #ffffff;
+        width: 20px;
+        height: 2px;
+    }
+
+    header nav .navlinks-content img {
+        width: 135px;
+    }
+
+}
+
+/* Contenu principal start */
+
+.contenuPrincipal {
+    background-color: #1d75de;
+}
+
+.contenuPrincipal .flex-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0px auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: 480px;
+}
+
+.contenuPrincipal .flex-container .flex-item {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenuPrincipal .flex-container .flex-item h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.contenuPrincipal .flex-container .flex-item h2 {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+}
+
+.contenuPrincipal .flex-container .flex-item .callToAction .subscription {
+    background-color: #191414;
+    border: 2px solid #191414;
+    padding: 14px 32px;
+    color: #fff;
+    border-radius: 500px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.contenuPrincipal .flex-container .flex-item .callToAction .seeSubscription {
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 14px 32px;
+    color: #fff;
+    border-radius: 500px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.contenuPrincipal .flex-container .flex-item .creditSubscription,
+.creditSubscription a {
+    font-size: 10px;
+    color: #fff;
+    margin: 2rem 0;
+    font-weight: 300;
+}
+
+/* Responsive Start */
+
+@media screen and (max-width: 768px) {
+
+    .contenuPrincipal {
+        padding: 9rem 0;
+    }
+    .contenuPrincipal .flex-container .flex-item h1 {
+        font-size: 1.5rem;
+    }
+    
+    .contenuPrincipal .flex-container .flex-item h2 {
+        font-size: 1rem;
+    }
+
+    .contenuPrincipal .flex-container .flex-item .callToAction {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contenuPrincipal .flex-container .flex-item .callToAction button {
+        margin: .3rem 0;
+    }
+    
+    .contenuPrincipal .flex-container .flex-item .creditSubscription,
+    .creditSubscription a {
+        font-size: 10px;
+        color: #fff;
+        margin: 2rem 0;
+    }
+}
+
+/* Section forWhat style start */
+
+.forWhat {
+    padding: 6rem 0;
+}
+
+.forWhat h2 {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.forWhat .grid-container {
+    width: 80%;
+    max-width: 1300px;
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+}
+
+.forWhat .grid-container .grid-item {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.forWhat .grid-container .grid-item img {
+    width: 142px;
+    margin: 50px auto;
+}
+
+.forWhat .grid-container .grid-item .title-desciption {
+    font-size: 18px;
+    font-weight: 600;
+    padding: .8rem 0;
+}
+
+.forWhat .grid-container .grid-item .paragraph-description {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Responsive start */
+
+@media screen and (max-width: 768px) {
+
+    .forWhat .grid-container {
+        max-width: 800px;
+        width: 80%;
+        height: auto;
+        margin: 30px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 400px);
+    }
+
+    .forWhat .grid-container .grid-item {
+        width: 400px;
+        height: 250px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .forWhat .grid-container .grid-item img {
+        width: 120px;
+        margin-right: 25px;
+    }
+
+    .forWhat .grid-container .grid-item .flexDirection {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+
+    .forWhat h2 {
+        font-size: 1.5rem;
+    }
+
+    .forWhat .grid-container {
+        max-width: 320px;
+        width: 80%;
+        height: auto;
+        margin: 30px 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 320px);
+    }
+
+    .forWhat .grid-container .grid-item {
+        width: 320px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .forWhat .grid-container .grid-item img {
+        width: 100px;
+        margin-right: 25px;
+    }
+
+    .forWhat .grid-container .grid-item .flexDirection {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+}
+
+/* Section subscription style start */
+
+.subscription {
+    background-color: #efefef;
+    padding: 3rem 0;
+}
+
+.subscription .titleSubscription {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.subscription .descSubscription {
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.subscription .creditCardImg {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subscription .creditCardImg img {
+    width: 30px;
+    margin: 0 .5rem;
+}
+
+.subscription .grid-container {
+    width: 80%;
+    max-width: 1170px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    justify-content: center;
+    gap: 20px;
+}
+
+.subscription .grid-container .grid-item {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    width: 270px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3), 
+                0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.subscription .grid-container .grid-item .headerCard {
+    padding-bottom: 15px;
+}
+
+.subscription .grid-container .grid-item .headerCard .freeSubscription {
+    background-color: #0d72ea;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.subscription .grid-container .grid-item .headerCard .nameSubscription {
+    color: #000;
+    padding: 6px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.subscription .grid-container .grid-item .headerCard .descriptionSub {
+    color: #000;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+
+.subscription .grid-container .grid-item .bodyCard .listItem {
+    padding: 20px 16px 16px 0;
+    height: 340px;
+}
+
+.subscription .grid-container .grid-item .bodyCard .listItem li {
+    list-style-type: none;
+    display: flex;
+    align-items: start;
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.subscription .grid-container .grid-item .bodyCard .listItem li img {
+    padding-right: 10px;
+}
+
+.subscription .grid-container .grid-item .bodyCard .subscribeNow {
+    background-color: #191414;
+    border: 2px solid #191414;
+    padding: 14px 32px;
+    color: #fff;
+    border-radius: 500px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+}
+
+.subscription .grid-container .grid-item .bodyCard .creditSubscriptionCard,
+.creditSubscriptionCard a {
+    color: #535353;
+    font-size: 12px;
+    margin-top: 12px;
+    font-weight: 300;
+}
+
+/* Partie responsive */
+
+@media screen and (max-width: 1200px) {
+    .subscription .grid-container {
+        width: 80%;
+        max-width: 800px;
+        height: auto;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 400px);
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .subscription .grid-container .grid-item {
+        width: 400px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3), 
+                    0px 0px 8px rgba(0, 0, 0, 0.3);
+    }
+    .subscription .grid-container .grid-item .bodyCard .listItem {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 568px) {
+
+    .subscription .titleSubscription {
+        font-size: 1.8rem;
+    }
+
+    .forWhat .grid-container {
+        max-width: 320px;
+        width: 80%;
+        height: auto;
+        margin: 30px 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 320px);
+    }
+
+    .forWhat .grid-container .grid-item {
+        width: 320px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .forWhat .grid-container .grid-item img {
+        width: 100px;
+        margin-right: 25px;
+    }
+
+    .forWhat .grid-container .grid-item .flexDirection {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+}
+
+/* Footer Page style start */
+
+footer {
+    background-color: #000;
+    padding: 6rem 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer .footer {
+    display: grid;
+    margin: auto;
+    padding: 0 4rem;
+    min-width: 1200px;
+    width: 80%;
+    min-height: 348px;
+    grid-template-columns: 150px 1fr 350px;
+    grid-template-rows: 250px 40px 40px;
+}
+
+footer .footer .logoFooter {
+    grid-column: span 1;
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+}
+
+footer .footer .logoFooter img {
+    width: 132px;
+}
+
+footer .footer .navlinks-footer {
+    grid-column: span 1;
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+footer .footer .navlinks-footer dl {
+    width: 100%;
+    padding: 0 15px;
+}
+
+footer .footer .navlinks-footer dl dt {
+    color: #919496;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+footer .footer .navlinks-footer dl dd {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: .04em;
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+footer .footer .navlinks-footer dl dd a {
+    color: white;
+}
+
+footer .footer .navlinks-footer dl dd a:hover {
+    color: #1ed760;
+}
+
+footer .footer .socialIcon {
+    grid-column: span 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer .footer .socialIcon ul {
+    display: flex;
+}
+
+footer .footer .socialIcon ul li {
+    list-style-type: none;
+    margin: 20px 0 0 10px;
+}
+
+footer .footer .socialIcon ul li a{
+    background: #222326;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 54px;
+    height: 54px;
+}
+
+footer .footer .socialIcon a:hover i {
+    color: #1ed760;
+}
+
+footer .footer .socialIcon i {
+    font-size: 24px;
+    color: #fff;
+}
+
+footer .footer .countryLocation {
+    grid-row: span 1;
+    grid-column: span 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer .footer .countryLocation a {
+    display: flex;
+    align-items: center;
+    color: #919496;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+footer .footer .countryLocation a:hover {
+    color: #1ed760;
+}
+
+footer .footer .countryLocation a img {
+    padding: 0 5px;
+}
+
+footer .footer .mLegalLink {
+    grid-row: span 1;
+    grid-column: span 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer .mLegalLink .link {
+    display: flex;
+}
+
+footer .footer .mLegalLink .link .linkItem {
+    padding: 0 10px;
+    list-style-type: none;
+}
+
+footer .footer .mLegalLink .link .linkItem a {
+    color: #919496;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+footer .footer .mLegalLink .link .linkItem a:hover {
+    color: #1ed760;
+}
+
+footer .footer .mLegalLink .copyright {
+    color: #919496;
+    font-family: 'poppins', sans-serif;
+    font-size: 12px;
+}
+
+/* Footer Responsive Start */
+
+@media screen and (max-width: 1200px) {
+    footer .footer {
+        display: grid;
+        margin: auto;
+        padding: 0 4rem;
+        min-width: 991px;
+        min-height: 348px;
+        grid-template-columns: 150px 1fr 350px;
+        grid-template-rows: 250px 40px 40px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 991px) {
+    footer .footer {
+        display: grid;
+        padding: 0 4rem;
+        min-width: 768px;
+        width: 100%;
+        min-height: 348px;
+        grid-template-columns: 350px;
+        grid-template-rows: 80px 250px 40px 40px 80px;
+    }
+
+    footer .footer .logoFooter {
+        grid-column: span 2;
+        grid-row: span 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .footer .navlinks-footer {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+        width: 100%;
+    }
+
+    footer .footer .navlinks-footer dl {
+        padding: 0;
+    }
+
+    footer .footer .socialIcon {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .footer .countryLocation {
+        grid-row: span 3;
+        grid-column: span 2;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    footer .footer .mLegalLink {
+        grid-column: span 2;
+        line-height: 1.8rem;
+    }
+
+    footer .footer .mLegalLink .link {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer .footer .mLegalLink {
+        display: flex;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    footer .footer .mLegalLink .copyright {
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    footer .footer {
+        display: grid;
+        padding: 0;
+        width: 80%;
+        min-width: 568px;
+        height: auto;
+        grid-template-columns: 250px;
+        grid-template-rows: 80px 600px 120px 80px 80px;
+    }
+
+    footer .footer .logoFooter {
+        grid-column: span 3;
+        grid-row: span 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .footer .navlinks-footer {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        width: 100%;
+    }
+
+    footer .footer .navlinks-footer dl {
+        width: 100%;
+        padding: 0;
+    }
+
+    footer .footer .socialIcon {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .footer .countryLocation {
+        grid-row: span 3;
+        grid-column: span 3;
+        display: flex;
+    }
+
+    footer .footer .mLegalLink {
+        grid-column: span 2;
+        line-height: 1.8rem;
+        display: flex;
+    }
+
+    footer .footer .mLegalLink .link .linkItem a {
+        font-size: 10px;
+    }
+
+    footer .footer .mLegalLink .link {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer .footer .mLegalLink .copyright {
+        font-size: 10px;
+        width: 100px;
+        text-align: right;
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+
+    footer .footer {
+        display: grid;
+        padding: 0;
+        width: 80%;
+        min-width: 320px;
+        height: auto;
+        grid-template-columns: 250px;
+        grid-template-rows: 80px 600px 120px 80px 80px;
+    }
+
+    footer .footer .logoFooter {
+        grid-column: span 3;
+        grid-row: span 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .footer .navlinks-footer {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        width: 100%;
+    }
+
+    footer .footer .navlinks-footer dl {
+        width: 100%;
+        padding: 0;
+    }
+
+    footer .footer .socialIcon {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .footer .countryLocation {
+        grid-row: span 3;
+        grid-column: span 3;
+        display: flex;
+    }
+
+    footer .footer .mLegalLink {
+        grid-column: span 2;
+        line-height: 1.8rem;
+    }
+
+    footer .footer .mLegalLink .link {
+        font-size: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer .footer .mLegalLink .link .linkItem {
+        font-size: 10px;
+    }
+
+    footer .footer .mLegalLink .link .linkItem a {
+        font-size: 10px;
+    }
+
+    footer .footer .mLegalLink .copyright {
+        font-size: 10px;
+    }
+
+}

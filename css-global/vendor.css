@@ -32,11 +32,13 @@
 	display: none;
 	position: relative;
 	width: 100%;
+	touch-action: pan-y;
 	-ms-touch-action: pan-y;
 }
 .owl-carousel .owl-wrapper {
 	display: none;
 	position: relative;
+	transform: translate3d(0px, 0px, 0px);
 	-webkit-transform: translate3d(0px, 0px, 0px);
 }
 .owl-carousel .owl-wrapper-outer {
@@ -73,10 +75,10 @@
 
 /* fix */
 .owl-carousel .owl-wrapper, .owl-carousel .owl-item {
-	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
-	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
 }
@@ -388,7 +390,7 @@
 	z-index: 1043;
 	position: fixed;
 	outline: none !important;
-	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .mfp-container {
 	text-align: center;
@@ -479,7 +481,7 @@ button.mfp-close, button.mfp-arrow {
 	cursor: pointer;
 	background: transparent;
 	border: 0;
-	-webkit-appearance: none;
+	appearance: none;
 	display: block;
 	outline: none;
 	padding: 0;
@@ -777,4 +779,4 @@ img.mfp-img {
 	padding-top: 0;
 }
 
-/*# sourceMappingURL=vendor.css.map */
+/* # sourceMappingURL=vendor.css.map */
