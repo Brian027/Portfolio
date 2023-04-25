@@ -10,6 +10,7 @@
 /* ***************** Back to Top Start**********************/
 
 const backToTop = document.getElementById("btn-back-to-top");
+const backTopBtn = document.getElementById("go-top");
 
 backToTop.addEventListener("click", () => {
   window.scrollTo({
@@ -18,6 +19,14 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+window.addEventListener("scroll", () => {
+  if(window.pageYOffset > 100){
+    backTopBtn.classList.add("active");
+  } else {
+    backTopBtn.classList.remove("active");
+  }
+})
 
 /* ***************** Back to Top End**********************/
 
@@ -72,6 +81,17 @@ window.addEventListener("load", () => {
   tl.from(btnAbout, 0.2, { y: 20, opacity: 0, delay: 2, ease: Back.ease }, 0.5);
 });
 
+const scrollToPfo = document.querySelector(".scrollToPortfolio");
+
+scrollToPfo.addEventListener("click", addScrollSmooth)
+
+function addScrollSmooth(){
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+}
+
 //........Portfolio Section Start animate.........//
 
 const items = document.querySelectorAll(".grid-item");
@@ -105,39 +125,41 @@ items.forEach(item => {
 
 // ................ Counter up start animate ...................//
 
-const observeCount = document.querySelector(".count-up");
+// const observeCount = document.querySelector(".count-up");
 const counters = document.querySelectorAll(".stat-count");
 
-let optionsCount = {
-  root: null,
-  rootMargin: "-10% 0px",
-  threshold: 0
-}
+// let optionsCount = {
+//   root: null,
+//   rootMargin: "-10% 0px",
+//   threshold: 0
+// }
 
-function countIntersect(counters){
-  counters.forEach(counter => {
-    counter.innerText = "0";
-    const updateCounter = () => {
-      const target = +counter.getAttribute('data-target');
-      const c = +counter.innerText;
+// function countIntersect(counters){
   
-      const increment = target / 200;
-      
-      if(c < target){
-        counter.innerText = `${Math.ceil(c + increment)}`;
-        setTimeout(updateCounter, 1);
-      }
+// }
+
+// const observerCount = new IntersectionObserver(
+//   countIntersect, optionsCount
+// )
+
+// counters.forEach(item => {
+//   observer.observe(item)
+// })
+
+counters.forEach(counter => {
+  counter.innerText = "0";
+  const updateCounter = () => {
+    const target = +counter.getAttribute('data-target');
+    const c = +counter.innerText;
+
+    const increment = target / 200;
+    
+    if(c < target){
+      counter.innerText = `${Math.ceil(c + increment)}`;
+      setTimeout(updateCounter, 1);
     }
-    updateCounter()
-  })
-}
-
-const observerCount = new IntersectionObserver(
-  countIntersect, optionsCount
-)
-
-counters.forEach(item => {
-  observer.observe(item)
+  }
+  updateCounter()
 })
 
 //................. Dark mode start ............................//

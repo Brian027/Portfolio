@@ -12,10 +12,9 @@
 
 	<!-- CSS General -->
 	<link rel="stylesheet" href="css-global/style.css">
+	<link rel="stylesheet" href="css-global/header.css">
 	<link rel="stylesheet" href="css-global/base.css">
 	<link rel="stylesheet" href="css-global/main.css">
-	<link rel="stylesheet" href="css-global/vendor.css">
-	<link rel="stylesheet" href="css-global/header.css">
 	<link rel="stylesheet" href="css-global/footer.css">
 	<link rel="stylesheet" href="css-global/contact-global.css">
 	<!-- CSS Libraries -->
@@ -80,24 +79,11 @@
 
 		<nav class="nav-navigation">
 			<div class="nav-links">
-				<a class="nav-link" data-text="Accueil" href="index.html">Accueil</a>
-				<a class="nav-link" data-text="APropos" href="about/about.html">APropos</a>
-				<a class="nav-link" data-text="MonParcours" href="skill-experience/skill-experience.html">MonParcours</a>
-				<a class="nav-link" data-text="Contact" href="contact/contact.html">Contact</a>
-				<a class="nav-link" data-text="MentionLégales" href="mentions_legales/mention-legales.html">MentionLégales</a>
-			</div>
-			<div class="social-links">
-				<a class="twitter-bg" aria-label="Twitter" href="https://twitter.com/CoupamaBrian" target="_blank"><i
-						class="fa fa-twitter"></i></a>
-				<a class="facebook-bg" aria-label="Facebook" href="https://www.facebook.com/brian.coupama"
-					target="_blank"><i class="fa fa-facebook"></i></a>
-				<a class="linkedin-bg" aria-label="Linkedin"
-					href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
-					target="_blank"><i class="fa fa-linkedin"></i></a>
-				<a class="instagram-bg" aria-label="Instagram" href="https://www.instagram.com/brian_web_developer/"
-					target="_blank"><i class="fa fa-instagram"></i></a>
-				<a class="github" aria-label="Github" href="https://github.com/Brian027" target="_blank"><i
-						class="fa fa-github"></i></a>
+				<span><a class="nav-link" data-text="Accueil" href="index.html">Accueil</a></span>
+				<span><a class="nav-link" data-text="APropos" href="about/about.html">APropos</a></span>
+				<span><a class="nav-link" data-text="MonParcours" href="skill-experience/skill-experience.html">MonParcours</a></span>
+				<span><a class="nav-link" data-text="Contact" href="contact/contact.html">Contact</a></span>
+				<span><a class="nav-link" data-text="MentionLégales" href="mentions_legales/mention-legales.html">MentionLégales</a></span>
 			</div>
 		</nav>
 	</header>
@@ -132,14 +118,15 @@
 				<a class="cta-home" aria-label="En savoir plus" href="about/about.html"><span class="text-btn">En savoir
 						plus..<span class="anim-point">.</span></span></a>
 			</div>
-			<div class="mouse-icon">
-				<button aria-label="Scroll to Portfolio" class="scrollsection"><i class="fa-solid fa-arrow-down"></i>
+			<div class="scrollToPfo">
+				<p class="scrollToPortfolio" href="#pfo" aria-label="Scroll to Portfolio" class="scrollsection">scroll me</p>
+				<span class="arrow"></span>
 			</div>
 		</section>
 
 		<!-- Portfolio Section
    		================================================== -->
-		<section class="portfolio">
+		<section class="portfolio" id="pfo">
 			<div class="intro-info">
 				<h5>Portfolio</h5>
 				<h1>Découvrez certaines de mes œuvres.</h1>
@@ -147,7 +134,7 @@
 			</div>
 			<div class="grid-container">
 				<div class="grid-item">
-					<img src="images/portfolio/SpotifyDesktop.png" alt="">
+					<img src="images/portfolio/SpotifyDesktop.webp" alt="Spotify Demo">
 					<div class="card-info">
 						<h5 class="animated-text">
 							<span>Clone de spotify</span>
@@ -158,7 +145,7 @@
 							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
 							iusto eaque.</span>
 						</p>
-						<a class="btn" href="/projets/Spotify/index.html" target="_blank">Voir...</a>
+						<a class="btn" href="/projets/Spotify/index.html" target="_blank">Demo</a>
 					</div>
 				</div>
 				<div class="grid-item">
@@ -188,7 +175,7 @@
 							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
 							iusto eaque.</span>
 						</p>
-						<a class="btn" href="#">Voir...</a>
+						<a class="btn" href="#">Demo</a>
 					</div>
 				</div>
 				<div class="grid-item">
@@ -203,7 +190,7 @@
 							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
 							iusto eaque.</span>
 						</p>
-						<a class="btn" href="#">Voir...</a>
+						<a class="btn" href="#">Demo</a>
 					</div>
 				</div>
 				<div class="grid-item">
@@ -218,7 +205,7 @@
 							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
 							iusto eaque.</span>
 						</p>
-						<a class="btn" href="#">Voir...</a>
+						<a class="btn" href="#">Demo</a>
 					</div>
 				</div>
 				<div class="grid-item">
@@ -233,7 +220,7 @@
 							eius veritatis esse eligendi cum quidem obcaecati dicta numquam sint maiores nihil neque qui
 							iusto eaque.</span>
 						</p>
-						<a class="btn" href="#">Voir...</a>
+						<a class="btn" href="#">Demo</a>
 					</div>
 				</div>
 			</div>
@@ -421,38 +408,36 @@
 	</main>
 	<!-- Footer -->
 	<footer>
-		<div class="row">
+        <div class="gridContainer">
 
-			<div class="col-six tab-full pull-right social text-center">
+            <div class="socialContainer gridItem">
 
-				<div class="social-links-footer">
-					<a class="twitter-bg" aria-label="Twitter" href="https://twitter.com/CoupamaBrian"
-						target="_blank"><i class="fa fa-twitter"></i></a>
-					<a class="facebook-bg" aria-label="Facebook" href="https://www.facebook.com/brian.coupama"
-						target="_blank"><i class="fa fa-facebook"></i></a>
-					<a class="linkedin-bg" aria-label="Linkedin"
-						href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
-						target="_blank"><i class="fa fa-linkedin"></i></a>
-					<a class="instagram-bg" aria-label="Instagram" href="https://www.instagram.com/brian_web_developer/"
-						target="_blank"><i class="fa fa-instagram"></i></a>
-					<a class="github" aria-label="Github" href="https://github.com/Brian027" target="_blank"><i
-							class="fa fa-github"></i></a>
-				</div>
+                <div class="social-links-footer">
+                    <a class="twitter-bg" href="https://twitter.com/CoupamaBrian" aria-label="Lien vers Twitter" target="_blank"><i
+                            class="fa fa-twitter"></i></a>
+                    <a class="facebook-bg" href="https://www.facebook.com/brian.coupama" aria-label="Lien vers Facebook" target="_blank"><i
+                            class="fa fa-facebook"></i></a>
+                    <a class="linkedin-bg"
+                        href="https://www.linkedin.com/in/brian-coupama-%F0%9F%92%BB-d%C3%A9veloppeur-web-en-recherche-de-stage-512644137/"
+                        target="_blank" aria-label="Lien vers linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a class="instagram-bg" href="https://www.instagram.com/brian_web_developer/" aria-label="Lien vers Instagram" target="_blank"><i
+                            class="fa fa-instagram"></i></a>
+                    <a class="github" href="https://github.com/Brian027" aria-label="Lien vers Github" target="_blank"><i
+                            class="fa fa-github"></i></a>
+                </div>
 
-			</div>
+            </div>
 
-			<div class="col-six tab-full">
-				<div class="copyright text-center">
-					<span>© Coupama Brian - Développeur Front End 2022.</span>
-				</div>
-			</div>
+            <div class="copyContainer gridItem">
+                <div class="copyright">
+                    <span>© Coupama Brian - Développeur Front End 2023.</span>
+                </div>
 
-		</div>
-		<div class="widget">
-			<button class="dark-mode" title="Dark Mode" aria-label="Theme sombre"><i class="fa-regular fa-moon"></i></button>
-		</div>
+            </div>
 
-	</footer>
+        </div>
+        <button class="dark-mode" aria-label="Theme Sombre"><i class="fa-regular fa-moon"></i></button>
+    </footer>
 	<!-- Back To Top -->
 	<div id="go-top">
 		<button class="smoothscroll" id="btn-back-to-top" aria-label="ScrollTop">
@@ -467,11 +452,11 @@
 
 	<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
-	<script src="js/script.js"></script>
-	<script src="js/header.js"></script>
-	<script src="js/main.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
-	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script type="module" src="js/script.js"></script>
+	<script type="module" src="js/header.js"></script>
+	<script type="module" src="js/main.js"></script>
+	<script type="module" src="https://unpkg.com/feather-icons"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
 </body>
 

@@ -2,6 +2,7 @@
 
 header {
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +13,8 @@ header {
 
 .nav-toggler {
     position: fixed;
-    z-index: 4446125151451;
+    z-index: 3000;
+    top: 25px;
     height: 50px;
     width: 50px;
     right: 25px;
@@ -32,7 +34,6 @@ header {
     background-color: #000;
     transition: transform .3s ease-out;
     transform-style: preserve-3d;
-    z-index: 4446125151451;
   }
 
   body.dark .line {
@@ -85,10 +86,10 @@ header {
   
   
   .logo img{
-    border-radius: 6px;
     width: 70px;
     height: 70px;
     transition: all 0.4s;
+    transform: translateY(0);
   }
   
   .nav-navigation {
@@ -126,6 +127,11 @@ header {
     -webkit-text-stroke: 0.2vw #083731;
     transition: color .5s ease;
     position: relative;
+  }
+
+  .nav-navigation .nav-links span {
+    display: inline-block;
+    overflow: hidden;
   }
 
   .nav-navigation .nav-links .nav-link::before {
@@ -180,39 +186,6 @@ header {
     color: #f8f9fa;
   }
   
-  
-  
-  .nav-navigation .social-links {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  
-  .nav-navigation .social-links a {
-    padding: 0 30px;
-  }
-
-  .nav-navigation .social-links a:hover i {
-    color: #083731;
-  }
-  
-  .nav-navigation .social-links i {
-    font-size: 16px;
-    color: rgba(21, 21, 21, 0.98);
-    transition: color .3s ease;
-  }
-
-  body.dark .nav-navigation .social-links i {
-    font-size: 16px;
-    color: rgb(255, 255, 255, 0.98);
-    transition: color .3s ease;
-  }
-
-  body.dark .nav-navigation .social-links a:hover i {
-    color: #083731;
-  }
-  
   @media screen and (min-width: 991px){
     .logo img {
       transition: all 0.4s ease;
@@ -221,15 +194,5 @@ header {
     .logo img:hover {
       transform: scale(1.5);
       transition: transform 0.4s ease;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-
-
-    .nav-navigation .social-links {
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
     }
   }
