@@ -95,21 +95,24 @@ function addScrollSmooth(){
 //........Portfolio Section Start animate.........//
 
 const items = document.querySelectorAll(".grid-item");
+const textPfo = document.querySelectorAll(".portfolio .intro-info span h5, .portfolio .intro-info span h1, .portfolio .intro-info span .lead");
 
 let options = {
   root: null,
-  rootMargin: "-1% 0px",
+  rootMargin: "-5% 0px",
   threshold: 0
 }
 
 function handleIntersect(entries){
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      entry.target.style.opacity = 1;
+      entry.target.style.visibility = "visible";
+      entry.target.style.opacity= 1;
       entry.target.classList.add("active");
     } else {
       entry.target.classList.remove("active");
-      entry.target.style.opacity = 0;
+      entry.target.style.visibility = "hidden";
+      entry.target.style.opacity= 0;
     }
   })
 }
@@ -118,15 +121,21 @@ const observer = new IntersectionObserver(
   handleIntersect, options
 )
 
+textPfo.forEach(item => {
+  observer.observe(item)
+})
+
 items.forEach(item => {
   observer.observe(item)
 })
 
 
+
+
 // ................ Counter up start animate ...................//
 
 // const observeCount = document.querySelector(".count-up");
-const counters = document.querySelectorAll(".stat-count");
+// const counters = document.querySelectorAll(".stat-count");
 
 // let optionsCount = {
 //   root: null,
@@ -134,33 +143,28 @@ const counters = document.querySelectorAll(".stat-count");
 //   threshold: 0
 // }
 
-// function countIntersect(counters){
+// counter.innerText = "0";
+// const updateCounter = () => {
+//   const target = +counter.getAttribute('data-target');
+//   const c = +counter.innerText;
+
+//   const increment = target / 200;
   
+//   if(c < target){
+//     counter.innerText = `${Math.ceil(c + increment)}`;
+//     setTimeout(updateCounter, 1);
+//   }
 // }
 
 // const observerCount = new IntersectionObserver(
-//   countIntersect, optionsCount
+//   updateCounter, optionsCount
 // )
-
-// counters.forEach(item => {
-//   observer.observe(item)
+// counters.forEach(count => {
+//   observerCount.observe(count)
 // })
 
-counters.forEach(counter => {
-  counter.innerText = "0";
-  const updateCounter = () => {
-    const target = +counter.getAttribute('data-target');
-    const c = +counter.innerText;
 
-    const increment = target / 200;
-    
-    if(c < target){
-      counter.innerText = `${Math.ceil(c + increment)}`;
-      setTimeout(updateCounter, 1);
-    }
-  }
-  updateCounter()
-})
+
 
 //................. Dark mode start ............................//
 

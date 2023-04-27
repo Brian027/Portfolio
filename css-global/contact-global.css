@@ -6,9 +6,54 @@
 
 #contact {
     background-color: #f8f9fa;
-    padding-top: 12rem;
+    padding-top: 9rem;
     padding-bottom: 7.2rem;
     transition: background-color 0.3s ease;
+  }
+
+  #contact .intro-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  #contact .intro-info span {
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  #contact .intro-info span h5 {
+    color: #083731;
+    transform: translateY(100%);
+    margin: 0;
+  }
+
+  #contact .intro-info span h1 {
+    text-align: center;
+    transform: translateY(100%);
+    margin: 0;
+  }
+
+  #contact .intro-info span .lead {
+    word-wrap: break-word;
+    text-align: center;
+    transform: translateY(100%);
+    margin: 0;
+  }
+
+  #contact .intro-info span h5.active, #contact .intro-info span h1.active, #contact .intro-info span .lead.active {
+    animation: animTextContact 1s ease-out forwards;
+  }
+
+  @keyframes animTextContact {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 
   body.dark #contact {
@@ -24,14 +69,41 @@
   body.light #contact input[type="text"], body.light #contact input[type="password"], body.light #contact input[type="email"], body.light #contact textarea {
     color: #000;
   }
-  
-  #contact .section-intro h5 {
-    color: #083731;
+
+  @media only screen and (max-width: 768px) {
+    #portfolio .intro-info {
+      max-width: 650px;
+    }
+    #portfolio .intro-info h1 {
+      font-size: 3rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    #portfolio .intro-info h1 {
+      font-size: 2.6rem;
+    }
+    #portfolio .intro-info h5 {
+      font-size: 1.5rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #portfolio .intro-info h1 {
+      font-size: 2.4rem;
+    }
   }
   
   /* contact form */
   .contact-form {
     max-width: 740px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+  .contact-form.active {
+    visibility: visible;
+    opacity: 1;
   }
   
   #contact form {
@@ -86,6 +158,14 @@
     width: 100%;
     margin-bottom: 0;
     border: none;
+    color: #151515;
+  }
+
+  body.dark #contact input[type="text"],
+  body.dark #contact input[type="password"],
+  body.dark #contact input[type="email"],
+  body.dark #contact textarea {
+    color: #f8f9fa;
   }
   
   body.dark #contact input[type="text"],
@@ -112,13 +192,20 @@
     border-color: #083731 !important;
     color: #151515;
   }
+
+  body.dark #contact input[type="text"]:focus,
+  body.dark #contact input[type="password"]:focus,
+  body.dark #contact input[type="email"]:focus {
+    color: #f8f9fa;
+  }
+
   #contact textarea {
     min-height: 20rem;
     padding: 1.8rem 2rem;
   }
   #contact textarea:focus {
     border-color: #083731 !important;
-    color: #ffffff;
+    color: #151515;
   }
   
   #contact .contact-form .form-field textarea {
