@@ -1,12 +1,3 @@
-// Preload start
-// const loader = document.querySelector(".loader");
-
-// window.addEventListener("load", () => {
-//   loader.classList.add("fondu-out");
-//   setTimeout(() => (loader.style.display = "none"), 1000);
-// });
-// Preload end
-
 /* ***************** Back to Top Start**********************/
 
 const backToTop = document.getElementById("btn-back-to-top");
