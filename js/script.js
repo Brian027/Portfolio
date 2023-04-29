@@ -23,11 +23,7 @@ window.addEventListener("scroll", () => {
 
 //........Home Section Start animate.........//
 
-let homeH2 = document.querySelector(".home-page .text-hero");
 
-var tl = gsap.timeline();
-
-tl.from(homeH2, 0.5, { y: 50, opacity: 0, delay: 1, ease: Back.ease }, 0.1);
 
 const homeSpan = document.querySelector(".home-page .animate-text").children,
   txtsLen = homeSpan.length;
@@ -58,19 +54,6 @@ function animateText() {
 window.onload = setTimeout(() => {
   animateText();
 }, 2000);
-
-const rsLinkHome = document.querySelectorAll(".home-page .social-links a");
-const btnAbout = document.querySelector(".home-page .cta-home");
-
-window.addEventListener("load", () => {
-  tl.from(
-    rsLinkHome,
-    0.2,
-    { y: 50, opacity: 0, delay: 2, ease: Back.ease },
-    0.3
-  );
-  tl.from(btnAbout, 0.2, { y: 20, opacity: 0, delay: 2, ease: Back.ease }, 0.5);
-});
 
 const scrollToPfo = document.querySelector(".scrollToPortfolio");
 

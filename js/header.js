@@ -1,5 +1,15 @@
 //................ Navbar Start ................//
 
+/* Logo Anim start */
+
+const logoSvg = document.querySelector(".logo");
+
+const tl = gsap.timeline({paused: true});
+
+tl.from(logoSvg, 1, {scale: 0.5, opacity: 0, delay: .5, duration: 2.5, ease:"elastic.out(1, 0.3)"}, 0.9)
+
+tl.play();
+
 /* ********** Animate icon nav hamburger start ************ */
 const hamburgerButton = document.querySelector(".nav-toggler");
 const navigation = document.querySelector(".nav-navigation");
@@ -18,12 +28,12 @@ function toggleNav() {
 
 hamburgerButton.addEventListener("click", () => {
 
-    const TL = gsap.timeline({paused: true});
+    const tl = gsap.timeline({paused: true});
     
-    TL.staggerFrom(linkNav, 1, {y: 200, ease:"Expo.out"}, 0.3)
+    tl.staggerFrom(linkNav, 1, {y: 200, ease:"Expo.out"}, 0.3)
 
     setTimeout(() => {
-      TL.play();
+      tl.play();
     }, 500);
 
     

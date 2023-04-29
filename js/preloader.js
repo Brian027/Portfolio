@@ -1,7 +1,5 @@
 // Preload start
 
-window.addEventListener("load", move);
-
 var tl = gsap.timeline({
     paused: "true"
   });
@@ -30,6 +28,8 @@ var tl = gsap.timeline({
 function move(){
     id = setInterval(frame,10);
 }
+
+move();
   
 function frame(){
     if(width > 100){

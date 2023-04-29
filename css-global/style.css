@@ -98,6 +98,7 @@ body.dark .home-page .text-hero {
   color: rgb(0, 0, 0, 0.82);
   letter-spacing: 2px;
   display: none;
+  user-select: none;
 }
 
 body.dark .home-page #hero-p {
@@ -239,34 +240,46 @@ body.dark .home-page .cta-home:hover span {
   color: #212121;
 }
 
-.home-page .scrollToPfo .arrow {
-  background-color: #212121;
-  width: 0.3em;
-  height: 3.6em;
-  border-radius: 12px;
-  position: relative;
-  animation: svgAnimOne 1.5s running infinite;
+.home-page .scrollToPfo .feather {
+  display: inline-block;
+  overflow: hidden;
 }
 
-.home-page .scrollToPfo i {
-  color: #212121;
-  font-size: 2.5rem;
-  animation: svgAnimTwo 1.5s running infinite;
+.home-page .scrollToPfo .feather {
+  stroke: #151515;
+  stroke-width: 2.5;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  animation: animSvgArrow 2.5s ease infinite;
 }
 
-body.dark .home-page .scrollToPfo i {
-  color: #f8f9fa;
-}
+@keyframes animSvgArrow {
 
-.home-page .scrollToPfo .arrow::after {
-  transform: rotate(45deg);
-  transform-origin: bottom right;
+  0% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+  20% {
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+  }
+  40% {
+    stroke-dasharray: 9px;
+    stroke-dashoffset: 9px;
+  }
+  60% {
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+  }
+  80% {
+    stroke-dasharray: 9px;
+    stroke-dashoffset: 9px;
+  }
+  100% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
 }
-
-.home-page .scrollToPfo .arrow::before {
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
-} 
 
 body.dark .home-page .scrollToPfo p {
   color: #f8f9fa;
