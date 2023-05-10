@@ -128,10 +128,11 @@
   }
   #contact form .form-field label {
     font-family: "Bree Serif", sans-serif;
+    display: none;
     font-size: 1.1rem;
     line-height: 2.4rem;
     position: absolute;
-    bottom: -1.2rem;
+    bottom: 50%;
     right: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -141,16 +142,24 @@
     color: #fff;
     font-weight: 700;
   }
+
   #contact form .form-field label::after {
     position: absolute;
-    left: -5px;
-    top: 50%;
-    margin-top: -6px;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-right: 5px solid #083731;
+    bottom: -9px;
+    left: 0px;
     content: "";
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #083731;
   }
+
+  #contact form .form-field .labelWarning .msgWarning {
+    margin-bottom: 0;
+    color: #f8f9fa;
+  }
+  
   #contact input[type="text"],
   #contact input[type="password"],
   #contact input[type="email"],
@@ -285,9 +294,8 @@
     text-align: center;
   }
   #submit-loader .text-loader {
-    display: none;
     font-family: "poppins", sans-serif;
-    color: #ffffff;
+    color: #000000;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
   }
@@ -332,10 +340,10 @@
   .s-loader > div {
     width: 1rem;
     height: 1rem;
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 100%;
     display: inline-block;
-    margin-right: 0.9rem;
+    margin-right: 1.2rem;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;
   }

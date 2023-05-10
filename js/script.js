@@ -71,7 +71,7 @@ function addScrollSmooth(){
 const items = document.querySelectorAll(".grid-item");
 const textPfo = document.querySelectorAll(".portfolio .intro-info span h5, .portfolio .intro-info span h1, .portfolio .intro-info span .lead");
 
-let options = {
+let option = {
   root: null,
   rootMargin: "-5% 0px",
   threshold: 0
@@ -92,7 +92,7 @@ function handleIntersect(entries){
 }
 
 const observer = new IntersectionObserver(
-  handleIntersect, options
+  handleIntersect, option
 )
 
 textPfo.forEach(item => {

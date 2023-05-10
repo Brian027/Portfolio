@@ -1,197 +1,104 @@
-/**
- * ===================================================================
- * main js
- *
- * -------------------------------------------------------------------
- */
+/*---------------------------------------------------- */
+/*	contact form
+------------------------------------------------------ */
 
-(function ($) {
-  "use strict";
+/* local validation */
 
-  /*---------------------------------------------------- */
-  /* Preloader
-	------------------------------------------------------ */
-  $(window).load(function () {
-    // will first fade out the loading animation
-    $("#loader").fadeOut("slow", function () {
-      // will fade out the whole DIV that covers the website.
-      $("#preloader").delay(300).fadeOut("slow");
-    });
-  });
+// $(document).ready(function() {
+//   $("form").submit(function() {
 
-  /*---------------------------------------------------- */
-  /* FitText Settings
-  	------------------------------------------------------ */
-  setTimeout(function () {
-    $("#intro h1").fitText(1, { minFontSize: "42px", maxFontSize: "84px" });
-  }, 100);
+//     var contactName = $("#contactName").val();
+//     var contactEmail = $("#contactEmail").val();
+//     var contactSubject = $("#contactSubject").val();
+//     var contactMessage = $("#contactMessage").val();
+//     var contactSubmit = $("#submitForm").val();
+//     $(".message-success").load("form/mail.php", {
+//       contactName: contactName,
+//       contactEmail: contactEmail,
+//       contactSubject: contactSubject,
+//       contactMessage: contactMessage,
+//       contactSubmit: contactSubmit
+//     });
+//   });
+// })
 
-  /*---------------------------------------------------- */
-  /* FitVids
-	------------------------------------------------------ */
-  $(".fluid-video-wrapper").fitVids();
 
-  /*---------------------------------------------------- */
-  /* Owl Carousel
-	------------------------------------------------------ */
-  $("#owl-slider").owlCarousel({
-    navigation: false,
-    pagination: true,
-    itemsCustom: [
-      [0, 1],
-      [700, 2],
-      [960, 3],
-    ],
-    navigationText: false,
-  });
 
-  /*----------------------------------------------------- */
-  /* Alert Boxes
-  	------------------------------------------------------- */
-  $(".alert-box").on("click", ".close", function () {
-    $(this).parent().fadeOut(500);
-  });
 
-  /*----------------------------------------------------- */
-  /* Stat Counter
-  	------------------------------------------------------- */
-  var statSection = $("#stats"),
-    stats = $(".stat-count");
 
-  statSection.waypoint({
-    handler: function (direction) {
-      if (direction === "down") {
-        stats.each(function () {
-          var $this = $(this);
 
-          $({ Counter: 0 }).animate(
-            { Counter: $this.text() },
-            {
-              duration: 4000,
-              easing: "swing",
-              step: function (curValue) {
-                $this.text(Math.ceil(curValue));
-              },
-            }
-          );
-        });
-      }
 
-      // trigger once only
-      this.destroy();
-    },
 
-    offset: "90%",
-  });
 
-  /*---------------------------------------------------- */
-  /*	Masonry
-	------------------------------------------------------ */
-  var containerProjects = $("#folio-wrapper");
 
-  containerProjects.imagesLoaded(function () {
-    containerProjects.masonry({
-      itemSelector: ".folio-item",
-      resize: true,
-    });
-  });
 
-  /*----------------------------------------------------*/
-  /*	Modal Popup
-	------------------------------------------------------*/
-  $(".item-wrap a").magnificPopup({
-    type: "inline",
-    fixedContentPos: false,
-    removalDelay: 300,
-    showCloseBtn: false,
-    mainClass: "mfp-fade",
-  });
 
-  $(document).on("click", ".popup-modal-dismiss", function (e) {
-    e.preventDefault();
-    $.magnificPopup.close();
-  });
 
-  /*---------------------------------------------------- */
-  /*  Placeholder Plugin Settings
-	------------------------------------------------------ */
-  $("input, textarea, select").placeholder();
 
-  /*---------------------------------------------------- */
-  /*	contact form
-	------------------------------------------------------ */
 
-  /* local validation */
-  $("#contactForm").validate({
-    /* submit via ajax */
-    submitHandler: function (form) {
-      var sLoader = $("#submit-loader");
 
-      $.ajax({
-        type: "POST",
-        url: "form/mail.php",
-        data: $(form).serialize(),
-        beforeSend: function () {
-          sLoader.fadeIn();
-        },
-        success: function (msg) {
-          // Message was sent
-          if (msg == "OK") {
-            sLoader.fadeOut();
-            $("#message-warning").hide();
-            $("#contactForm").fadeOut();
-            $("#message-success").fadeIn();
-          }
-          // There was an error
-          else {
-            sLoader.fadeOut();
-            $("#message-warning").html(msg);
-            $("#message-warning").fadeIn();
-          }
-        },
-        error: function () {
-          sLoader.fadeOut();
-          $("#message-warning").html("Le message n'a pu être envoyer");
-          $("#message-warning").fadeIn();
-        },
-      });
-    },
-  });
-});
 
-//........Contact Section Start animate.........//
 
-const textCtc = document.querySelectorAll("#contact .intro-info span h5, #contact .intro-info span h1, #contact .intro-info span .lead");
-const formCtc = document.querySelectorAll(".contact-form");
 
-let options = {
-  root: null,
-  rootMargin: "-5% 0px",
-  threshold: 0
-}
 
-function handleIntersect(entries){
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.visibility = "visible";
-      entry.target.style.opacity= 1;
-      entry.target.classList.add("active");
-    } else {
-      entry.target.classList.remove("active");
-      entry.target.style.visibility = "hidden";
-      entry.target.style.opacity= 0;
-    }
-  })
-}
 
-const observer = new IntersectionObserver(
-  handleIntersect, options
-)
 
-textCtc.forEach(item => {
-  observer.observe(item)
-})
 
-formCtc.forEach(item => {
-  observer.observe(item)
-})
+
+
+
+
+
+
+
+
+// submitForm.addEventListener("click", (e) => {
+
+//   e.preventDefault();
+//   validForm();
+
+// });
+
+// function validForm() {
+
+//   if(contactName == ""){
+
+//     document.querySelector(".msgWarning").style.display = "flex";
+//     setTimeout(() => {
+//       document.querySelector(".msgWarning").style.display = "none";
+//     }, 3000);
+    
+
+//   } else if (contactName.length < 5){
+    
+//     document.querySelector(".msgWarning").style.display = "flex";
+//     document.querySelector(".msgWarning.name").innerHTML = "Votre nom doit comporter au moins 5 caractères.";
+//     setTimeout(() => {
+//       document.querySelector(".msgWarning").style.display = "none";
+//     }, 5000);
+
+//   } else {
+
+//     return false;
+
+//   }
+
+  // if(contactEmail == ""){
+
+  //   document.querySelector(".msgWarning").style.display = "flex";
+  //   setTimeout(() => {
+  //     document.querySelector(".msgWarning").style.display = "none";
+  //   }, 3000);
+    
+
+  // } else if (contactEmail.){
+    
+  //   document.querySelector(".msgWarning").style.display = "flex";
+  //   document.querySelector(".msgWarning.name").innerHTML = "Votre nom doit comporter au moins 5 caractères.";
+  //   setTimeout(() => {
+  //     document.querySelector(".msgWarning").style.display = "none";
+  //   }, 5000);
+
+  // }
+
+// }

@@ -1,10 +1,10 @@
 //................ Navbar Start ................//
 
+var tl = gsap.timeline({paused: true});
+
 /* Logo Anim start */
 
 const logoSvg = document.querySelector(".logo");
-
-const tl = gsap.timeline({paused: true});
 
 tl.from(logoSvg, 1, {scale: 0.5, opacity: 0, delay: .5, duration: 2.5, ease:"elastic.out(1, 0.3)"}, 0.9)
 
@@ -27,16 +27,12 @@ function toggleNav() {
 /* ************** Animate NavLink start **************** */
 
 hamburgerButton.addEventListener("click", () => {
-
-    const tl = gsap.timeline({paused: true});
     
     tl.staggerFrom(linkNav, 1, {y: 200, ease:"Expo.out"}, 0.3)
 
     setTimeout(() => {
       tl.play();
     }, 500);
-
-    
 
 })
 

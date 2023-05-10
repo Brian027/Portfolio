@@ -10,7 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: white;
-  color: #6e6e6e;
+  color: #1d1d1d;
   transition: background-color 0.3s ease;
 }
 
@@ -95,14 +95,7 @@ body {
 
 .skill-exp {
   min-height: 100vh;
-  background-image: url("https://i.postimg.cc/4NpLLkm1/bg-skill.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.3s ease;
   padding: 30px 0;
-  color: #313131;
-  position: relative;
 }
 
 .skill-exp .section-intro {
@@ -110,9 +103,9 @@ body {
 }
 
 body.dark .skill-exp {
-  background-image: url("../img/bg-skill.png");
-  transition: background-image 0.3s ease;
+  background-color: #1d1d1d;
   color: #f8f9fa;
+  transition: background-color .7s ease-out;
 }
 
 .skill-exp .grid {
@@ -124,10 +117,6 @@ body.dark .skill-exp {
   grid-template-columns: repeat(auto-fill, 600px);
   justify-content: center;
   gap: 100px;
-}
-
-.skill-exp .column > img {
-  transform: scale(1.3);
 }
 
 .skill-exp .grid .column {
@@ -169,11 +158,20 @@ body.dark .skill-exp {
 }
 
 /* Column skill 1 color start */
-.skill-exp .column:nth-child(1) .skill-bar .bar i {
-  color: #083731;
+
+
+.skill-exp .column:nth-child(1) .skill-bar .bar i.fa-html5 {
+  color: #fe2727;
   cursor: pointer;
 }
 
+.skill-exp .column:nth-child(1) .skill-bar .bar i.fa-php {
+  color: #005893;
+}
+
+.skill-exp .column:nth-child(1) .skill-bar .bar i.fa-square-js {
+  color: #ffda44;
+}
 
 /* Column skill 2 color end */
 
@@ -603,6 +601,10 @@ body.dark .skill-exp {
   bottom: 0;
 }
 
+#resume .timeline-content p {
+  font-size: 1.5rem;
+}
+
 body.dark #resume .timeline-content h4::after {
   background: rgba(255, 255, 255, 0.2);
 }
@@ -686,32 +688,6 @@ body.dark #resume .timeline-content h4::after {
 }
 
 /* Dark mode start */
-
-button.dark-mode {
-  position: fixed;
-  bottom: 100px;
-  left: 50px;
-  border: none;
-  border-radius: 50%;
-  padding: 10px 14px;
-  background-color: #083731;
-  z-index: 3000;
-  transform: scale(1);
-  transition: transform .3s;
-}
-
-button.dark-mode:hover {
-  transform: scale(1.1);
-}
-
-button.dark-mode i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: #f8f9fa;
-  text-align: center;
-}
 
 body.dark {
   color: rgb(250, 250, 250, 0.9)!important;
