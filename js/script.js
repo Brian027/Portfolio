@@ -103,8 +103,39 @@ items.forEach(item => {
   observer.observe(item)
 })
 
+// const gridItem = document.querySelector(".portfolio .grid-container .grid-item");
+// const cardItem = document.querySelector(".portfolio .grid-container .grid-item .card-info");
+// const titleCard = document.querySelector(".portfolio .grid-container .grid-item .card-info h5 span");
+// const titleCategorie = document.querySelector(".portfolio .grid-container .grid-item .card-info .categorie span");
+// const logoCard = document.querySelector(".portfolio .grid-container .grid-item .card-info .categorie i");
+// const separation = document.querySelector(".portfolio .grid-container .grid-item .card-info hr");
+// const txtBodyCard = document.querySelector(".portfolio .grid-container .grid-item .card-info ");
+// const btnCard = document.querySelector(".portfolio .grid-container .grid-item .card-info .btn");
 
+// const TLCARD = gsap.timeline({
+//   default: {
+//     ease: "power2",
+//     duration: 0.3,
+//   },
+//   paused: true,
+// })
 
+// TLCARD
+// .to(cardItem,{bottom: 400, duration: 0.2}, '-=0.1')
+// .from(titleCard,{bottom: 400, duration: 0.2}, '-=0.1')
+// .from(titleCategorie,{opacity: 0, duration: 0.2}, '-=0.1')
+// .from(logoCard,{scale: 0, duration: 0.2}, '-=0.1')
+// .from(separation,{width: 0, duration: 0.2}, '-=0.2')
+// .from(txtBodyCard,{opacity: 0, duration: 0.3}, '-=0.1')
+// .from(btnCard,{scale: 0, duration: 0.2}, '-=0.1')
+
+// gridItem.addEventListener('mouseenter', () => {
+//     TLCARD.play();
+//   })
+
+// gridItem.addEventListener('mouseleave', () => {
+//   TLCARD.reverse();
+// })
 
 // ................ Counter up start animate ...................//
 

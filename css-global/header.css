@@ -24,6 +24,19 @@ header {
     background: transparent;
     transition: all .4s;
   }
+
+  .nav-toggler .txtBtn {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: 'poppins';
+    color: #101010;
+    opacity: 1;
+    transition: opacity .5s .5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  body.dark .nav-toggler .txtBtn {
+    color: #fafafa;
+  }
   
   .line {
     position: absolute;
@@ -71,6 +84,11 @@ header {
       right: 0;
       width: 100%;
     }
+  }
+
+  .nav-toggler.active .txtBtn {
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(0.19, 1, 0.22, 1);
   }
   
   .nav-toggler.active .l1 {
