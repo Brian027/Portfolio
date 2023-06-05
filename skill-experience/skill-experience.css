@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: white;
+  background-color: #eeeeee;
   color: #1d1d1d;
   transition: background-color 0.3s ease;
 }
@@ -691,6 +691,6 @@ body.dark #resume .timeline-content h4::after {
 
 body.dark {
   color: rgb(250, 250, 250, 0.9)!important;
-  background-color: #1d1d1d;
+  background-color: #111111;
   transition: background-color 0.3s ease;
 }

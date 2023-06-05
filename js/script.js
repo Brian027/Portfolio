@@ -12,21 +12,20 @@ backToTop.addEventListener("click", () => {
 });
 
 window.addEventListener("scroll", () => {
-  if(window.pageYOffset > 100){
+  if (window.pageYOffset > 100) {
     backTopBtn.classList.add("active");
   } else {
     backTopBtn.classList.remove("active");
   }
-})
+});
 
 /* ***************** Back to Top End**********************/
 
 //........Home Section Start animate.........//
 
-
-
 const homeSpan = document.querySelector(".home-page .animate-text").children,
   txtsLen = homeSpan.length;
+
 let index = 0;
 const textInTimer = 3000,
   textOutTimer = 2800;
@@ -57,85 +56,92 @@ window.onload = setTimeout(() => {
 
 const scrollToPfo = document.querySelector(".scrollToPortfolio");
 
-scrollToPfo.addEventListener("click", addScrollSmooth)
+scrollToPfo.addEventListener("click", addScrollSmooth);
 
-function addScrollSmooth(){
+function addScrollSmooth() {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
-  })
+  });
 }
 
 //........Portfolio Section Start animate.........//
 
-const items = document.querySelectorAll(".grid-item");
-const textPfo = document.querySelectorAll(".portfolio .intro-info span h5, .portfolio .intro-info span h1, .portfolio .intro-info span .lead");
+const textPfo = document.querySelectorAll(
+  ".portfolio .intro-info span h5, .portfolio .intro-info span h1, .portfolio .intro-info span .lead"
+);
 
 let option = {
   root: null,
   rootMargin: "-5% 0px",
-  threshold: 0
-}
+  threshold: 0,
+};
 
-function handleIntersect(entries){
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
+function handleIntersect(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
       entry.target.style.visibility = "visible";
-      entry.target.style.opacity= 1;
+      entry.target.style.opacity = 1;
       entry.target.classList.add("active");
     } else {
       entry.target.classList.remove("active");
       entry.target.style.visibility = "hidden";
-      entry.target.style.opacity= 0;
+      entry.target.style.opacity = 0;
     }
-  })
+  });
 }
 
-const observer = new IntersectionObserver(
-  handleIntersect, option
-)
+const observer = new IntersectionObserver(handleIntersect, option);
 
-textPfo.forEach(item => {
-  observer.observe(item)
+textPfo.forEach((item) => {
+  observer.observe(item);
+});
+
+// Animer la carte au survol de la souris
+
+// Récupération des éléments
+
+contentWrapper = jQuery(".grid-item");
+overlay = jQuery(".grid-item .overlay");
+card = jQuery(".grid-item .card-info");
+titleCard = jQuery(".grid-item .animated-text span, .grid-item .animated-text i");
+hr = jQuery(".grid-item hr");
+allText = jQuery(".grid-item .categorie span, .desc span");
+btn = jQuery(".grid-item .btn");
+
+// Création de la fonction d'animation
+
+contentWrapper.each(function() {
+  
+  const thisWrapper = $(this);
+  const thisOverlay = $(this).find(".overlay");
+  const thisCard = $(this).find(".card-info");
+  const thisTitleCard = $(this).find(".animated-text span, .animated-text i");
+  const thisHr = $(this).find("hr");
+  const thisAllText = $(this).find(".categorie span, .desc span");
+  const thisBtn = $(this).find(".btn");
+
+  // Création de la timeline
+
+  var TL = gsap.timeline({ paused: true });
+
+  TL.to(thisOverlay, { opacity: 1, duration: 0.2 }, 0.1)
+  .to(thisCard, { bottom: 400, duration: 0.2 }, 0.5)
+  .from(thisTitleCard, { opacity: 0, duration: 0.2, stagger: 0.1 }, 0.7)
+  .from(thisHr, { width: 0, duration: 0.2 }, 0.9)
+  .from(thisAllText, { opacity: 0, duration: 0.2, stagger: 0.1 }, 1.1)
+  .from(thisBtn, { opacity: 0, duration: 0.2 }, 1.3);
+
+  // Evenement au survol de la souris
+
+  thisWrapper.on("mouseover", function() {
+    TL.play();
+  }).on("mouseout", function() {
+    TL.reverse();
+  });
+
 })
 
-items.forEach(item => {
-  observer.observe(item)
-})
-
-// const gridItem = document.querySelector(".portfolio .grid-container .grid-item");
-// const cardItem = document.querySelector(".portfolio .grid-container .grid-item .card-info");
-// const titleCard = document.querySelector(".portfolio .grid-container .grid-item .card-info h5 span");
-// const titleCategorie = document.querySelector(".portfolio .grid-container .grid-item .card-info .categorie span");
-// const logoCard = document.querySelector(".portfolio .grid-container .grid-item .card-info .categorie i");
-// const separation = document.querySelector(".portfolio .grid-container .grid-item .card-info hr");
-// const txtBodyCard = document.querySelector(".portfolio .grid-container .grid-item .card-info ");
-// const btnCard = document.querySelector(".portfolio .grid-container .grid-item .card-info .btn");
-
-// const TLCARD = gsap.timeline({
-//   default: {
-//     ease: "power2",
-//     duration: 0.3,
-//   },
-//   paused: true,
-// })
-
-// TLCARD
-// .to(cardItem,{bottom: 400, duration: 0.2}, '-=0.1')
-// .from(titleCard,{bottom: 400, duration: 0.2}, '-=0.1')
-// .from(titleCategorie,{opacity: 0, duration: 0.2}, '-=0.1')
-// .from(logoCard,{scale: 0, duration: 0.2}, '-=0.1')
-// .from(separation,{width: 0, duration: 0.2}, '-=0.2')
-// .from(txtBodyCard,{opacity: 0, duration: 0.3}, '-=0.1')
-// .from(btnCard,{scale: 0, duration: 0.2}, '-=0.1')
-
-// gridItem.addEventListener('mouseenter', () => {
-//     TLCARD.play();
-//   })
-
-// gridItem.addEventListener('mouseleave', () => {
-//   TLCARD.reverse();
-// })
 
 // ................ Counter up start animate ...................//
 
@@ -154,7 +160,7 @@ items.forEach(item => {
 //   const c = +counter.innerText;
 
 //   const increment = target / 200;
-  
+
 //   if(c < target){
 //     counter.innerText = `${Math.ceil(c + increment)}`;
 //     setTimeout(updateCounter, 1);
@@ -168,24 +174,14 @@ items.forEach(item => {
 //   observerCount.observe(count)
 // })
 
-
-
-
 //................. Dark mode start ............................//
 
 const body = document.querySelector("body"),
   btnToggle = document.querySelector(".dark-mode");
-const iconBtn = document.querySelector(".dark-mode i");
 
 let getMode = localStorage.getItem("mode");
 if (getMode && getMode === "dark") {
   body.classList.add("dark");
-}
-
-if(body.classList.contains("dark")){
-  btnToggle.innerHTML = '<img src="img/sun.svg" alt="icone soleil">';
-} else {
-  btnToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
 }
 
 btnToggle.addEventListener("click", () => {
@@ -196,3 +192,65 @@ btnToggle.addEventListener("click", () => {
   }
   localStorage.setItem("mode", "dark");
 });
+
+//.................. Dark mode end ............................//
+
+//..................  Clap button .......................//
+
+// Récupération des éléments dans le DOM
+
+const clapBtn = document.querySelector(".clap-btn"),
+  clapIcon = document.querySelector(".clap-btn svg"),
+  clapCount = document.querySelector(".clap-btn span");
+
+// Création de la fonction d'animation
+
+function clapAnimation() {
+
+  const TL = gsap.timeline({ paused: true });
+
+  TL.to(clapIcon, { scale: 1.5, duration: 0.1 })
+    .to(clapIcon, { scale: 1, duration: 0.1 })
+    .to(clapIcon, { scale: 1.5, duration: 0.1 })
+    .to(clapIcon, { scale: 1, duration: 0.1 });
+
+  TL.play();
+}
+
+// Evenement au chargement de la page
+
+window.addEventListener("load", () => {
+  getClap();
+});
+
+// Evenement au clic
+
+clapBtn.addEventListener("click", () => {
+  clapAnimation();
+  sendClap();
+});
+
+// Fonction ajax pour envoyer une requête au fichier PHP
+
+function sendClap() {
+  $.ajax({
+    url: "data/count/count-clap.php",
+    type: "POST",
+    success: function (data) {
+      console.log(data);
+      clapCount.innerText = data;
+    }
+  })
+}
+
+// Fonction ajax pour récupérer le nombre de claps
+
+function getClap() {
+  $.ajax({
+    url: "data/count-clap",
+    type: "POST",
+    success: function (data) {
+      clapCount.innerText = data;
+    }
+  })
+}

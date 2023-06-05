@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #fafafa;
+}
+
+body.dark {
+  background-color: #111111;
+  color: #f8f9fa;
+  transition: background-color .3s;
+}
+
 #contact {
     background-color: #f8f9fa;
     padding-top: 9rem;
@@ -57,7 +67,7 @@
   }
 
   body.dark #contact {
-    background-color: #151515;
+    background-color: #111111;
     color: #f8f9fa;
     transition: background-color .3s;
   }
@@ -127,7 +137,7 @@
     clear: both;
   }
   #contact form .form-field label {
-    font-family: "Bree Serif", sans-serif;
+    font-family: "poppins", sans-serif;
     display: none;
     font-size: 1.1rem;
     line-height: 2.4rem;
@@ -140,7 +150,7 @@
     margin: 0;
     background: #083731;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   #contact form .form-field label::after {
@@ -237,7 +247,7 @@
     padding: 0 3rem;
     margin-top: 4.8rem;
     width: 100%;
-    background: rgb(21, 21, 21, 0.9);
+    background: rgba(7, 7, 7, 0.9);
     color: #f8f9fa;
     border-radius: 30px;
     transition: 0.4s ease;
@@ -299,10 +309,10 @@
     letter-spacing: 0.3rem;
     text-transform: uppercase;
   }
-  .oldie #submit-loader .s-loader {
+  #submit-loader .s-loader {
     display: none;
   }
-  .oldie #submit-loader .text-loader {
+  #submit-loader .text-loader {
     display: block;
   }
   .contact-info {
@@ -387,17 +397,14 @@
 /* Widget Dark mode start */
 
 button.dark-mode:hover {
+  border: none;
   transform: scale(1.1);
   background-color: #083731;
-  box-shadow: 1px 1px 18px #083731,
-              -1px 1px 9px #083731;
 }
 
 body.dark button.dark-mode:hover {
   transform: scale(1.1);
   background-color: #083731;
-  box-shadow: 1px 1px 18px #083731,
-              -1px 1px 9px #083731;
 }
 
 button.dark-mode i {
@@ -410,14 +417,45 @@ button.dark-mode i {
   position: relative;
 }
 
+button.dark-mode i.bx.bxs-moon {
+  transform: translateX(200%);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+body.dark button.dark-mode i.bx.bxs-moon {
+  color: #ffffff;
+  font-size: 32px;
+  transform: translateX(0);
+  transition: transform 1s 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+button.dark-mode i.bx.bxs-sun{
+  font-size: 32px;
+  color: #151515;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 1s 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+button.dark-mode:hover i.bx.bxs-sun {
+  color: #ffffff;
+}
+
+body.dark button.dark-mode i.bx.bxs-sun{
+  position: absolute;
+  top: 50%;
+  left: -150%;
+  transform: translate(-150%, -50%);
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 button.dark-mode:hover i {
   color: #f8f9fa;
 }
 
 body.dark .dark-mode {
-  background-color: #151515e5;
-  box-shadow: 4px 4px 32px rgba(37, 37, 37, 0.85),
-              -4px 4px 16px rgba(37, 37, 37, 0.85);
+  background-color: #000;
+  border: none;
 }
 
 body.dark .dark-mode i {
@@ -427,26 +465,19 @@ body.dark .dark-mode i {
 @media  screen and (min-width: 768px) {
   .dark-mode {
     position: fixed;
-    bottom: 100px;
-    left: 50px;
+    bottom: 90px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
     border: none;
     border-radius: 50%;
-    padding: 10px 14px;
-    background-color: #ffffff;
-    box-shadow: 1px 1px 42px #c5c5c5,
-                -1px 1px 21px #c5c5c5;
-    z-index: 3000;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 500;
     transform: scale(1);
     transition: transform .3s cubic-bezier(0.19, 1, 0.22, 1), background-color 1s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  .dark-mode img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20px;
-    width: 20px;
-    margin: 3px 0;
+    overflow: hidden;
+    display: inline-block;
   }
 
 }
@@ -460,7 +491,7 @@ body.dark .dark-mode i {
     border-radius: 50%;
     padding: 10px 14px;
     background-color: #fafafa;
-    z-index: 3000;
+    z-index: 500;
     transform: scale(1);
     transition: transform .3s;
   }
@@ -473,4 +504,46 @@ body.dark .dark-mode i {
     width: 20px;
     margin: 3px 0;
   }
+}
+
+/* Widget Dark mode end */
+
+/* Clapping Button */
+
+.clap-btn {
+  position: fixed;
+  bottom: 185px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #ffffff;
+  z-index: 500;
+  cursor: pointer;
+}
+
+.clap-btn.active {
+  background-color: #f8f9fa;
+  border: none;
+  transform: scale(1.1);
+  transition: transform .3s cubic-bezier(0.19, 1, 0.22, 1), background-color 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.clap-btn svg {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.clap-btn .clap-counter {
+  font-size: 14px;
+  font-weight: 500;
+  color: #151515;
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
 }

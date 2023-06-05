@@ -62,7 +62,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  background-color: #eeeeee;
   transition: background-color 1s ease;
   min-height: 600px;
   height: 100vh;
@@ -293,30 +293,6 @@ body.dark .home-page .scrollToPfo p {
   color: #f8f9fa;
 }
 
-@keyframes svgAnimOne {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes svgAnimTwo{
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 /* Partie Responsive Section Home */
 
 @media screen and (max-width: 991px) {
@@ -437,26 +413,18 @@ body.dark .home-page .scrollToPfo p {
   height: 700px;
   border-radius: 6px;
   position: relative;
-  overflow: hidden;
-  opacity: 0;
   cursor: pointer;
 }
 
-.portfolio .grid-container .grid-item::after {
-  content: '';
+.portfolio .grid-container .grid-item .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.5);
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity .5s 2s ease;
-}
-
-.portfolio .grid-container .grid-item:hover::after {
-  opacity: 1;
-  transition: opacity .5s .1s ease;
 }
 
 .portfolio .grid-container .grid-item:nth-child(1).active, .grid-item:nth-child(4).active {
@@ -524,92 +492,44 @@ body.dark .home-page .scrollToPfo p {
   rgba(196, 196, 196,0.05) 77%,rgba(166, 166, 166,0.05) 77%, rgba(166, 166, 166,0.05) 93%,
   rgba(76, 76, 76,0.05) 93%, rgba(76, 76, 76,0.05) 100%),radial-gradient(circle at center center, 
   rgb(0,0,0) 0%, rgb(0,0,0) 8%,rgb(0,0,0) 8%, rgb(0,0,0) 46%,rgb(0,0,0) 46%, 
-  rgb(0,0,0) 60%,rgb(0,0,0) 60%, rgb(0,0,0) 80%,rgb(0,0,0) 80%, rgb(0,0,0) 82%,rgb(0,0,0) 82%, rgb(0,0,0) 100%); 
-  background-size: 43px 43px;
+  rgb(0,0,0) 60%,rgb(0,0,0) 60%, rgb(0,0,0) 80%,rgb(0,0,0) 80%, rgb(0,0,0) 82%,rgb(0,0,0) 82%, rgb(0,0,0) 100%);
   transform: translateY(400px);
-  transition: transform .5s 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+  background-size: 43px 43px;
 }
 
-.portfolio .grid-container .grid-item .card-info h5 span, .card-info p span{
-  display: inline-block;
-  color: white;
-}
-
-.portfolio .grid-container .grid-item:hover .card-info{
-  transform: translateY(0);
-  transition: transform 0.5s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item .card-info h5 span {
-  font-size: 2.5rem;
-  transform: translateY(35px);
-  transition: transform .5s .5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item:hover .card-info h5 span {
-  transform: translateY(0);
-  transition: transform .5s .5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item .categorie {
+.portfolio .grid-container .grid-item .card-info h5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  line-height: 0;
 }
 
-.portfolio .grid-container .grid-item .categorie span {
-  transform: translateY(40px);
-  transition: transform .5s 1s cubic-bezier(0.19, 1, 0.22, 1);
+.portfolio .grid-container .grid-item .card-info h5 span, .card-info p span{
+  color: white;
 }
 
-.portfolio .grid-container .grid-item:hover .categorie span {
-  transform: translateY(0);
-  transition: transform .5s 1s cubic-bezier(0.19, 1, 0.22, 1);
+.portfolio .grid-container .grid-item .card-info h5 span {
+  font-size: 3rem;
 }
 
-.portfolio .grid-container .grid-item .categorie i {
-  transform: scale(0);
-  transition: transform .5s 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item:hover .categorie i {
-  transform: scale(1);
-  transition: transform .5s 1s cubic-bezier(0.19, 1, 0.22, 1);
+.portfolio .grid-container .grid-item .card-info h5 i {
+  font-size: 1.8rem;
+  color: #dfdfdf;
 }
 
 .portfolio .grid-container .grid-item .card-info hr {
-  width: 0px;
+  width: 100px;
   height: 1px;
-  margin: 5px 0;
+  background-color: #dfdfdf;
+  margin: 7px 0 20px;
   border: none;
-  background-color: #fafafa;
-  transition: width .5s 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item:hover .card-info hr {
-  width: 50px;
-  transition: width .5s 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item .card-info p span {
-  transform: translateY(150px);
-  transition: transform .5s 1.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item:hover .card-info p span {
-  transform: translateY(0);
-  transition: transform .5s 1.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item .card-info h5, .card-info p {
-  overflow: hidden;
 }
 
 .portfolio .grid-container .grid-item .card-info p span {
   color: #dfdfdf;
   font-weight: 100;
   letter-spacing: .07em;
+  line-height: 1.4;
 }
 
 .portfolio .grid-container .grid-item .card-info .btn {
@@ -623,12 +543,6 @@ body.dark .home-page .scrollToPfo p {
   border-radius: 32px;
   transition: background-color .15s ease-out, transform .3s ease-out;
   font-weight: 600;
-  transform: scale(0);
-  transition: transform .5s 1.6s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.portfolio .grid-container .grid-item:hover .card-info .btn {
-  transform: scale(1);
   transition: transform .5s 1.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
