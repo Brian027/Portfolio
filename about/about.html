@@ -199,37 +199,50 @@
     </section> <!-- /process-->
 
     <!-- contact -->
-
     <section id="contact">
       <div class="intro-info">
-				<span><h5>Contact</h5></span>
-				<span><h1>Un projet de création web ?</h1></span>
-				<span><p class="lead">Pour toute question ou demande auquel vous voulez m'adresser, je vous invite à me
-					contacter via ce formulaire de contact. J'essaierai de répondre au plus vite !</p></span>
-			</div>
-
+        <span>
+          <h5>Contact</h5>
+        </span>
+        <span>
+          <h1>Un projet de création web ?</h1>
+        </span>
+        <span>
+          <p class="lead">
+            Pour toute question ou demande auquel vous voulez m'adresser, je
+            vous invite à me contacter via ce formulaire de contact.
+            J'essaierai de répondre au plus vite !
+          </p>
+        </span>
+      </div>
       <div class="row contact-form">
         <div class="col-twelve">
-          <form name="contactForm" id="contactForm" method="post">
+          <form name="contactForm" id="contactForm" method="post" action="form/mail.php">
             <fieldset>
               <div class="form-field">
-                <input name="contactName" type="text" id="contactName" placeholder="Nom" value="" minlength="2"
-                  required="" />
+                <label class="msgWarning name" for="contactName">Ce champ est requis.</label>
+                <input name="contactName" type="text" id="contactName" placeholder="Nom" />
               </div>
               <div class="form-field">
-                <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" />
+                <label class="msgWarning email" for="contactEmail">Ce champ est requis.</label>
+                <input name="contactEmail" type="text" id="contactEmail" placeholder="Email" />
               </div>
               <div class="form-field">
-                <input name="contactSubject" type="text" id="contactSubject" placeholder="Objet" value="" />
+                <label class="msgWarning subject" for="contactSubject">Ce champ est requis.</label>
+                <input name="contactSubject" type="text" id="contactSubject" placeholder="Objet" />
               </div>
               <div class="form-field">
-                <textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10" cols="50"
-                  required=""></textarea>
+                <label class="msgWarning message" for="contactMessage">Ce champ est requis.</label>
+                <textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10"
+                  cols="50"></textarea>
               </div>
+
               <div class="form-field">
-                <button class="submitform">Envoyer</button>
+                <button id="submitForm" class="submitform">Envoyer</button>
                 <div id="submit-loader">
-                  <div class="text-loader">Envoi...</div>
+                  <div class="text-loader">
+                    <p>Envoi...</p>
+                  </div>
                   <div class="s-loader">
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>
@@ -330,11 +343,11 @@
     </button>
 </footer>
   <!-- Back To Top -->
-	<div id="go-top">
-		<a href="#top" class="smoothscroll" id="btn-back-to-top">
-			<i class="fas fa-arrow-up"></i>
-		</a>
-	</div>
+  <div id="go-top">
+    <button class="smoothscroll" id="btn-back-to-top" aria-label="ScrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
 
   <!-- JQUERY -->
   <script src="../js/jquery.js"></script>
@@ -349,6 +362,7 @@
   <!-- <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
   
   <script src="about.js"></script>
+  <script src="../js/formValid.js"></script>
   <script src="../js/contact.js"></script>
   <script src="../js/header.js"></script>
   <script src="../js/preloader.js"></script>

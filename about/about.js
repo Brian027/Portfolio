@@ -1,3 +1,26 @@
+/* ***************** Back to Top Start**********************/
+
+const backToTop = document.getElementById("btn-back-to-top");
+const backTopBtn = document.getElementById("go-top");
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    backTopBtn.classList.add("active");
+  } else {
+    backTopBtn.classList.remove("active");
+  }
+});
+
+/* ***************** Back to Top End**********************/
+
 //................. Dark mode start ............................//
 const body = document.querySelector("body"),
   btnToggle = document.querySelector(".dark-mode");

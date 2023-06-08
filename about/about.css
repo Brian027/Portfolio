@@ -51,11 +51,18 @@ body {
 /* Back to top start*/
 
 #go-top {
+  visibility: hidden;
+  opacity: 0;
   position: fixed;
-  display: none;
-  bottom: 50px;
+  bottom: 30px;
   right: 50px;
   z-index: 5000;
+  transition: visibility .7s ease, opacity .7s ease;
+}
+
+#go-top.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 #btn-back-to-top {
@@ -76,6 +83,12 @@ body {
   background: transparent;
   color: #083731;
   box-shadow: inset 0 0 0 0px #083731;
+}
+
+@media screen and (max-width:768px) {
+  #go-top {
+    display: none;
+  }
 }
 
 /*------ About ------ */

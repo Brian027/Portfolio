@@ -54,7 +54,7 @@ body {
   }
 }
 
-/* Section hero start */
+/* Section Home Page Start */
 
 .home-page {
   position: relative;
@@ -312,6 +312,10 @@ body.dark .home-page .scrollToPfo p {
     text-align: center;
   }
 
+  .home-page .home-text {
+    margin-top: 100px;
+  }
+
   .home-page .text-hero {
     font-size: 5rem;
     text-align: center;
@@ -414,6 +418,7 @@ body.dark .home-page .scrollToPfo p {
   border-radius: 6px;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .portfolio .grid-container .grid-item .overlay {
@@ -473,6 +478,9 @@ body.dark .home-page .scrollToPfo p {
 .portfolio .grid-container .grid-item img {
   object-fit: cover;
   border-radius: 6px;
+  height: 100%;
+  width: 100%;
+  object-position: top;
 }
 
 .portfolio .grid-container .grid-item .card-info {

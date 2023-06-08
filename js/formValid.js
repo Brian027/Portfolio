@@ -41,7 +41,7 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
         }, 3000);
     } 
 
-    // CHECK SUBJECT
+    //CHECK SUBJECT
 
     else if(contactSubject == ""){
         $("#contact form .form-field label.subject").show(50);
@@ -83,7 +83,7 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
         // Requête AJAX
         $.ajax({
             type: "POST",
-            url: "php/form/mail.php",
+            url: "form/mail.php",
             data: formData,
             dataType: "json",
             success: function (data) {

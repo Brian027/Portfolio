@@ -1,8 +1,25 @@
 /* ***************** Back to Top Start**********************/
 
-/* ***************** Back to Top End**********************/
+const backToTop = document.getElementById("btn-back-to-top");
+const backTopBtn = document.getElementById("go-top");
 
-/* **************** Anim section skill end ***************** */
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    backTopBtn.classList.add("active");
+  } else {
+    backTopBtn.classList.remove("active");
+  }
+});
+
+/* ***************** Back to Top End**********************/
 
 //................. Dark mode start ............................//
 const body = document.querySelector("body"),
@@ -21,3 +38,63 @@ btnToggle.addEventListener("click", () => {
   }
   localStorage.setItem("mode", "dark");
 });
+
+//..................  Clap button .......................//
+
+// Récupération des éléments dans le DOM
+
+const clapBtn = document.querySelector(".clap-btn"),
+  clapIcon = document.querySelector(".clap-btn svg"),
+  clapCount = document.querySelector(".clap-btn span");
+
+// Création de la fonction d'animation
+
+function clapAnimation() {
+
+  const TL = gsap.timeline({ paused: true });
+
+  TL.to(clapIcon, { scale: 1.5, duration: 0.1 })
+    .to(clapIcon, { scale: 1, duration: 0.1 })
+    .to(clapIcon, { scale: 1.5, duration: 0.1 })
+    .to(clapIcon, { scale: 1, duration: 0.1 });
+
+  TL.play();
+}
+
+// Evenement au chargement de la page
+
+window.addEventListener("load", () => {
+  getClap();
+});
+
+// Evenement au clic
+
+clapBtn.addEventListener("click", () => {
+  clapAnimation();
+  sendClap();
+});
+
+// Fonction ajax pour envoyer une requête au fichier PHP
+
+function sendClap() {
+  $.ajax({
+    url: "../data/count/count-clap.php",
+    type: "POST",
+    success: function (data) {
+      console.log(data);
+      clapCount.innerText = data;
+    }
+  })
+}
+
+// Fonction ajax pour récupérer le nombre de claps
+
+function getClap() {
+  $.ajax({
+    url: "../data/count-clap",
+    type: "POST",
+    success: function (data) {
+      clapCount.innerText = data;
+    }
+  })
+}
