@@ -78,7 +78,7 @@ clapBtn.addEventListener("click", () => {
 
 function sendClap() {
   $.ajax({
-    url: "data/count/count-clap.php",
+    url: "./data/count/count-clap.php",
     type: "POST",
     success: function (data) {
       console.log(data);
@@ -91,7 +91,7 @@ function sendClap() {
 
 function getClap() {
   $.ajax({
-    url: "../data/count-clap",
+    url: "./data/count-clap",
     type: "POST",
     success: function (data) {
       clapCount.innerText = data;
