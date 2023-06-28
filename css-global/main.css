@@ -204,7 +204,6 @@ p.lead {
 
 em,
 i,
-strong,
 b {
   line-height: 3rem;
   font-style: normal;
@@ -214,7 +213,6 @@ em,
 i {
   font-family: "lora-italic", serif;
 }
-strong,
 b {
   font-family: "lora-bold", serif;
 }

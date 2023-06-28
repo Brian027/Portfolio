@@ -80,14 +80,29 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
             message: contactMessage,
         };
 
+        var sLoader = $('#submit-loader');
+
         // Requête AJAX
         $.ajax({
             type: "POST",
             url: "form/mail.php",
             data: formData,
             dataType: "json",
-            success: function (data) {
-                console.log(data);
+            success: function (msg) {
+                if(msg == "OK"){
+                    sLoader.fadeOut();
+                    $('#contactForm').fadeOut();
+	                $('#message-success').fadeIn();
+                } else {
+                    sLoader.fadeOut(); 
+	                $('#message-warning').html(msg);
+		            $('#message-warning').fadeIn();
+                }
+            },
+            error: function () {
+                sLoader.fadeOut();
+                $('#message-warning').html("Le message n'as pas pu être envoyer. Réessayer plus tard!");
+                $('#message-warning').fadeIn();
             },
         });
     }

@@ -23,41 +23,26 @@ window.addEventListener("scroll", () => {
 
 //........Home Section Start animate.........//
 
-const homeSpan = document.querySelector(".home-page .animate-text").children,
-  txtsLen = homeSpan.length;
+gsap.registerPlugin(ScrollTrigger);
+const homeText = document.querySelector(".home-page .textAnim");
+const textSlide = document.querySelector(".home-page .animateText #hero-p");
+const words = ["Développeur Web à La Réunion", "Développeur Mobile", "Développeur React Js", "Développeur Front End", "Développeur JavaScript"];
 
-let index = 0;
-const textInTimer = 3000,
-  textOutTimer = 2800;
-
-function animateText() {
-  for (let i = 0; i < txtsLen; i++) {
-    homeSpan[i].classList.remove("text-in", "text-out");
-  }
-
-  homeSpan[index].classList.add("text-in");
-
-  setTimeout(function () {
-    homeSpan[index].classList.add("text-out");
-  }, textOutTimer);
-
-  setTimeout(function () {
-    if (index == txtsLen - 1) {
-      index = 0;
-    } else {
-      index++;
-    }
-    animateText();
-  }, textInTimer);
-}
-window.onload = setTimeout(() => {
-  animateText();
-}, 2000);
-
-const scrollToPfo = document.querySelector(".scrollToPortfolio");
-
-scrollToPfo.addEventListener("click", addScrollSmooth);
-
+let masterTL = gsap.timeline({ repeat: -1 }).pause();
+words.forEach((word) => {
+  let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+  tl.to(textSlide, {
+    opacity: 1,
+    duration: 1,
+    text: word,
+  });
+  masterTL.add(tl);
+});
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    masterTL.play();
+  } , 2500);
+});
 function addScrollSmooth() {
   window.scrollTo({
     top: 0,
@@ -65,36 +50,63 @@ function addScrollSmooth() {
   });
 }
 
+let proxy = { skew: 0 },
+  skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg") // fast
+  clamp = gsap.utils.clamp(-20, 20); // Don't let the skew go beyond 20 degrees.
+
+ScrollTrigger.create({
+  onUpdate: (self) => {
+    let skew = clamp(self.getVelocity() / -300);
+    // Only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+    if (Math.abs(skew) > Math.abs(proxy.skew)) {
+      proxy.skew = skew;
+      gsap.to(proxy, {
+        skew: 0,
+        duration: 0.8,
+        ease: "power3",
+        overwrite: true,
+        onUpdate: () => skewSetter(proxy.skew),
+      });
+    }
+  },
+});
+
+gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
+
 //........Portfolio Section Start animate.........//
 
 const textPfo = document.querySelectorAll(
   ".portfolio .intro-info span h5, .portfolio .intro-info span h1, .portfolio .intro-info span .lead"
 );
+const containerGrid = document.querySelector(".grid-container").children;
 
-let option = {
-  root: null,
-  rootMargin: "-5% 0px",
-  threshold: 0,
-};
+gsap.from(textPfo, {
+  scrollTrigger: {
+    trigger: textPfo,
+    start: "top bottom",
+    end: "bottom top",
+    toggleActions: "restart pause reverse none",
+  },
+  y: 400,
+  skewY: 20,
+  duration: 4,
+  opacity: 0,
+  stagger: 0.4,
+  ease: "power4.out",
+});
 
-function handleIntersect(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.visibility = "visible";
-      entry.target.style.opacity = 1;
-      entry.target.classList.add("active");
-    } else {
-      entry.target.classList.remove("active");
-      entry.target.style.visibility = "hidden";
-      entry.target.style.opacity = 0;
-    }
-  });
-}
-
-const observer = new IntersectionObserver(handleIntersect, option);
-
-textPfo.forEach((item) => {
-  observer.observe(item);
+gsap.from(containerGrid, {
+  scrollTrigger: {
+    trigger: textPfo,
+    start: "top center",
+    end: "bottom top",
+    toggleActions: "restart pause reverse none",
+  },
+  opacity: 0,
+  scale: 0.9,
+  duration: 4,
+  stagger: 0.2,
+  ease: "elastic.out(1, 0.3)",
 });
 
 // Animer la carte au survol de la souris
@@ -111,8 +123,8 @@ btn = jQuery(".grid-item .btn");
 
 // Création de la fonction d'animation
 
-contentWrapper.each(function() {
-  
+contentWrapper.each(function () {
+
   const thisWrapper = $(this);
   const thisOverlay = $(this).find(".overlay");
   const thisCard = $(this).find(".card-info");
@@ -123,21 +135,21 @@ contentWrapper.each(function() {
 
   // Création de la timeline
 
-  var TL = gsap.timeline({ paused: true });
+  const cardTL = gsap.timeline({ paused: true });
 
-  TL.to(thisOverlay, { opacity: 1, duration: 0.2 }, 0.1)
-  .to(thisCard, { bottom: 400, duration: 0.2 }, 0.5)
-  .from(thisTitleCard, { opacity: 0, duration: 0.2, stagger: 0.1 }, 0.7)
-  .from(thisHr, { width: 0, duration: 0.2 }, 0.9)
-  .from(thisAllText, { opacity: 0, duration: 0.2, stagger: 0.1 }, 1.1)
-  .from(thisBtn, { opacity: 0, duration: 0.2 }, 1.3);
+  cardTL.to(thisOverlay, { opacity: 1, duration: 0.2 }, 0.1)
+    .to(thisCard, { bottom: 400, duration: 0.2 }, 0.5)
+    .from(thisTitleCard, { opacity: 0, duration: 0.2, stagger: 0.1 }, 0.7)
+    .from(thisHr, { width: 0, duration: 0.2 }, 0.9)
+    .from(thisAllText, { opacity: 0, duration: 0.2, stagger: 0.1 }, 1.1)
+    .from(thisBtn, { opacity: 0, duration: 0.2 }, 1.3);
 
   // Evenement au survol de la souris
 
-  thisWrapper.on("mouseover", function() {
-    TL.play();
-  }).on("mouseout", function() {
-    TL.reverse();
+  thisWrapper.on("mouseover", function () {
+    cardTL.play();
+  }).on("mouseout", function () {
+    cardTL.reverse();
   });
 
 })

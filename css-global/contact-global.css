@@ -299,7 +299,7 @@ body.dark {
   
   /* form loader */
   #submit-loader {
-    display: none;
+    display: block;
     position: relative;
     left: 0;
     top: 1.8rem;
@@ -316,7 +316,7 @@ body.dark {
     display: none;
   }
   #submit-loader .text-loader {
-    display: block;
+    display: none;
   }
   .contact-info {
     margin: 4.8rem auto 0;
@@ -450,8 +450,8 @@ body.dark .dark-mode i {
 
 .dark-mode {
   position: fixed;
-  bottom: 90px;
-  right: 50px;
+  bottom: 185px;
+  right: 40px;
   width: 70px;
   height: 70px;
   border: none;
@@ -469,21 +469,14 @@ body.dark .dark-mode i {
   button.dark-mode:hover {
     border: none;
     transform: scale(1.1);
-    background-color: #083731;
+    box-shadow: 0 0 30px 0 #5a5a5a62;
   }
   
   body.dark button.dark-mode:hover {
     transform: scale(1.1);
-    background-color: #083731;
+    box-shadow: none;
   }
 
-  button.dark-mode:hover i.bx.bxs-sun {
-    color: #ffffff;
-  }
-
-  button.dark-mode:hover i {
-    color: #f8f9fa;
-  }
 }
 
 @media screen and (max-width:767px) {
@@ -509,8 +502,8 @@ body.dark .dark-mode i {
 
 .clap-btn {
   position: fixed;
-  bottom: 185px;
-  right: 50px;
+  bottom: 90px;
+  right: 40px;
   width: 70px;
   height: 70px;
   border-radius: 50%;

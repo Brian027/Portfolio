@@ -93,6 +93,7 @@
     </div>
 
     <button class="nav-toggler" type="button" aria-label="Menu">
+      <div class="textBtn">Menu</div>
       <span class="line l1"></span>
       <span class="line l2"></span>
     </button>
@@ -112,16 +113,18 @@
   <main>
     <!-- 	Hero Section 
    		================================================== -->
-    <section class="home-page">
-      <div class="home-text">
+    <section class="home-page anim" id="home">
+      <div class="home-text textAnim skewElem">
         <h1 class="text-hero">Bonjour, je suis Brian.</h1>
-        <p class="animate-text">
-          <span id="hero-p">Développeur frond end à la Réunion</span>
-          <span id="hero-p">Conception de sites web</span>
-          <span id="hero-p">et d'application web et mobile.</span>
-          <span id="hero-p">Enjoy to coding !</span>
-          <span id="hero-p">Développeur JavaScript !</span>
-          <span id="hero-p">Développeur Mobile</span>
+        <p class="introHero">
+
+          Je conçois et réalise vos <strong>projets web</strong> que ce soit applications ou tout simplement un site
+          web, je serais mener
+          à bien votre ou vos projets !
+        </p>
+        <p class="animateText">
+          <span>Je suis: </span>
+          <span id="hero-p"></span>
         </p>
         <div class="social-links">
           <a class="twitter-bg" aria-label="Twitter" href="https://twitter.com/CoupamaBrian" target="_blank"><i
@@ -136,19 +139,21 @@
           <a class="github" aria-label="Github" href="https://github.com/Brian027" target="_blank"><i
               class="fa fa-github"></i></a>
         </div>
-        <a class="cta-home" aria-label="En savoir plus" href="about/about.html"><span class="text-btn">En savoir
-            plus..<span class="anim-point">.</span></span></a>
+        <div class="callToAction">
+          <a class="cta-home" aria-label="En savoir plus" href="about/about.html"><span class="text-btn">En savoir
+              plus...
+          </a>
+        </div>
       </div>
+
       <div class="scrollToPfo">
-        <p class="scrollToPortfolio" href="#pfo" aria-label="Scroll to Portfolio" class="scrollsection">
-          scroll me
-        </p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-arrow-down">
-          <line x1="12" y1="2" x2="12" y2="20"></line>
-          <polyline points="18 14 12 20 6 14"></polyline>
-        </svg>
+        <div class="textContent">
+          <p class="scrollToPortfolio" aria-label="Scroll to Portfolio" class="scrollsection">scroll me</p>
+        </div>
+        <div class="scrollClick">
+          <a href="#pfo" aria-label="Scroll to Portfolio" class="scrollsection"></a>
+          <span class="roundedAnim"></span>
+        </div>
       </div>
     </section>
 
@@ -169,7 +174,7 @@
         </span>
       </div>
       <div class="grid-container">
-        <div class="grid-item">
+        <div class="grid-item skewElem">
           <div class="overlay"></div>
           <img src="images/portfolio/SpotifyDesktop.webp" alt="Spotify Demo" />
           <div class="card-info">
@@ -190,7 +195,7 @@
             <a class="btn" href="projets/Spotify/index.html" target="_blank">Demo</a>
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item skewElem">
           <div class="overlay"></div>
           <img src="images/portfolio/DesktopTastyRestaurant.webp" alt="Spotify Demo" />
           <div class="card-info">
@@ -374,11 +379,6 @@
         </div>
       </div>
     </div>
-    <!-- Dark Mode Widget -->
-    <button class="dark-mode" aria-label="Theme Sombre">
-      <i class='bx bxs-moon' title="Tu es en mode sombre !"></i>
-      <i class='bx bxs-sun' title="Tu es en mode jour !"></i>
-    </button>
     <!-- Clapping Button -->
     <button class="clap-btn" aria-label="Applaudir">
       <svg width="70pt" height="70pt" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg"
@@ -421,6 +421,11 @@
       </svg>
       <span class="clap-counter"></span>
     </button>
+    <!-- Dark Mode Widget -->
+    <button class="dark-mode" aria-label="Theme Sombre">
+      <i class='bx bxs-moon' title="Tu es en mode sombre !"></i>
+      <i class='bx bxs-sun' title="Tu es en mode jour !"></i>
+    </button>
   </footer>
   <!-- Back To Top -->
   <div id="go-top">
@@ -433,8 +438,10 @@
   <script src="js/jquery.js"></script>
 
   <!-- *********************** GSAP *********************** -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js"></script>
   <script src="js/preloader.js"></script>
   <script src="js/header.js"></script>
   <script src="js/script.js"></script>
@@ -444,7 +451,6 @@
 
   <!-- **************************************************************************************************** -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Observer.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
