@@ -1,4 +1,4 @@
-/* ***************** Back to Top Start**********************/
+//.........................Back to Top Start.......................//
 
 const backToTop = document.getElementById("btn-back-to-top");
 const backTopBtn = document.getElementById("go-top");
@@ -19,8 +19,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* ***************** Back to Top End**********************/
-
+//.........................Back to Top End........................//
+//..............Scrolling Smooth Effect..............//
 //........Home Section Start animate.........//
 
 gsap.registerPlugin(ScrollTrigger);
@@ -153,38 +153,6 @@ contentWrapper.each(function () {
   });
 
 })
-
-
-// ................ Counter up start animate ...................//
-
-// const observeCount = document.querySelector(".count-up");
-// const counters = document.querySelectorAll(".stat-count");
-
-// let optionsCount = {
-//   root: null,
-//   rootMargin: "-10% 0px",
-//   threshold: 0
-// }
-
-// counter.innerText = "0";
-// const updateCounter = () => {
-//   const target = +counter.getAttribute('data-target');
-//   const c = +counter.innerText;
-
-//   const increment = target / 200;
-
-//   if(c < target){
-//     counter.innerText = `${Math.ceil(c + increment)}`;
-//     setTimeout(updateCounter, 1);
-//   }
-// }
-
-// const observerCount = new IntersectionObserver(
-//   updateCounter, optionsCount
-// )
-// counters.forEach(count => {
-//   observerCount.observe(count)
-// })
 
 //................. Dark mode start ............................//
 
