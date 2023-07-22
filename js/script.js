@@ -1,3 +1,38 @@
+// Cursor
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+  var x = e.clientX;
+  var y = e.clientY;
+  cursor.style.left = x + "px";
+  cursor.style.top = y + "px";
+});
+
+// Loading Page
+const animSection = document.querySelector(".anim");
+const animTitle = document.querySelector(".titleAnim");
+const contentIntro = document.querySelector(".contentIntro");
+window.addEventListener("load", () => {
+  gsap.from(animSection,{
+    opacity: 0,
+    duration: 1.5,
+    y: "-150%"
+  },1.5);
+  gsap.from(animTitle, {
+    opacity: 0,
+    y: 200,
+    skewY: 10,
+    duration: 1.5,
+    ease: "power2.out",
+  },"-=.2");
+  gsap.from(contentIntro.children, {
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.3,
+    ease: "power2.out",
+  }, "-=.2");
+});
+
 //.........................Back to Top Start.......................//
 
 const backToTop = document.getElementById("btn-back-to-top");
@@ -153,6 +188,38 @@ contentWrapper.each(function () {
   });
 
 })
+
+//........Portfolio Section End animate.........//
+
+//........Counter Start animate.........//
+
+const counter = document.querySelectorAll(".stat-count");
+
+counter.forEach((counter) => {
+  counter.innerText = "0";
+
+  const updateCounter = () => {
+    const target = +counter.getAttribute("data-target");
+    const c = +counter.innerText;
+
+    const increment = target / 1000;
+
+    if (c < target) {
+      counter.innerText = `${Math.ceil(c + increment)}`;
+      setTimeout(updateCounter, 1);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  // Déclencher la fonction avec scrollTrigger
+  ScrollTrigger.create({
+    trigger: counter,
+    start: "top 80%",
+    end: "bottom 50%",
+    toggleActions: "restart pause reverse none",
+    onEnter: () => updateCounter(),
+  });
+});
 
 //................. Dark mode start ............................//
 

@@ -25,14 +25,21 @@ header {
   }
 
   .nav-toggler .textBtn {
+    display: block;
+    height: 30px;
+    transition: opacity .3s ease-out;
+    overflow: hidden;
+  }
+
+  .nav-toggler .textBtn p {
     font-size: 1.8rem;
     text-transform: uppercase;
     font-family: 'poppins';
     color: #101010;
-    transition: opacity .3s ease-out;
+    margin-bottom: 0;
   }
 
-  body.dark .nav-toggler .txtBtn {
+  body.dark .nav-toggler .textBtn p {
     color: #fafafa;
   }
   

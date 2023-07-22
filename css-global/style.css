@@ -9,6 +9,7 @@ body {
   font-family: "Bree Serif", serif;
   transition: background-color 0.3s ease;
   overflow-x: hidden;
+  cursor: none;
 }
 
 /* Back to top start*/
@@ -54,6 +55,23 @@ body {
   }
 }
 
+/* Cursor  */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #fafafa;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+a:hover .cursor {
+  transform: translate(-50%, -50%) scale(4) ;
+}
+
 /* Section Home Page Start */
 
 .home-page {
@@ -78,7 +96,7 @@ body.dark .home-page {
   width: 80%;
   margin:  0 auto;
   display: flex;
-  justify-content: space-between;
+  gap: 3rem;
   flex-direction: column;
   margin-top: -10vh;
 }
@@ -95,6 +113,12 @@ body.dark .home-page .text-hero {
   color: #fafafa;
 }
 
+.home-page .contentIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .home-page .introHero {
   font-family: 'poppins', serif;
   font-weight: 500;
@@ -106,9 +130,17 @@ body.dark .home-page .text-hero {
   margin-bottom: 0;
 }
 
+body.dark .home-page .introHero {
+  color: #fafafa;
+}
+
 .home-page .introHero strong {
   font-weight: 600;
   border-bottom: 1px solid #151515;
+}
+
+body.dark .home-page .introHero strong {
+  border-bottom: 1px solid #f8f9fa;
 }
 
 .home-page .animateText {
@@ -120,6 +152,10 @@ body.dark .home-page .text-hero {
   font-weight: 500;
   font-family: "poppins";
   color: #151515;
+}
+
+body.dark .home-page .animateText span:first-child {
+  color: #f8f9fa;
 }
 
 .home-page .animateText #hero-p {
@@ -264,20 +300,12 @@ body.dark .home-page .scrollToPfo .scrollClick .roundedAnim {
 
 @media screen and (max-width: 768px) {
 
-  .home-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .home-page .home-text {
-    margin-top: 100px;
-  }
-
   .home-page .text-hero {
     font-size: 5rem;
-    text-align: center;
+  }
+
+  .home-page .home-text .introHero {
+    font-size: 1.2rem;
   }
 
   .home-page #hero-p {
@@ -286,7 +314,7 @@ body.dark .home-page .scrollToPfo .scrollClick .roundedAnim {
   }
 
   .home-page .social-links i{
-    font-size: 20px;
+    font-size: 1.4rem;
   }
 
   .home-page .cta-home .text-btn {
@@ -295,13 +323,13 @@ body.dark .home-page .scrollToPfo .scrollClick .roundedAnim {
 }
 
 @media screen and (max-width: 576px) {
-
-  .home-page .home-text {
-    margin-top: 150px;
-  }
   
   .home-page .text-hero {
     font-size: 4rem;
+  }
+
+  .home-page .home-text .introHero {
+    font-size: 1.2rem;
   }
 }
 
@@ -439,16 +467,16 @@ body.dark .home-page .scrollToPfo .scrollClick .roundedAnim {
 
 .portfolio .grid-container .grid-item .card-info .btn {
   color: #212121;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   background-color: #f8f9fa;
   width: 100px;
   padding: .5rem 1rem;
   text-align: center;
+  font-family: 'poppins', serif;
   margin-bottom: 2rem;
   border-radius: 32px;
   transition: background-color .15s ease-out, transform .3s ease-out;
   font-weight: 600;
-  transition: transform .5s 1.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .portfolio .grid-container .grid-item .card-info .btn:hover {

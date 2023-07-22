@@ -8,7 +8,6 @@ const iconScrollBlock = document.querySelector(".scrollToPfo .scrollClick");
 const iconScroll = document.querySelector(".scrollToPfo .scrollClick .roundedAnim");
 const darkModeBtn = document.querySelector(".dark-mode");
 const clapBtnAnim = document.querySelector(".clap-btn");
-const animText = document.querySelector(".textAnim");
 
 // Creation de la timeline avec GSAP
 
@@ -29,17 +28,7 @@ tl.to("#preloader", {
 },"-=.1");
 
 // Animation de la page d'accueil
-tl.from(".anim",{
-  duration: 1.5,
-  y: "-150%"
-},"-=.2");
-tl.from(animText.children, {
-  opacity: 0,
-  y: 200,
-  skewY: 10,
-  duration: 1.5,
-  ease: "ease.in",
-})
+
 tl.fromTo(animHeaderEl, {
   opacity: 0,
   scale: 0.5,
